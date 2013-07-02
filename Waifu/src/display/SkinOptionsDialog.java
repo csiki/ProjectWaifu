@@ -1,3 +1,6 @@
+package display;
+
+import core.SkinContainer;
 //  @ Project		: ProjectWaifu
 //  @ File Name		: SkinOptionsDialog.java
 //  @ Date			: 2013.07.02.

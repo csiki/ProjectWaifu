@@ -1,3 +1,5 @@
+package display;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: SkinPanel.java
 //  @ Date			: 2013.07.02.

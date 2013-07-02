@@ -1,3 +1,7 @@
+package display;
+
+import java.util.List;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: RadioBtnPane.java
 //  @ Date			: 2013.07.02.
@@ -13,6 +17,7 @@ public class RadioBtnPane {
     }
     
     public int waitForResponse() {
+		return 0;
     
     }
 }

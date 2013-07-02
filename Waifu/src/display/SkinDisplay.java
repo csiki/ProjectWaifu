@@ -1,3 +1,10 @@
+package display;
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+import core.SkinContainer;
+import core.Settings;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: SkinDisplay.java
 //  @ Date			: 2013.07.02.
@@ -15,7 +22,13 @@ public class SkinDisplay extends ElementDisplay {
     
     }
     
-    public void paintComponent(Graphics g, int x, int y) {
+    public void paintComponent1(Graphics g, int x, int y) {
     
     }
+
+	@Override
+	public void paintComponent(Graphics g, int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
 }
