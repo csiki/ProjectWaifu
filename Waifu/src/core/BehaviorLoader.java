@@ -9,7 +9,9 @@ package core;
 
 
 public class BehaviorLoader {
+	
     private String behSource;
+    
     public Behavior loadBehavior(String behPath) {
     	return null;
     }

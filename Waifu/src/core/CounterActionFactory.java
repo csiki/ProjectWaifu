@@ -14,12 +14,14 @@ import display.CheckBoxPane;
 
 
 public class CounterActionFactory {
+	
     private SkinContainer skinContainer;
     private SkinDisplay skinFrame;
     private CloudCommentDisplay cloudCommentFrame;
     private InputBoxPane inputBoxFrame;
     private RadioBtnPane radioBtnFrame;
     public CheckBoxPane checkBoxFrame;
+    
     public SkinSwitch createSkinSwitch(int skinIndex) {
     	return null;
     }

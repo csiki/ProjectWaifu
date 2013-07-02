@@ -11,8 +11,10 @@ import java.util.List;
 
 
 public class BehaviorContainer {
+	
 	private List<Boolean> behaviorActivated;
     private Behavior behaviors;
+    
     public Behavior getBehavior(int index) {
     	return null;
     }

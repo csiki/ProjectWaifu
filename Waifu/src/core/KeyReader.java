@@ -1,3 +1,5 @@
+package core;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: KeyReader.java
 //  @ Date			: 2013.07.02.
@@ -7,9 +9,11 @@
 
 
 public class KeyReader extends Sensor {
+	
     private int keyTyped;
-    public int getKeyTyped() {
     
+    public int getKeyTyped() {
+    	return 0;
     }
     
     public void on() {

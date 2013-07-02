@@ -1,3 +1,5 @@
+package core;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: UserAction.java
 //  @ Date			: 2013.07.02.
@@ -7,8 +9,10 @@
 
 
 public abstract class UserAction {
+	
     private Behavior behavior;
     public abstract void update();
     public abstract void activate(Behavior behavior);
     public abstract void deactivate();
+    
 }

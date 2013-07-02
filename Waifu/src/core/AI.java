@@ -11,11 +11,13 @@ import java.util.List;
 
 
 public class AI {
+	
     private List<String> skins;
     private Sensor sensors;
     private UserActionFactory userActionFactory;
     private CounterActionFactory counterActionFactory;
     private BehaviorContainer behContainer;
+    
     public void conditionFulfilled(Behavior beh) {
     
     }

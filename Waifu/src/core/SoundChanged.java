@@ -1,3 +1,5 @@
+package core;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: SoundChanged.java
 //  @ Date			: 2013.07.02.
@@ -7,15 +9,17 @@
 
 
 public class SoundChanged extends UserAction {
+	
     private boolean soundStartExpected;
     private boolean soundOn;
     private SoundListener soundListener;
-    public boolean getState() {
     
+    public boolean getState() {
+    	return false;
     }
     
     public boolean isSoundOn() {
-    
+    	return false;
     }
     
     public void update() {

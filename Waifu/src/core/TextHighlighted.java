@@ -1,3 +1,5 @@
+package core;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: TextHighlighted.java
 //  @ Date			: 2013.07.02.
@@ -5,13 +7,14 @@
 //  @ Copyright		: All rights reserved
 
 
-
-private class TextHighlighted extends UserAction, HighlightTracker {
+public class TextHighlighted extends UserAction {
+	
     private String highlightedString;
     private boolean textHighlighted;
     private HighlightTracker highlightTracker;
-    public String getState() {
     
+    public String getState() {
+    	return null;
     }
     
     public void update() {

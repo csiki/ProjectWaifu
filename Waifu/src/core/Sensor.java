@@ -1,3 +1,5 @@
+package core;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: Sensor.java
 //  @ Date			: 2013.07.02.
@@ -7,15 +9,17 @@
 
 
 public abstract class Sensor {
+	
     private String name;
     private UserAction subs;
-    protected void notifyAll() {
-    
-    }
     
     public abstract void on();
     
     public abstract void off();
+    
+    protected void notifyAllSubbs() {
+    	
+    }
     
     public void subscribe(UserAction subber) {
     
@@ -26,6 +30,6 @@ public abstract class Sensor {
     }
     
     public String getName() {
-    
+    	return null;
     }
 }

@@ -12,9 +12,11 @@ import display.CheckBoxPane;
 
 
 public class CheckBox extends CounterAction {
+	
     private List<String> options;
     private List<Integer> chosenIndexes;
     private CheckBoxPane checkBoxFrame;
+    
     public void addOption(String option) {
     
     }

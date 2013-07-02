@@ -1,3 +1,5 @@
+package core;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: HighlightTracker.java
 //  @ Date			: 2013.07.02.
@@ -7,6 +9,7 @@
 
 
 public class HighlightTracker extends Sensor {
+	
     public void on() {
     
     }

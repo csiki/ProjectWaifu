@@ -1,3 +1,7 @@
+package core;
+
+import display.SkinDisplay;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: SkinSwitch.java
 //  @ Date			: 2013.07.02.
@@ -7,9 +11,11 @@
 
 
 public class SkinSwitch extends CounterAction {
+	
     private int skin;
     private SkinDisplay skinFrame;
     private SkinContainer skinContainer;
+    
     public void setSkin(int skinIndex) {
     
     }

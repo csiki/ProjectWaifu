@@ -1,3 +1,5 @@
+package core;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: KeyTyped.java
 //  @ Date			: 2013.07.02.
@@ -7,16 +9,18 @@
 
 
 public class KeyTyped extends UserAction {
+	
     private int key;
     private char keyExpected;
     private boolean keyTyped;
     private KeyReader keyReader;
-    public int getState() {
     
+    public int getState() {
+    	return 0;
     }
     
     public boolean isKeyTyped() {
-    
+    	return false;
     }
     
     public void update() {

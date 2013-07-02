@@ -12,9 +12,11 @@ import display.CloudCommentPanel;
 
 
 public class CloudComment extends CounterAction {
+	
     private String comment;
     private CloudCommentDisplay cloudCommentDisplayable;
     private CloudCommentPanel cloudCommentPanel;
+    
     public void setComment(String comment) {
     
     }

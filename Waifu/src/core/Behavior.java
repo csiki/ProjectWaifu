@@ -9,11 +9,14 @@ package core;
 
 
 public abstract class Behavior {
+	
     private String name;
     private AI ai;
+    
     public abstract void notify(UserAction userAction);
     public abstract void condition(UserActionFactory UAF);
     public abstract void consequent(CounterActionFactory CAF);
+    
     public String getName() {
     	return null;
     }

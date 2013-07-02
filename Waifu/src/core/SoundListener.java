@@ -1,3 +1,5 @@
+package core;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: SoundListener.java
 //  @ Date			: 2013.07.02.
@@ -7,6 +9,7 @@
 
 
 public class SoundListener extends Sensor {
+	
     public void on() {
     
     }
