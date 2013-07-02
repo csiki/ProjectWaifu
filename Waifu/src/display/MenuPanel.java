@@ -1,3 +1,7 @@
+package display;
+
+import java.awt.image.BufferedImage;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: MenuPanel.java
 //  @ Date			: 2013.07.02.

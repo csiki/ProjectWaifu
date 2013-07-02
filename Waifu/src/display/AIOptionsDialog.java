@@ -1,3 +1,9 @@
+package display;
+
+import core.BehaviorContainer;
+import core.BehaviorLoader;
+
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: AIOptionsDialog.java
 //  @ Date			: 2013.07.02.

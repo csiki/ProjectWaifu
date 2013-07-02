@@ -1,3 +1,8 @@
+package display;
+
+import java.util.List;
+
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: CheckBoxPane.java
 //  @ Date			: 2013.07.02.
@@ -13,6 +18,7 @@ public class CheckBoxPane {
     }
     
     public List<Integer> waitForResponse() {
-    
+		return null;
     }
+    
 }
