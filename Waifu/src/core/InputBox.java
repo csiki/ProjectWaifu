@@ -13,13 +13,17 @@ import display.InputBoxPane;
 public class InputBox extends CounterAction {
 	
     private String input;
-    private InputBoxPane inputBoxFrame;
+    private InputBoxPane inputBoxPane;
+    
+    public InputBox(InputBoxPane inputBoxPane) {
+    	this.inputBoxPane = inputBoxPane;
+    }
     
     public String getInput() {
-    	return null;
+    	return this.input;
     }
     
     public void trigger() {
-    
+    	this.input = this.inputBoxPane.waitForResponse();
     }
 }

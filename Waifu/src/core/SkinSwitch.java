@@ -13,14 +13,28 @@ import display.SkinDisplay;
 public class SkinSwitch extends CounterAction {
 	
     private int skin;
-    private SkinDisplay skinFrame;
+    private SkinDisplay skinDisplay;
     private SkinContainer skinContainer;
     
-    public void setSkin(int skinIndex) {
+    public SkinSwitch(int skinIndex, SkinDisplay skinDisplay, SkinContainer skinContainer) {
+    	this.skinDisplay = skinDisplay;
+    	this.skinContainer = skinContainer;
+    	
+    	this.setSkin(skinIndex);
+    }
     
+    public void setSkin(int skinIndex) {
+    	
+    	if (skinContainer.getSkin(skinIndex) != null) {
+    		this.skin = skinIndex;
+    	}
+    	else {
+    		// default skin
+    		this.skin = 0;
+    	}
     }
     
     public void trigger() {
-    
+    	this.skinDisplay.loadSkin(skinContainer.loadSkin(skin));
     }
 }

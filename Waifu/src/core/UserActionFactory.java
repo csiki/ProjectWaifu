@@ -10,28 +10,28 @@ package core;
 
 public class UserActionFactory {
 	
-    private KeyReader keylogger;
+    private KeyReader keyreader;
     private TimeChecker timeChecker;
     private HighlightTracker highlightTracker;
-    private SoundListener soundListener;
+    //private SoundListener soundListener; // removed
     
     public KeyTyped createKeyTyped(char keyExpected) {
-    	return null;
+    	return new KeyTyped(keyExpected, this.keyreader);
     }
     
-    public SoundChanged createSoundChanged(boolean soundStartExpected) {
+    /*public SoundChanged createSoundChanged(boolean soundStartExpected) {
     	return null;
-    }
+    }*/
     
     public StringTyped createStringTyped(String stringExpected) {
-    	return null;
+    	return new StringTyped(stringExpected, this.keyreader);
     }
     
     public TextHighlighted createTextHighlighted() {
-    	return null;
+    	return new TextHighlighted(this.highlightTracker);
     }
     
     public TimeReached createTimeReached() {
-    	return null;
+    	return new TimeReached(timeChecker);
     }
 }

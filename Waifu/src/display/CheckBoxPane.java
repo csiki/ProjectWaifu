@@ -2,7 +2,6 @@ package display;
 
 import java.util.List;
 
-
 //  @ Project		: ProjectWaifu
 //  @ File Name		: CheckBoxPane.java
 //  @ Date			: 2013.07.02.
@@ -12,7 +11,9 @@ import java.util.List;
 
 
 public class CheckBoxPane {
+	
     private List<String> options;
+    
     public void addOptions(List<String> options) {
     
     }

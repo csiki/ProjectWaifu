@@ -1,5 +1,6 @@
 package core;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //  @ Project		: ProjectWaifu
@@ -12,42 +13,46 @@ import java.util.List;
 
 public class BehaviorContainer {
 	
-	private List<Boolean> behaviorActivated;
-    private Behavior behaviors;
+	private volatile List<Boolean> behaviorActivated;
+    private volatile List<Behavior> behaviors;
+    
+    BehaviorContainer() {
+    	this.behaviorActivated = new ArrayList<Boolean>();
+    	this.behaviors = new ArrayList<Behavior>();
+    }
     
     public Behavior getBehavior(int index) {
-    	return null;
+    	return this.behaviors.get(index);
     }
     
     public int getNumOfBehaviors() {
-    	return 0;
+    	return this.behaviors.size();
     }
     
     public void addBehavior(Behavior beh) {
-    
+    	this.behaviors.add(beh);
+    	this.behaviorActivated.add(true);
     }
     
-    public void rmBehavior(int beh) {
-    
+    public void rmBehavior(int index) {
+    	this.behaviors.remove(index);
+    	this.behaviorActivated.remove(index);
     }
     
     public void activateBehavior(int index) {
-    
+    	this.behaviorActivated.set(index, true);
     }
     
     public void deactivateBehavior(int index) {
-    
+    	this.behaviorActivated.set(index, false);
     }
     
     public boolean isBehaviorActivated(int index) {
-    	return false;
+    	return this.behaviorActivated.get(index);
     }
     
     public boolean isBehaviorActivated(Behavior beh) {
-    	return false;
-    }
-    
-    public void setBehaviorActivation(boolean set) {
-    
+    	int index = this.behaviors.indexOf(beh);
+    	return this.behaviorActivated.get(index);
     }
 }

@@ -1,5 +1,18 @@
 package core;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
+
+import core.Behavior;
+import misc.FileClassLoader;
+
+import javax.tools.*;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: BehaviorLoader.java
 //  @ Date			: 2013.07.02.
@@ -10,17 +23,131 @@ package core;
 
 public class BehaviorLoader {
 	
+	/**
+	 * Ends with a java.io.File.separator
+	 */
     private String behSource;
     
-    public Behavior loadBehavior(String behPath) {
+    public BehaviorLoader(String behSource) {
+    	this.behSource = behSource;
+    }
+    
+    public BehaviorContainer loadBehaviors() {
+    	
+    	// TODO ez még a compileos verzió
+    	/*File behFile = new File(behSource+behPath);
+    	if (behFile.exists()) {
+    		
+    		File compiledFile = compileBehavior(behSource+behPath);
+    		
+    		if (compiledFile != null && compiledFile.exists()) {
+    			return this.loadBehaviorClass(compiledFile);
+    		}
+    	}*/
+    	
+    	// create BehaviorContainer
+    	BehaviorContainer bc = new BehaviorContainer();
+    	
+    	// check if behSource folder exists
+    	File behFolder = new File(behSource);
+    	
+    	if (behFolder.exists()) {
+    		
+    		List<File> behaviorFiles = new ArrayList<File>();
+    		
+    		this.FindAllBehaviorsInDirectory(behFolder, behaviorFiles);
+    		
+    		// iterate through behaviorFiles list loading classes
+        	for (final File behFile : behaviorFiles) {
+        		Behavior beh = loadBehaviorClass(behFile);
+        		
+        		if (beh != null) {
+        			bc.addBehavior(beh);
+        		}
+        	}
+    	}
+    	
+    	return bc;
+    }
+    
+    private void FindAllBehaviorsInDirectory(final File behFolder, List<File> behaviorFiles) {
+    	
+    	for (final File behFile : behFolder.listFiles()) {
+    		if (behFile.isDirectory()) {
+    			this.FindAllBehaviorsInDirectory(behFile, behaviorFiles);
+    		}
+    		else {
+    			// check behFile extension
+    			int i = behFile.getName().lastIndexOf('.');
+    			if (i > 0) {
+    				
+    			    String extension = behFile.getName().substring(i+1);
+    			    
+    			    if (extension.equals("java")) {
+    			    	// add file behaviorFiles
+    			    	behaviorFiles.add(behFile);
+    			    }
+    			}
+    		}
+    	}
+    	
+    }
+    
+    private File compileBehavior(String behPath) {
+    	
+    	System.setProperty("java.home", "C:"+java.io.File.separator+"Program Files"+java.io.File.separator+"Java"+java.io.File.separator+"jdk1.7.0");
+    	JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+    	// TODO compiler null ha jre-vel fordítják, ez problémás lehet !
+    	
+    	int compilationResult = compiler.run(null, null, null, behPath, "-d", "behaviors");
+    	
+    	if (compilationResult == 0) {
+    		return new File("behaviors"+java.io.File.separator+behPath);
+        }
+    	
     	return null;
     }
     
-    private String compileBehavior(String behPath) {
-    	return null;
-    }
-    
-    private Behavior loadBehaviorClass(String compiledPath) {
-    	return null;
+    @SuppressWarnings("unchecked")
+	private Behavior loadBehaviorClass(File compiledFile) {
+    	
+    	FileClassLoader fcl = new FileClassLoader(BehaviorLoader.class.getClassLoader());
+    	
+    	Class<Behavior> behClass = null;
+    	
+    	// get the class
+    	try {
+    		behClass = fcl.loadClassFromFile(compiledFile);
+    	} catch (FileNotFoundException e) {
+    		e.printStackTrace();
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    	
+    	// get the constructor
+    	Constructor<Behavior> behConstructor = null;
+    	try {
+    		behConstructor = behClass.getConstructor();
+    	} catch (SecurityException e) {
+    		e.printStackTrace();
+    	} catch (NoSuchMethodException e) {
+    		e.printStackTrace();
+    	}
+    	
+    	// construct the player
+    	Behavior beh = null;
+    	try {
+    		beh = behConstructor.newInstance();
+    	} catch (IllegalArgumentException e) {
+    		e.printStackTrace();
+    	} catch (InstantiationException e) {
+    		e.printStackTrace();
+    	} catch (IllegalAccessException e) {
+    		e.printStackTrace();
+    	} catch (InvocationTargetException e) {
+    		e.printStackTrace();
+    	}
+    	
+    	return beh;
     }
 }

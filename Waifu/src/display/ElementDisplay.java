@@ -11,5 +11,7 @@ import java.awt.Graphics;
 
 
 public abstract class ElementDisplay {
+	
     public abstract void paintComponent(Graphics g, int x, int y);
+    
 }

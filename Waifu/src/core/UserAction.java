@@ -10,7 +10,12 @@ package core;
 
 public abstract class UserAction {
 	
-    private Behavior behavior;
+    protected Behavior behavior;
+    
+    public UserAction() {
+    	this.behavior = null;
+    }
+    
     public abstract void update();
     public abstract void activate(Behavior behavior);
     public abstract void deactivate();

@@ -10,5 +10,7 @@ import core.SkinContainer;
 
 
 public class SkinOptionsDialog {
+	
     private SkinContainer skinContainer;
+    
 }

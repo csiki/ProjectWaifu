@@ -1308,10 +1308,10 @@ concrete command
 <XPD:OBJ name="OwnedViews[44]" type="UMLClassView" guid="GTFBuhikNU6fMqf3w1RXpAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">952</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">288</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">948</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">284</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">142</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">277</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">264</XPD:ATTR>
 <XPD:REF name="Model">Fl2NcZfpKE6+ZsE43K2R2AAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="VV0hTeIEQkOY9HjdfvtYEAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="BFEe/XaMsECuTabpI/zSSwAA">
@@ -1339,7 +1339,7 @@ concrete command
 <XPD:OBJ name="OwnedViews[45]" type="UMLGeneralizationView" guid="79BiA/v9mE6qAb3ldYLznQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">1093,544;1112,576</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">1089,536;1112,576</XPD:ATTR>
 <XPD:REF name="Model">AFwu6K17I0WXB38JdE+AdgAA</XPD:REF>
 <XPD:REF name="Head">mkNINVHGu0OzWKAroK2cgwAA</XPD:REF>
 <XPD:REF name="Tail">GTFBuhikNU6fMqf3w1RXpAAA</XPD:REF>
@@ -3666,7 +3666,7 @@ that's not needed
 <XPD:OBJ name="OwnedViews[93]" type="UMLAssociationView" guid="8J0WHwmwh0m9h9rByZ9QiQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">952,391;879,354</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">948,383;881,353</XPD:ATTR>
 <XPD:REF name="Model">jTAabEAmB06n3ST3xKMSewAA</XPD:REF>
 <XPD:REF name="Head">3+pag1B7F02Rrc9h1hYiRwAA</XPD:REF>
 <XPD:REF name="Tail">GTFBuhikNU6fMqf3w1RXpAAA</XPD:REF>
@@ -7839,7 +7839,7 @@ is pressed
 <XPD:REF name="Views[3]">rymCLpNxXEySStJfLCV71AAA</XPD:REF>
 <XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
 <XPD:REF name="Generalizations[0]">AFwu6K17I0WXB38JdE+AdgAA</XPD:REF>
-<XPD:ATTR name="#Operations" type="integer">12</XPD:ATTR>
+<XPD:ATTR name="#Operations" type="integer">11</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="wUsRLqbuCkGc293JMcJkhwAA">
 <XPD:ATTR name="Name" type="string">getState</XPD:ATTR>
 <XPD:REF name="Owner">Fl2NcZfpKE6+ZsE43K2R2AAA</XPD:REF>
@@ -7948,16 +7948,6 @@ is pressed
 <XPD:ATTR name="Name" type="string">minute</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">Tspd9IsMZ0afeUVMhBFU7gAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[11]" type="UMLOperation" guid="QQApLlpvNEOt3WOpSihiJgAA">
-<XPD:ATTR name="Name" type="string">isTimeReached</XPD:ATTR>
-<XPD:REF name="Owner">Fl2NcZfpKE6+ZsE43K2R2AAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="SbWMpDvsvEayG01+Ry5sMwAA">
-<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">boolean</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">QQApLlpvNEOt3WOpSihiJgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:ATTR name="#TypedParameters" type="integer">1</XPD:ATTR>

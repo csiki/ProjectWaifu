@@ -10,7 +10,12 @@ package core;
 
 public class SoundListener extends Sensor {
 	
-    public void on() {
+    public SoundListener(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void on() {
     
     }
     

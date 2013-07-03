@@ -13,27 +13,34 @@ public class TextHighlighted extends UserAction {
     private boolean textHighlighted;
     private HighlightTracker highlightTracker;
     
+    public TextHighlighted(HighlightTracker highlightTracker) {
+    	this.highlightedString = null;
+    	this.highlightTracker = highlightTracker;
+    	this.textHighlighted = false;
+    }
+    
     public String getState() {
-    	return null;
+    	return this.highlightedString;
+    }
+    
+    public boolean isTextHighlighted() {
+    	return this.textHighlighted;
     }
     
     public void update() {
-    
+    	this.deactivate();
+    	highlightedString = this.highlightTracker.getHighlightedText();
+    	this.textHighlighted = true;
     }
     
     public void activate(Behavior behavior) {
-    
+    	this.deactivate();
+    	this.textHighlighted = false;
+    	this.highlightedString = null;
+    	this.highlightTracker.subscribe(this);
     }
     
     public void deactivate() {
-    
-    }
-    
-    public void on() {
-    
-    }
-    
-    public void off() {
-    
+    	this.highlightTracker.unsubscribe(this);
     }
 }

@@ -1,5 +1,9 @@
 package core;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: Sensor.java
 //  @ Date			: 2013.07.02.
@@ -10,26 +14,36 @@ package core;
 
 public abstract class Sensor {
 	
+	protected volatile boolean turnedOn;
     private String name;
-    private UserAction subs;
+    private List<UserAction> subs;
+    
+    public Sensor(String name) {
+    	this.name = name;
+    	this.subs = Collections.synchronizedList(new ArrayList<UserAction>());
+    	this.turnedOn = true;
+    }
     
     public abstract void on();
     
     public abstract void off();
     
-    protected void notifyAllSubbs() {
+    final protected void notifyAllSubs() {
     	
+    	for (UserAction sub : subs) {
+    		sub.update();
+    	}
     }
     
-    public void subscribe(UserAction subber) {
-    
+    final public void subscribe(UserAction subber) {
+    	this.subs.add(subber);
     }
     
-    public void unsubscribe(UserAction unsubber) {
-    
+    final public void unsubscribe(UserAction unsubber) {
+    	this.subs.remove(unsubber);
     }
     
-    public String getName() {
-    	return null;
+    final public String getName() {
+    	return this.name;
     }
 }

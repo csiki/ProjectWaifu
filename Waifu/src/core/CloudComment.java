@@ -14,14 +14,26 @@ import display.CloudCommentPanel;
 public class CloudComment extends CounterAction {
 	
     private String comment;
-    private CloudCommentDisplay cloudCommentDisplayable;
+    private CloudCommentDisplay cloudCommentDisplay;
     private CloudCommentPanel cloudCommentPanel;
     
-    public void setComment(String comment) {
+    public CloudComment(String comment, CloudCommentDisplay cloudCommentDisplay, CloudCommentPanel cloudCommentPanel) {
+    	this.comment = comment;
+    	this.cloudCommentDisplay = cloudCommentDisplay;
+    	this.cloudCommentPanel = cloudCommentPanel;
+    }
     
+    public void setComment(String comment) {
+    	this.comment = comment;
     }
     
     public void trigger() {
+    	this.cloudCommentDisplay.popupComment(comment);
+    	this.cloudCommentPanel.repaint();
+    }
     
+    public void hide() {
+    	this.cloudCommentDisplay.hideComment();
+    	this.cloudCommentPanel.repaint();
     }
 }

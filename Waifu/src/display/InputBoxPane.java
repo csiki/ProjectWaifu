@@ -9,6 +9,7 @@ package display;
 
 
 public class InputBoxPane {
+	
     public String waitForResponse() {
 		return null;
     

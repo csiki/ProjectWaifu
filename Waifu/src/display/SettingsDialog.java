@@ -10,5 +10,7 @@ import core.Settings;
 
 
 public class SettingsDialog {
+	
     private Settings settings;
+    
 }

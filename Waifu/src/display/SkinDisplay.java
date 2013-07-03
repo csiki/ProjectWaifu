@@ -2,6 +2,8 @@ package display;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+
 import core.SkinContainer;
 import core.Settings;
 
@@ -14,16 +16,14 @@ import core.Settings;
 
 
 public class SkinDisplay extends ElementDisplay {
-    private int loadedSkin;
-    private Dimension resolution;
+	
+    private BufferedImage loadedSkin;
+    //private Dimension resolution; // get it from Settings
     private SkinContainer skinContainer;
     private Settings settings;
-    public void loadSkin(int skinIndex) {
     
-    }
-    
-    public void paintComponent1(Graphics g, int x, int y) {
-    
+    public void loadSkin(BufferedImage skinImg) {
+    	loadedSkin = skinImg;
     }
 
 	@Override

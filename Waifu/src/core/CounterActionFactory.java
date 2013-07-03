@@ -1,4 +1,5 @@
 package core;
+import display.CloudCommentPanel;
 import display.SkinDisplay;
 import display.CloudCommentDisplay;
 import display.InputBoxPane;
@@ -16,29 +17,46 @@ import display.CheckBoxPane;
 public class CounterActionFactory {
 	
     private SkinContainer skinContainer;
-    private SkinDisplay skinFrame;
-    private CloudCommentDisplay cloudCommentFrame;
-    private InputBoxPane inputBoxFrame;
-    private RadioBtnPane radioBtnFrame;
-    public CheckBoxPane checkBoxFrame;
+    private SkinDisplay skinDisplay;
+    private CloudCommentDisplay cloudCommentDisplay;
+    private CloudCommentPanel cloudCommentPanel;
+    private InputBoxPane inputBoxPane;
+    private RadioBtnPane radioBtnPane;
+    private CheckBoxPane checkBoxPane;
+    
+    public CounterActionFactory(
+    		SkinContainer skinContainer,
+    		SkinDisplay skinDisplay,
+    		CloudCommentDisplay cloudCommentDisplay,
+    		InputBoxPane inputBoxPane,
+    		RadioBtnPane radioBtnPane,
+    		CheckBoxPane checkBoxPane)
+    {
+    	this.skinContainer = skinContainer;
+    	this.skinDisplay = skinDisplay;
+    	this.cloudCommentDisplay = cloudCommentDisplay;
+    	this.inputBoxPane = inputBoxPane;
+    	this.radioBtnPane = radioBtnPane;
+    	this.checkBoxPane = checkBoxPane;
+    }
     
     public SkinSwitch createSkinSwitch(int skinIndex) {
-    	return null;
+    	return new SkinSwitch(skinIndex, skinDisplay, skinContainer);
     }
     
     public CloudComment createCloudComment(String comment) {
-    	return null;
+    	return new CloudComment(comment, cloudCommentDisplay, cloudCommentPanel);
     }
     
     public InputBox createInputBox() {
-    	return null;
+    	return new InputBox(this.inputBoxPane);
     }
     
     public RadioBtn createRadioBtn() {
-    	return null;
+    	return new RadioBtn(this.radioBtnPane);
     }
     
     public CheckBox createCheckBox() {
-    	return null;
+    	return new CheckBox(this.checkBoxPane);
     }
 }

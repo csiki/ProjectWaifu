@@ -1,6 +1,8 @@
 package core;
 
+import java.util.ArrayList;
 import java.util.List;
+
 import display.CheckBoxPane;
 
 //  @ Project		: ProjectWaifu
@@ -15,25 +17,43 @@ public class CheckBox extends CounterAction {
 	
     private List<String> options;
     private List<Integer> chosenIndexes;
-    private CheckBoxPane checkBoxFrame;
+    private CheckBoxPane checkBoxPane;
     
-    public void addOption(String option) {
-    
+    public CheckBox(CheckBoxPane checkBoxPane) {
+    	this.checkBoxPane = checkBoxPane;
+    	this.options = new ArrayList<String>();
+    	this.chosenIndexes = new ArrayList<Integer>();
     }
     
-    public String getChosenText() {
-    	return null;
+    public void addOption(String option) {
+    	if (option != null) {
+    		this.options.add(option);
+    	}
     }
     
     public int getNumOfChosenIndexes() {
-    	return 0;
+    	return this.chosenIndexes.size();
     }
     
     public int getChosenIndex(int index) {
+    	
+    	if (index >= 0 && index < this.chosenIndexes.size()) {
+    		return this.chosenIndexes.get(index);
+    	}
+    	
     	return 0;
     }
     
-    public void trigger() {
+    public String getChosenString(int index) {
+    	if (index >= 0 && index < this.chosenIndexes.size()) {
+    		return this.options.get(this.chosenIndexes.get(index));
+    	}
+    	
+    	return "";
+    }
     
+    public void trigger() {
+    	this.checkBoxPane.addOptions(options);
+    	this.chosenIndexes = this.checkBoxPane.waitForResponse();
     }
 }
