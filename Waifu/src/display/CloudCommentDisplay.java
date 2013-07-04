@@ -3,10 +3,6 @@ package display;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: CloudCommentDisplay.java
@@ -16,14 +12,16 @@ import javax.imageio.ImageIO;
 
 
 
-public class CloudCommentDisplay extends ElementDisplay {
+public class CloudCommentDisplay implements ElementDisplay {
 	
 	private boolean popupped;
     private String comment;
+    private BufferedImage cloudImg;
     
-    public CloudCommentDisplay() {
+    public CloudCommentDisplay(BufferedImage cloudImg) {
     	this.popupped = false;
     	this.comment = null;
+    	this.cloudImg = cloudImg;
     }
     
     public void popupComment(String comment) {
@@ -34,26 +32,17 @@ public class CloudCommentDisplay extends ElementDisplay {
     public void hideComment() {
     	this.popupped = false;
     }
-    
 
 	@Override
 	public void paintComponent(Graphics g, int x, int y) {
 		
 		Graphics2D g2 = (Graphics2D) g;
 		if (this.popupped) {
-			
-			// load image
-			File cloudImgFile = new File("img" + java.io.File.separator + "chatbubble.png");
-			BufferedImage cloudImg = null;
-			try {
-				cloudImg = ImageIO.read(cloudImgFile);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
 			// draw image
 			g2.drawImage(cloudImg, x, y, x + cloudImg.getWidth(), y + cloudImg.getHeight(), 0, 0, cloudImg.getWidth(), cloudImg.getHeight(), null);
+			
+			// draw text
+			g2.drawString(comment, x + 10, y + 10);
 		}
 		else {
 			// TODO transparent draw

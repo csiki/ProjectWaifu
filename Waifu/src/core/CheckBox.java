@@ -2,8 +2,7 @@ package core;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import display.CheckBoxPane;
+import display.CheckBoxDialog;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: CheckBox.java
@@ -16,13 +15,13 @@ import display.CheckBoxPane;
 public class CheckBox extends CounterAction {
 	
     private List<String> options;
-    private List<Integer> chosenIndexes;
-    private CheckBoxPane checkBoxPane;
+    private List<Integer> selectedIndexes;
+    private CheckBoxDialog checkBoxDialog;
     
-    public CheckBox(CheckBoxPane checkBoxPane) {
-    	this.checkBoxPane = checkBoxPane;
+    public CheckBox(CheckBoxDialog checkBoxDialog) {
+    	this.checkBoxDialog = checkBoxDialog;
     	this.options = new ArrayList<String>();
-    	this.chosenIndexes = new ArrayList<Integer>();
+    	this.selectedIndexes = new ArrayList<Integer>();
     }
     
     public void addOption(String option) {
@@ -31,29 +30,30 @@ public class CheckBox extends CounterAction {
     	}
     }
     
-    public int getNumOfChosenIndexes() {
-    	return this.chosenIndexes.size();
+    public int getNumOfSelectedIndexes() {
+    	return this.selectedIndexes.size();
     }
     
-    public int getChosenIndex(int index) {
+    public int getSelectedIndex(int index) {
     	
-    	if (index >= 0 && index < this.chosenIndexes.size()) {
-    		return this.chosenIndexes.get(index);
+    	if (index >= 0 && index < this.selectedIndexes.size()) {
+    		return this.selectedIndexes.get(index);
     	}
     	
-    	return 0;
+    	return -1;
     }
     
-    public String getChosenString(int index) {
-    	if (index >= 0 && index < this.chosenIndexes.size()) {
-    		return this.options.get(this.chosenIndexes.get(index));
+    public String getSelectedText(int index) {
+    	if (index >= 0 && index < this.selectedIndexes.size()) {
+    		return this.options.get(this.selectedIndexes.get(index));
     	}
     	
-    	return "";
+    	return null;
     }
     
     public void trigger() {
-    	this.checkBoxPane.addOptions(options);
-    	this.chosenIndexes = this.checkBoxPane.waitForResponse();
+    	this.checkBoxDialog.addOptions(options);
+    	this.checkBoxDialog.init();
+    	this.selectedIndexes = this.checkBoxDialog.getResponse();
     }
 }

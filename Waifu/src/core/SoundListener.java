@@ -15,11 +15,9 @@ public class SoundListener extends Sensor {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void on() {
-    
-    }
-    
-    public void off() {
-    
-    }
+	@Override
+	public void turnOff() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -1,12 +1,5 @@
 package main;
 
-import core.BehaviorLoader;
-import core.Serializer;
-import de.ksquared.system.keyboard.GlobalKeyListener;
-import de.ksquared.system.keyboard.KeyAdapter;
-import de.ksquared.system.keyboard.KeyEvent;
-import display.MainFrame;
-
 
 /**
  * Program starts execution here.
@@ -15,6 +8,12 @@ import display.MainFrame;
  */
 public class Main {
 	public static void main(String args[]) {
-		//MainFrame mf = new MainFrame();
+		
+		WaifuBuilder waifu = new WaifuBuilder();
+		
+		waifu.build();
+		System.out.println("builded");
+		waifu.start();
+		System.out.println("started");
 	}
 }

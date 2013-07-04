@@ -15,6 +15,12 @@ public class UserActionFactory {
     private HighlightTracker highlightTracker;
     //private SoundListener soundListener; // removed
     
+    public UserActionFactory(KeyReader keyreader, TimeChecker timeChecker, HighlightTracker highlightTracker) {
+    	this.keyreader = keyreader;
+    	this.timeChecker = timeChecker;
+    	this.highlightTracker = highlightTracker;
+    }
+    
     public KeyTyped createKeyTyped(char keyExpected) {
     	return new KeyTyped(keyExpected, this.keyreader);
     }

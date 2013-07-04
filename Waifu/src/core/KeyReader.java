@@ -15,14 +15,16 @@ import de.ksquared.system.keyboard.KeyEvent;
 public class KeyReader extends Sensor{
 	
 	volatile private int keyTyped;
+	private GlobalKeyListener gkl;
+	private KeyAdapter keyAdatper;
 	
     public KeyReader(String name) {
 		super(name);
 		this.keyTyped = 0;
 		
 		// already runs on a different thread
-		GlobalKeyListener gkl = new GlobalKeyListener();
-		gkl.addKeyListener(new KeyAdapter() {
+		this.gkl = new GlobalKeyListener();
+		this.keyAdatper = new KeyAdapter() {
 			@Override public void keyReleased(KeyEvent event) {
 				int keyCode = event.getVirtualKeyCode();
 				if (turnedOn && keyCode >= 65 && keyCode <= 90) {
@@ -30,18 +32,20 @@ public class KeyReader extends Sensor{
 					notifyAllSubs();
 				}
 			}
-    	});
+		};
+		
+		this.gkl.addKeyListener(this.keyAdatper);
 	}
     
     public int getKeyTyped() {
     	return this.keyTyped;
     }
     
-    public void on() {
-    	this.turnedOn = true;
-    }
-    
-    public void off() {
+    @Override
+    public void turnOff() {
     	this.turnedOn = false;
+    	this.gkl.removeKeyListener(this.keyAdatper);
+    	this.keyAdatper = null;
+    	this.gkl = null;
     }
 }

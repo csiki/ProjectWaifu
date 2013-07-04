@@ -32,7 +32,7 @@ public class BehaviorLoader {
     	this.behSource = behSource;
     }
     
-    public BehaviorContainer loadBehaviors() {
+    public BehaviorContainer loadBehaviors(BehaviorContainer bc) {
     	
     	// TODO ez még a compileos verzió
     	/*File behFile = new File(behSource+behPath);
@@ -46,7 +46,10 @@ public class BehaviorLoader {
     	}*/
     	
     	// create BehaviorContainer
-    	BehaviorContainer bc = new BehaviorContainer();
+    	if (bc == null) {
+    		bc = new BehaviorContainer();
+    	}
+    	// else extend already existing BehaviorContainer
     	
     	// check if behSource folder exists
     	File behFolder = new File(behSource);
@@ -68,6 +71,10 @@ public class BehaviorLoader {
     	}
     	
     	return bc;
+    }
+    
+    public void setSource(String source) {
+    	this.behSource = source;
     }
     
     private void FindAllBehaviorsInDirectory(final File behFolder, List<File> behaviorFiles) {

@@ -1,10 +1,9 @@
 package display;
 
-import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import core.SkinContainer;
 import core.Settings;
 
 //  @ Project		: ProjectWaifu
@@ -15,12 +14,16 @@ import core.Settings;
 
 
 
-public class SkinDisplay extends ElementDisplay {
+public class SkinDisplay implements ElementDisplay {
 	
     private BufferedImage loadedSkin;
-    //private Dimension resolution; // get it from Settings
-    private SkinContainer skinContainer;
+    private BufferedImage defaultSkin;
     private Settings settings;
+    
+    public SkinDisplay(Settings settings, BufferedImage defaultSkin) {
+    	this.settings = settings;
+    	this.defaultSkin = defaultSkin;
+    }
     
     public void loadSkin(BufferedImage skinImg) {
     	loadedSkin = skinImg;
@@ -28,7 +31,15 @@ public class SkinDisplay extends ElementDisplay {
 
 	@Override
 	public void paintComponent(Graphics g, int x, int y) {
-		// TODO Auto-generated method stub
+		Graphics2D g2 = (Graphics2D) g;
 		
+		if (loadedSkin != null) {
+			// load loaded
+			g2.drawImage(loadedSkin, x, y, x + (int)settings.getResolution().getWidth(), y + (int)settings.getResolution().getHeight(), 0, 0, loadedSkin.getWidth(), loadedSkin.getHeight(), null);
+		}
+		else {
+			// load default
+			g2.drawImage(defaultSkin, x, y, x + (int)settings.getResolution().getWidth(), y + (int)settings.getResolution().getHeight(), 0, 0, defaultSkin.getWidth(), defaultSkin.getHeight(), null);
+		}
 	}
 }

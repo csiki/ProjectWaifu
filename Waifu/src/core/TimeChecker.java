@@ -16,26 +16,29 @@ public class TimeChecker extends Sensor implements Runnable {
     
     @Override
 	public void run() {
-		
+
     	while (this.turnedOn) {
-    		
     		// notify all subs every 5 minutes
     		this.notifyAllSubs();
     		
-    		try {
-				Thread.sleep(300000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+    		// wait 5 minutes
+    		for (int i = 0; i < 300; ++i) {
+    			
+    			if (!this.turnedOn) {
+    				break;
+    			}
+    			
+    			try {
+    				Thread.sleep(1000);
+    			} catch (InterruptedException e) {
+    				e.printStackTrace();
+    			}
+    		}
     	}
-    	
 	}
 
-	public void on() {
-		this.turnedOn = true;
-    }
-    
-    public void off() {
-    	this.turnedOn = false;
-    }
+	@Override
+	public void turnOff() {
+		this.turnedOn = false;
+	}
 }

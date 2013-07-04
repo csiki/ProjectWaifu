@@ -2,8 +2,7 @@ package core;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import display.RadioBtnPane;
+import display.RadioBtnDialog;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: RadioBtn.java
@@ -16,13 +15,13 @@ import display.RadioBtnPane;
 public class RadioBtn extends CounterAction {
 	
     private List<String> options;
-    private int chosenIndex;
-    private RadioBtnPane radioBtnPane;
+    private int selectedIndex;
+    private RadioBtnDialog radioBtnDialog;
     
-    RadioBtn(RadioBtnPane radioBtnPane) {
-    	this.radioBtnPane = radioBtnPane;
+    public RadioBtn(RadioBtnDialog radioBtnDialog) {
+    	this.radioBtnDialog = radioBtnDialog;
     	this.options = new ArrayList<String>();
-    	this.chosenIndex = -1;
+    	this.selectedIndex = -1;
     }
     
     public void addOption(String option) {
@@ -31,20 +30,21 @@ public class RadioBtn extends CounterAction {
     	}
     }
     
-    public String getChosenText() {
-    	if (this.chosenIndex != -1) {
-    		return this.options.get(chosenIndex);
+    public String getSelectedText() {
+    	if (this.selectedIndex != -1) {
+    		return this.options.get(selectedIndex);
     	}
     	
     	return null;
     }
     
-    public int getChosenIndex() {
-    	return this.chosenIndex;
+    public int getSelectedIndex() {
+    	return this.selectedIndex;
     }
     
     public void trigger() {
-    	this.radioBtnPane.addOptions(options);
-    	this.chosenIndex = this.radioBtnPane.waitForResponse();
+    	this.radioBtnDialog.addOptions(options);
+    	this.radioBtnDialog.init();
+    	this.selectedIndex = this.radioBtnDialog.getResponse();
     }
 }

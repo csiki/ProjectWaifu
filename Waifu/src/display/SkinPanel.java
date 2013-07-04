@@ -1,6 +1,6 @@
 package display;
 
-import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
@@ -21,7 +21,7 @@ public class SkinPanel extends JPanel {
     
 	public SkinPanel(ElementDisplay skinDisplay) {
 		this.skinDisplay = skinDisplay;
-		this.setBackground(Color.YELLOW); // TODO
+		this.setPreferredSize(new Dimension(300, 400));
 	}
 	
 	@Override

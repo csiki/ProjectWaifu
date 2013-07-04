@@ -21,15 +21,24 @@ public class Settings implements Serializable {
     private Dimension resolution;
     private int posX;
     private int posY;
+    private String behaviorsPath;
+    
+    // static vars
+    public final static int cloudWidth = 300;
+    public final static int maxNumOfSkins = 100;
+    public final static int menuElementWidth = 100;
+    public final static int menuElementHeight = 60;
+    public final static int menuElementFontSize = 24;
     
     public Settings() {
     	// default settings
     	this.runOnStartUp = true;
     	this.placeOnTop = true;
     	this.resolution = new Dimension(300, 400);
+    	this.behaviorsPath = "behaviors" + java.io.File.separator;
     	
     	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    	this.posX = (int) screenSize.getWidth() - 350;
+    	this.posX = (int) screenSize.getWidth() - 350 - Settings.cloudWidth;
     	this.posY = (int) screenSize.getHeight() - 450;
     }
     
@@ -61,6 +70,10 @@ public class Settings implements Serializable {
     	return this.posY;
     }
     
+    public String getBehaviorsPath() {
+    	return this.behaviorsPath;
+    }
+    
     public void setPosX(int set) {
     	this.posX = set;
     }
@@ -71,5 +84,9 @@ public class Settings implements Serializable {
     
     public void setResolution(int width, int height) {
     	this.resolution = new Dimension(width, height);
+    }
+    
+    public void setBehaviorsPath(String set) {
+    	this.behaviorsPath = set;
     }
 }

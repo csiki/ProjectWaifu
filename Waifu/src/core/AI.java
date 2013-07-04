@@ -18,7 +18,7 @@ public class AI {
     private BehaviorContainer behContainer;
     private volatile boolean busy;
     
-    AI(
+    public AI(
     		List<Sensor> sensors,
     		BehaviorContainer behContainer,
     		UserActionFactory userActionFactory,

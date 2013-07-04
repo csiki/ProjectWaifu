@@ -1,6 +1,6 @@
 package core;
 
-import display.InputBoxPane;
+import display.InputBoxDialog;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: InputBox.java
@@ -13,10 +13,11 @@ import display.InputBoxPane;
 public class InputBox extends CounterAction {
 	
     private String input;
-    private InputBoxPane inputBoxPane;
+    private InputBoxDialog inputBoxDialog;
     
-    public InputBox(InputBoxPane inputBoxPane) {
-    	this.inputBoxPane = inputBoxPane;
+    public InputBox(InputBoxDialog inputBoxDialog) {
+    	this.inputBoxDialog = inputBoxDialog;
+    	this.input = null;
     }
     
     public String getInput() {
@@ -24,6 +25,7 @@ public class InputBox extends CounterAction {
     }
     
     public void trigger() {
-    	this.input = this.inputBoxPane.waitForResponse();
+    	this.inputBoxDialog.init();
+    	this.input = this.inputBoxDialog.getInput();
     }
 }

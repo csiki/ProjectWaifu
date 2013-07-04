@@ -1,5 +1,7 @@
 package display;
 
+import javax.swing.JDialog;
+
 import core.SkinContainer;
 //  @ Project		: ProjectWaifu
 //  @ File Name		: SkinOptionsDialog.java
@@ -9,8 +11,25 @@ import core.SkinContainer;
 
 
 
-public class SkinOptionsDialog {
+public class SkinOptionsDialog extends JDialog {
 	
-    private SkinContainer skinContainer;
+	private static final long serialVersionUID = -5947340462492700774L;
+	
+	private SkinContainer skinContainer;
+	
+	public SkinOptionsDialog(SkinContainer skinContainer) {
+		this.skinContainer = skinContainer;
+	}
+	
+	public void init() {
+		
+	}
     
+	public void show() {
+		
+	}
+	
+	public void hide() {
+		
+	}
 }

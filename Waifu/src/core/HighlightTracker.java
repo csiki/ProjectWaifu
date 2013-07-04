@@ -1,9 +1,11 @@
 package core;
 
 import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
 
 import com.sun.jna.Native;
 import com.sun.jna.platform.win32.User32;
@@ -18,7 +20,7 @@ import com.sun.jna.win32.StdCallLibrary;
 
 
 
-public class HighlightTracker extends Sensor implements Runnable {
+public class HighlightTracker extends Sensor implements Runnable, ClipboardOwner {
 	
 	public interface CustomUser32 extends StdCallLibrary {
         CustomUser32 INSTANCE = (CustomUser32) Native.loadLibrary("user32", CustomUser32.class);
@@ -32,14 +34,6 @@ public class HighlightTracker extends Sensor implements Runnable {
 		super(name);
 		this.highlighted = null;
 	}
-
-	public void on() {
-		this.turnedOn = true;
-    }
-    
-    public void off() {
-    	this.turnedOn = false;
-    }
     
     @Override
 	public void run() {
@@ -65,7 +59,11 @@ public class HighlightTracker extends Sensor implements Runnable {
 				e.printStackTrace();
 			}
 		}
-		
+	}
+    
+    @Override
+	public void turnOff() {
+		this.turnedOn = false;
 	}
     
     public String getHighlightedText() {
@@ -112,4 +110,9 @@ public class HighlightTracker extends Sensor implements Runnable {
         
         return null;
     }
+
+	@Override
+	public void lostOwnership(Clipboard clipboard, Transferable contents) {
+		// needed for implementing ClipboardOwner
+	}
 }

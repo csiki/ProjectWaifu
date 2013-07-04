@@ -1,10 +1,11 @@
 package core;
+
+import display.CheckBoxDialog;
 import display.CloudCommentPanel;
+import display.InputBoxDialog;
+import display.RadioBtnDialog;
 import display.SkinDisplay;
 import display.CloudCommentDisplay;
-import display.InputBoxPane;
-import display.RadioBtnPane;
-import display.CheckBoxPane;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: CounterActionFactory.java
@@ -20,24 +21,24 @@ public class CounterActionFactory {
     private SkinDisplay skinDisplay;
     private CloudCommentDisplay cloudCommentDisplay;
     private CloudCommentPanel cloudCommentPanel;
-    private InputBoxPane inputBoxPane;
-    private RadioBtnPane radioBtnPane;
-    private CheckBoxPane checkBoxPane;
+    private InputBoxDialog inputBoxDialog;
+    private RadioBtnDialog radioBtnDialog;
+    private CheckBoxDialog checkBoxDialog;
     
     public CounterActionFactory(
     		SkinContainer skinContainer,
     		SkinDisplay skinDisplay,
     		CloudCommentDisplay cloudCommentDisplay,
-    		InputBoxPane inputBoxPane,
-    		RadioBtnPane radioBtnPane,
-    		CheckBoxPane checkBoxPane)
+    		InputBoxDialog inputBoxDialog,
+    		RadioBtnDialog radioBtnDialog,
+    		CheckBoxDialog checkBoxDialog)
     {
     	this.skinContainer = skinContainer;
     	this.skinDisplay = skinDisplay;
     	this.cloudCommentDisplay = cloudCommentDisplay;
-    	this.inputBoxPane = inputBoxPane;
-    	this.radioBtnPane = radioBtnPane;
-    	this.checkBoxPane = checkBoxPane;
+    	this.inputBoxDialog = inputBoxDialog;
+    	this.radioBtnDialog = radioBtnDialog;
+    	this.checkBoxDialog = checkBoxDialog;
     }
     
     public SkinSwitch createSkinSwitch(int skinIndex) {
@@ -49,14 +50,14 @@ public class CounterActionFactory {
     }
     
     public InputBox createInputBox() {
-    	return new InputBox(this.inputBoxPane);
+    	return new InputBox(this.inputBoxDialog);
     }
     
     public RadioBtn createRadioBtn() {
-    	return new RadioBtn(this.radioBtnPane);
+    	return new RadioBtn(this.radioBtnDialog);
     }
     
     public CheckBox createCheckBox() {
-    	return new CheckBox(this.checkBoxPane);
+    	return new CheckBox(this.checkBoxDialog);
     }
 }

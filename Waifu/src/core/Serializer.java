@@ -1,7 +1,6 @@
 package core;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -19,6 +18,8 @@ import java.io.Serializable;
 public class Serializer {
 	
 	static String mainFolder = "serialized" + java.io.File.separator;
+	
+	private Serializer() {}
 	
     public static void serialize(Behavior behavior, Serializable object, String filePathWithNameAndExtension) {
     	String path = mainFolder;
@@ -66,7 +67,7 @@ public class Serializer {
 			in.close();
 			fin.close();
 		} catch (IOException | ClassNotFoundException e) {
-			e.printStackTrace();
+			return null;
 		}
     	
     	return object;

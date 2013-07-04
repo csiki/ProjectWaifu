@@ -20,6 +20,7 @@ public class CloudCommentPanel extends JPanel {
     
 	public CloudCommentPanel(ElementDisplay cloudCommentDisplay) {
 		this.cloudCommentDisplay = cloudCommentDisplay;
+		this.setOpaque(false);
 	}
 	
 	@Override

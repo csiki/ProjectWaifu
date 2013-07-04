@@ -10,8 +10,8 @@ import java.awt.Graphics;
 
 
 
-public abstract class ElementDisplay {
+public interface ElementDisplay {
 	
-    public abstract void paintComponent(Graphics g, int x, int y);
+    public void paintComponent(Graphics g, int x, int y);
     
 }

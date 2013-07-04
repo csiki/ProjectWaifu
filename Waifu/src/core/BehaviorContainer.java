@@ -16,7 +16,7 @@ public class BehaviorContainer {
 	private volatile List<Boolean> behaviorActivated;
     private volatile List<Behavior> behaviors;
     
-    BehaviorContainer() {
+    public BehaviorContainer() {
     	this.behaviorActivated = new ArrayList<Boolean>();
     	this.behaviors = new ArrayList<Behavior>();
     }
@@ -37,6 +37,10 @@ public class BehaviorContainer {
     public void rmBehavior(int index) {
     	this.behaviors.remove(index);
     	this.behaviorActivated.remove(index);
+    }
+    
+    public void clearBehaviors() {
+    	this.behaviors.clear();
     }
     
     public void activateBehavior(int index) {

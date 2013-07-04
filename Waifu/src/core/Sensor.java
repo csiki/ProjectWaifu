@@ -24,9 +24,7 @@ public abstract class Sensor {
     	this.turnedOn = true;
     }
     
-    public abstract void on();
-    
-    public abstract void off();
+    public abstract void turnOff();
     
     final protected void notifyAllSubs() {
     	
