@@ -29,6 +29,7 @@ public class CounterActionFactory {
     		SkinContainer skinContainer,
     		SkinDisplay skinDisplay,
     		CloudCommentDisplay cloudCommentDisplay,
+    		CloudCommentPanel cloudCommentPanel,
     		InputBoxDialog inputBoxDialog,
     		RadioBtnDialog radioBtnDialog,
     		CheckBoxDialog checkBoxDialog)
@@ -36,6 +37,7 @@ public class CounterActionFactory {
     	this.skinContainer = skinContainer;
     	this.skinDisplay = skinDisplay;
     	this.cloudCommentDisplay = cloudCommentDisplay;
+    	this.cloudCommentPanel = cloudCommentPanel;
     	this.inputBoxDialog = inputBoxDialog;
     	this.radioBtnDialog = radioBtnDialog;
     	this.checkBoxDialog = checkBoxDialog;

@@ -3,8 +3,11 @@ package behaviors;
 import core.Behavior;
 import core.CloudComment;
 import core.CounterActionFactory;
+import core.KeyTyped;
 import core.SkinSwitch;
 import core.StringTyped;
+import core.TextHighlighted;
+import core.TimeReached;
 import core.UserAction;
 import core.UserActionFactory;
 
@@ -12,7 +15,7 @@ import core.UserActionFactory;
 // állítds be h bin/behaviors-ból töltsön be !!! (alapból nem onnan szedi) (AIOptionsba tudod ha elindítod a cumót)
 // elején ezt irogasd át, aztáncsinálj több behaviorra egyszerre h reagál
 // nem kell másik csak ez fog mûködni!!!
-
+// timereachedet próbáld csak, több valszeg szar ! meg a counter actionöket különbözõ kombinációban
 
 public class BahaviorExample extends Behavior {
 
@@ -22,7 +25,7 @@ public class BahaviorExample extends Behavior {
 		System.out.println("construktor");
 	}
 	
-	private StringTyped stringT; // user action
+	private TimeReached tr; // user action
 
 	@Override
 	public void notify(UserAction userAction) {
@@ -37,12 +40,15 @@ public class BahaviorExample extends Behavior {
 	@Override
 	public void condition(UserActionFactory UAF) {
 		// egyszerû stringTyped
-		this.stringT = UAF.createStringTyped("hajaj"); // hajaj stringet várjuk h beüssék
+		this.tr = UAF.createTimeReached(); // a karakter kell
+		
+		// csalás
+		this.notify(this.tr);
 		
 		// és aktiváljuk, úgy h ennek a behavior-nek szóljon ha sikeres
-		this.stringT.activate(this);
+		//this.ht.activate(this); // csalás miatt kinyomtam
 		
-		System.out.println("így teszteld h a rész lefutott e (kiírja lenn a console-ra");
+		System.out.println("így teszteld h a rész lefutott e (kiírja lenn a console-ra)");
 	}
 
 	@Override
@@ -58,6 +64,9 @@ public class BahaviorExample extends Behavior {
 		sw.trigger(); // elsütjük a cumót
 		cc.trigger();
 		System.out.println("conseqent");
+		
+		// itt újraaktiválhatod a user actiont, ha azt akarod h újra mûködjön
+		//this.tr.activate(this);
 	}
 
 }
