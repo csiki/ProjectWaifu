@@ -3,10 +3,12 @@ package core;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
+import behaviors.BahaviorExample;
 
 import core.Behavior;
 import misc.FileClassLoader;
@@ -21,7 +23,9 @@ import javax.tools.*;
 
 
 
-public class BehaviorLoader {
+public class BehaviorLoader implements Serializable {
+	
+	private static final long serialVersionUID = -4083336349416973787L;
 	
 	/**
 	 * Ends with a java.io.File.separator
@@ -69,6 +73,9 @@ public class BehaviorLoader {
         		}
         	}
     	}
+    	
+    	// TODO próba hozzáadása!
+    	bc.addBehavior(new BahaviorExample("pl"));
     	
     	return bc;
     }

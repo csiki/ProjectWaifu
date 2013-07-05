@@ -13,7 +13,7 @@ public abstract class Behavior {
     private String name;
     private AI ai;
     
-    Behavior(String name) {
+    protected Behavior(String name) {
     	this.name = name;
     	this.ai = null;
     }

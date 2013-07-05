@@ -44,7 +44,7 @@ public class HighlightTracker extends Sensor implements Runnable, ClipboardOwner
 			try {
 				selectedText = this.getSelectedText(User32.INSTANCE, CustomUser32.INSTANCE);
 			} catch (Exception e) {
-				e.printStackTrace();
+				selectedText = null;
 			}
 			
 			// set highlighted

@@ -1,19 +1,23 @@
 package display;
 
-import java.awt.Container;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+
 import javax.swing.JFrame;
+
+import core.Settings;
 
 class DragMouseListener implements MouseListener, MouseMotionListener {
 	JFrame target;
 	Point start_drag;
 	Point start_loc;
+	Settings settings;
 
-	public DragMouseListener(JFrame target) {
+	public DragMouseListener(JFrame target, Settings settings) {
 		this.target = target;
+		this.settings = settings;
 	}
 
 	Point getScreenLocation(MouseEvent e) {
@@ -44,6 +48,9 @@ class DragMouseListener implements MouseListener, MouseMotionListener {
 				(int) (this.start_loc.getX() + offset.getX()), (int) (this.start_loc
 						.getY() + offset.getY()));
 		target.setLocation(new_location);
+		
+		settings.setPosX(new_location.x);
+		settings.setPosY(new_location.y);
 	}
 
 	public void mouseMoved(MouseEvent e) {}

@@ -3,6 +3,8 @@ package core;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: Settings.java
@@ -18,14 +20,26 @@ public class Settings implements Serializable {
 	
 	private boolean runOnStartUp;
     private boolean placeOnTop;
-    private Dimension resolution;
+    //private Dimension resolution;
     private int posX;
     private int posY;
     private String behaviorsPath;
+    private String chosenSizing;
+    
+    public static final Map<String, Sizing> sizes = new HashMap<String, Sizing>();
+    
+    // add further sizes here
+    static {
+    	sizes.put("300x400", new Sizing()); // default
+    }
     
     // static vars
-    public final static int cloudWidth = 300;
+    // TODO kicserélni Sizingra!!!
     public final static int maxNumOfSkins = 100;
+    public final static int waifuWidth = 300;
+    public final static int waifuHeight = 400;
+    public final static int cloudWidth = 300;
+    public final static int cloudHeight = 250;
     public final static int menuElementWidth = 100;
     public final static int menuElementHeight = 60;
     public final static int menuElementFontSize = 24;
@@ -34,8 +48,8 @@ public class Settings implements Serializable {
     	// default settings
     	this.runOnStartUp = true;
     	this.placeOnTop = true;
-    	this.resolution = new Dimension(300, 400);
     	this.behaviorsPath = "behaviors" + java.io.File.separator;
+    	this.chosenSizing = "300x400";
     	
     	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     	this.posX = (int) screenSize.getWidth() - 350 - Settings.cloudWidth;
@@ -58,10 +72,6 @@ public class Settings implements Serializable {
     	this.placeOnTop = placeOnTop;
     }
     
-    public Dimension getResolution() {
-    	return this.resolution;
-    }
-    
     public int getPosX() {
     	return this.posX;
     }
@@ -82,11 +92,21 @@ public class Settings implements Serializable {
     	this.posY = set;
     }
     
-    public void setResolution(int width, int height) {
-    	this.resolution = new Dimension(width, height);
-    }
-    
     public void setBehaviorsPath(String set) {
     	this.behaviorsPath = set;
+    }
+    
+    public Sizing getCurrentSizing() {
+    	return Settings.sizes.get(this.chosenSizing);
+    }
+    
+    public String getCurrentSizingName() {
+    	return this.chosenSizing;
+    }
+    
+    public void setCurrentSizing(String name) {
+    	if (Settings.sizes.containsKey(name)) {
+    		this.chosenSizing = name;
+    	}
     }
 }

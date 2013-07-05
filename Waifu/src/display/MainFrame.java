@@ -26,31 +26,23 @@ public class MainFrame {
     private Settings settings;
     private SkinOptionsDialog skinOptionsDialog;
     private AIOptionsDialog aiOptionsDialog;
-    private SettingsDialog settingsDialog;
+    private SettingsDialog settingsDialog; // TODO not needed
     
     private JFrame frame = new JFrame();
     
     /**
 	 * Create the application.
 	 */
-	public MainFrame(Settings settings,
-			SkinPanel skinPanel, CloudCommentPanel cloudCommentPanel, MenuPanel menuPanel,
-			SkinOptionsDialog skinOptionsDialog, AIOptionsDialog aiOptionsDialog, SettingsDialog settingsDialog) {
+    public MainFrame(Settings settings) {
 		this.settings = settings;
-		this.skinPanel = skinPanel;
-		this.cloudCommentPanel = cloudCommentPanel;
-		this.menuPanel = menuPanel;
-		this.skinOptionsDialog = skinOptionsDialog;
-		this.aiOptionsDialog = aiOptionsDialog;
-		this.settingsDialog = settingsDialog;
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	public void initialize() {
-		frame.setBounds(settings.getPosX(), settings.getPosY(), (int) settings.getResolution().getWidth() + Settings.cloudWidth + 50, (int)settings.getResolution().getHeight() + 50);
-		//frame.setBounds(200, 200, 600, 400);
+		frame.setBounds(settings.getPosX(), settings.getPosY(),
+				settings.getCurrentSizing().waifuWidth + settings.getCurrentSizing().cloudWidth + 50, settings.getCurrentSizing().waifuHeight + 50);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setUndecorated(true);
 		frame.setBackground(new Color (0, 0, 0, 0));
@@ -61,10 +53,6 @@ public class MainFrame {
 		
 		// gridbag
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		/*gridBagLayout.columnWidths = new int[]{0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};*/
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		// skin panel gbc
@@ -90,7 +78,7 @@ public class MainFrame {
 		frame.getContentPane().add(this.cloudCommentPanel, cloudGBC);
 		
 		// drag and drop
-		DragMouseListener dml = new DragMouseListener(this.frame);
+		DragMouseListener dml = new DragMouseListener(this.frame, this.settings);
 		this.frame.getContentPane().addMouseListener(dml);
 		this.frame.getContentPane().addMouseMotionListener(dml);
 		
@@ -101,5 +89,17 @@ public class MainFrame {
 	
 	public JFrame getFrame() {
 		return this.frame;
+	}
+	
+	public void providePanels(SkinPanel skinPanel, CloudCommentPanel cloudCommentPanel, MenuPanel menuPanel) {
+		this.skinPanel = skinPanel;
+		this.cloudCommentPanel = cloudCommentPanel;
+		this.menuPanel = menuPanel;
+	}
+	
+	public void provideDialogs(SkinOptionsDialog skinOptionsDialog, AIOptionsDialog aiOptionsDialog, SettingsDialog settingsDialog) {
+		this.skinOptionsDialog = skinOptionsDialog;
+        this.aiOptionsDialog = aiOptionsDialog;
+        this.settingsDialog = settingsDialog;
 	}
 }

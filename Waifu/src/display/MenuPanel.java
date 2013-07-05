@@ -44,12 +44,12 @@ public class MenuPanel extends JPanel {
 		this.aiOptionsDialog = aiOptionsDialog;
 		this.settingsDialog = settingsDialog;
     	
-    	this.setPreferredSize(new Dimension(300, 200));
+    	this.setPreferredSize(new Dimension(300, 200)); // TODO set to sizing
     	
     	// popupmenu
     	this.popupMenu = new JPopupMenu();
     	this.skinOpMI = new CustomMenuItem("Skin options");
-    	this.settingsMI = new CustomMenuItem("Settings");
+    	this.settingsMI = new CustomMenuItem("Settings..");
     	this.aiOpMI = new CustomMenuItem("A.I. options");
     	
     	this.popupMenu.add(this.skinOpMI);
@@ -60,21 +60,21 @@ public class MenuPanel extends JPanel {
     	this.skinOpMI.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
-				skinOptionsDialog.show();
+				skinOptionsDialog.showD();
 			}
 		});
     	
     	this.settingsMI.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
-				settingsDialog.show();
+				settingsDialog.showD();
 			}
 		});
     	
     	this.aiOpMI.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
-				aiOptionsDialog.show();
+				aiOptionsDialog.showD();
 			}
 		});
     	

@@ -1,6 +1,7 @@
 package display;
 
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 
 import core.SkinContainer;
 //  @ Project		: ProjectWaifu
@@ -17,7 +18,8 @@ public class SkinOptionsDialog extends JDialog {
 	
 	private SkinContainer skinContainer;
 	
-	public SkinOptionsDialog(SkinContainer skinContainer) {
+	public SkinOptionsDialog(SkinContainer skinContainer, JFrame parent) {
+		super(parent, true);
 		this.skinContainer = skinContainer;
 	}
 	
@@ -25,11 +27,8 @@ public class SkinOptionsDialog extends JDialog {
 		
 	}
     
-	public void show() {
+	public void showD() {
 		
 	}
 	
-	public void hide() {
-		
-	}
 }

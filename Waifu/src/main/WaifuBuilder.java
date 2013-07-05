@@ -25,7 +25,7 @@ public class WaifuBuilder {
 	private UserActionFactory userActionFactory;
 	
 	// dialogs
-	private InputBoxDialog inputBoxDialog; // TODO threads!!!!!!!!!!!!!!!!!!!!
+	private InputBoxDialog inputBoxDialog;
 	private CheckBoxDialog checkBoxDialog;
 	private RadioBtnDialog radioBtnDialog;
 	private SettingsDialog settingsDialog;
@@ -58,9 +58,14 @@ public class WaifuBuilder {
 		this.loadBehaviors();
 		this.buildSensors();
 		this.buildDisplays();
-		this.buildDialogs();
-		this.buildPanels();
 		this.buildMainFrame();
+		
+		this.buildDialogs();
+		this.mainFrame.provideDialogs(skinOptionsDialog, aiOptionsDialog, settingsDialog);
+		
+		this.buildPanels();
+		this.mainFrame.providePanels(skinPanel, cloudCommentPanel, menuPanel);
+		
 		this.buildCounterActionDialogs();
 		this.buildFactories();
 		this.buildAI();
@@ -70,6 +75,11 @@ public class WaifuBuilder {
 	
 	public void start() {
 		this.mainFrame.initialize();
+		
+		// start behaviors // TODO ezt majd áttenni AIba !
+		for (int i = 0; i < this.behaviorContainer.getNumOfBehaviors(); ++i) {
+			this.behaviorContainer.getBehavior(i).condition(userActionFactory);
+		}
 	}
 	
 	public void exit() {
@@ -135,6 +145,16 @@ public class WaifuBuilder {
 		this.skinDisplay = new SkinDisplay(this.settings, this.skinContainer.loadSkin(0));
 	}
 	
+	private void buildMainFrame() {
+		this.mainFrame = new MainFrame(settings);
+	}
+	
+	private void buildDialogs() {
+		this.skinOptionsDialog = new SkinOptionsDialog(this.skinContainer, this.mainFrame.getFrame());
+		this.aiOptionsDialog = new AIOptionsDialog(this.behaviorContainer, this.behaviorLoader, this.settings);
+		this.settingsDialog = new SettingsDialog(this.settings, this.mainFrame.getFrame());
+	}
+	
 	private void buildPanels() {
 		// load menu images
 		String pathExit = "img" + java.io.File.separator + "cross.png";
@@ -158,16 +178,6 @@ public class WaifuBuilder {
 		
 		// cloud panel
 		this.cloudCommentPanel = new CloudCommentPanel(this.cloudCommentDisplay);
-	}
-	
-	private void buildDialogs() {
-		this.skinOptionsDialog = new SkinOptionsDialog(this.skinContainer);
-		this.aiOptionsDialog = new AIOptionsDialog(this.behaviorContainer, this.behaviorLoader);
-		this.settingsDialog = new SettingsDialog(this.settings);
-	}
-	
-	private void buildMainFrame() {
-		this.mainFrame = new MainFrame(settings, skinPanel, cloudCommentPanel, menuPanel, skinOptionsDialog, aiOptionsDialog, settingsDialog);
 	}
 	
 	private void buildCounterActionDialogs() {

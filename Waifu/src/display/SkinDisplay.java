@@ -35,11 +35,11 @@ public class SkinDisplay implements ElementDisplay {
 		
 		if (loadedSkin != null) {
 			// load loaded
-			g2.drawImage(loadedSkin, x, y, x + (int)settings.getResolution().getWidth(), y + (int)settings.getResolution().getHeight(), 0, 0, loadedSkin.getWidth(), loadedSkin.getHeight(), null);
+			g2.drawImage(loadedSkin, x, y, x + settings.getCurrentSizing().waifuWidth, y + settings.getCurrentSizing().waifuHeight, 0, 0, loadedSkin.getWidth(), loadedSkin.getHeight(), null);
 		}
 		else {
 			// load default
-			g2.drawImage(defaultSkin, x, y, x + (int)settings.getResolution().getWidth(), y + (int)settings.getResolution().getHeight(), 0, 0, defaultSkin.getWidth(), defaultSkin.getHeight(), null);
+			g2.drawImage(defaultSkin, x, y, x + settings.getCurrentSizing().waifuWidth, y + settings.getCurrentSizing().waifuHeight, 0, 0, defaultSkin.getWidth(), defaultSkin.getHeight(), null);
 		}
 	}
 }

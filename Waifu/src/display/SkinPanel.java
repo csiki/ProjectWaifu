@@ -5,6 +5,8 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
+import core.Settings;
+
 //  @ Project		: ProjectWaifu
 //  @ File Name		: SkinPanel.java
 //  @ Date			: 2013.07.02.
@@ -21,7 +23,7 @@ public class SkinPanel extends JPanel {
     
 	public SkinPanel(ElementDisplay skinDisplay) {
 		this.skinDisplay = skinDisplay;
-		this.setPreferredSize(new Dimension(300, 400));
+		this.setPreferredSize(new Dimension(Settings.waifuWidth, Settings.waifuHeight));
 	}
 	
 	@Override
