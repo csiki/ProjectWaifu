@@ -24,9 +24,6 @@ public class MainFrame {
     private CloudCommentPanel cloudCommentPanel;
     private MenuPanel menuPanel;
     private Settings settings;
-    private SkinOptionsDialog skinOptionsDialog;
-    private AIOptionsDialog aiOptionsDialog;
-    private SettingsDialog settingsDialog; // TODO not needed
     
     private JFrame frame = new JFrame();
     
@@ -42,7 +39,7 @@ public class MainFrame {
 	 */
 	public void initialize() {
 		frame.setBounds(settings.getPosX(), settings.getPosY(),
-				settings.getCurrentSizing().waifuWidth + settings.getCurrentSizing().cloudWidth + 50, settings.getCurrentSizing().waifuHeight + 50);
+				this.settings.getCurrentSizing().frameWidth, settings.getCurrentSizing().frameHeight);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setUndecorated(true);
 		frame.setBackground(new Color (0, 0, 0, 0));
@@ -95,11 +92,5 @@ public class MainFrame {
 		this.skinPanel = skinPanel;
 		this.cloudCommentPanel = cloudCommentPanel;
 		this.menuPanel = menuPanel;
-	}
-	
-	public void provideDialogs(SkinOptionsDialog skinOptionsDialog, AIOptionsDialog aiOptionsDialog, SettingsDialog settingsDialog) {
-		this.skinOptionsDialog = skinOptionsDialog;
-        this.aiOptionsDialog = aiOptionsDialog;
-        this.settingsDialog = settingsDialog;
 	}
 }

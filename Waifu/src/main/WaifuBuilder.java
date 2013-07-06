@@ -19,7 +19,6 @@ public class WaifuBuilder {
 	private TimeChecker timeChecker;
 	Thread threadForHTracker;
 	Thread threadForTChecker;
-	Thread threadForKReader;
 	
 	// factories
 	private CounterActionFactory counterActionFactory;
@@ -62,7 +61,6 @@ public class WaifuBuilder {
 		this.buildMainFrame();
 		
 		this.buildDialogs();
-		this.mainFrame.provideDialogs(skinOptionsDialog, aiOptionsDialog, settingsDialog);
 		
 		this.buildPanels();
 		this.mainFrame.providePanels(skinPanel, cloudCommentPanel, menuPanel);
@@ -125,11 +123,9 @@ public class WaifuBuilder {
 		
 		this.threadForHTracker = new Thread(this.highlightTracker);
 		this.threadForTChecker = new Thread(this.timeChecker);
-		this.threadForKReader = new Thread(this.keyReader);
 		
 		this.threadForHTracker.start();
 		this.threadForTChecker.start();
-		this.threadForKReader.start();
 	}
 	
 	private void buildDisplays() {

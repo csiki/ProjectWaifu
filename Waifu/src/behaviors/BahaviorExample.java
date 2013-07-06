@@ -11,62 +11,38 @@ import core.TimeReached;
 import core.UserAction;
 import core.UserActionFactory;
 
-// csinálj ugyanilyen classokat a behaviors csomagba, és azokkal teszteld
-// állítds be h bin/behaviors-ból töltsön be !!! (alapból nem onnan szedi) (AIOptionsba tudod ha elindítod a cumót)
-// elején ezt irogasd át, aztáncsinálj több behaviorra egyszerre h reagál
-// nem kell másik csak ez fog mûködni!!!
-// timereachedet próbáld csak, több valszeg szar ! meg a counter actionöket különbözõ kombinációban
-
 public class BahaviorExample extends Behavior {
 
 	public BahaviorExample(String name) {
 		super(name);
-		// ez a konstruktor, ide nem kell semmi
-		System.out.println("construktor");
 	}
 	
 	private TimeReached tr; // user action
+	private KeyTyped kt;
+	private StringTyped st;
+	private TextHighlighted th;
 
 	@Override
 	public void notify(UserAction userAction) {
-		
-		// ez akkor fut le, ha egy a condition()-ba általad létrehozott UserAction sikeresen lezajlott
-		// ekkor jöhet a válaszreakció ( ha csak egy useraction van, egyelõre elég is lesz annyi )
 		this.conditionFulfilled();
-		
-		System.out.println("notify");
 	}
 
 	@Override
 	public void condition(UserActionFactory UAF) {
-		// egyszerû stringTyped
-		this.tr = UAF.createTimeReached(); // a karakter kell
+		this.kt = UAF.createKeyTyped('a');
 		
-		// csalás
-		this.notify(this.tr);
-		
-		// és aktiváljuk, úgy h ennek a behavior-nek szóljon ha sikeres
-		//this.ht.activate(this); // csalás miatt kinyomtam
-		
-		System.out.println("így teszteld h a rész lefutott e (kiírja lenn a console-ra)");
+		this.kt.activate(this);
 	}
 
 	@Override
 	public void consequent(CounterActionFactory CAF) {
-		// itt vmit csináljon a waifu
+
+		SkinSwitch sw = CAF.createSkinSwitch(2);
 		
-		// karakter váltás
-		SkinSwitch sw = CAF.createSkinSwitch(2); // 2es indexûre vált, maradj 10en belül, de azt is tesztelheted ha rosszat írsz (sokat, vagy minuszt)
+		CloudComment cc = CAF.createCloudComment("proba !");
 		
-		// comment
-		CloudComment cc = CAF.createCloudComment("proba !"); // próbáld ki sok szöveggel is
-		
-		sw.trigger(); // elsütjük a cumót
+		sw.trigger();
 		cc.trigger();
-		System.out.println("conseqent");
-		
-		// itt újraaktiválhatod a user actiont, ha azt akarod h újra mûködjön
-		//this.tr.activate(this);
 	}
 
 }

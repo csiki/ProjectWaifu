@@ -28,7 +28,7 @@ public class HighlightTracker extends Sensor implements Runnable, ClipboardOwner
         void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
     }
 	
-	volatile String highlighted;
+	private volatile String highlighted;
 	
     public HighlightTracker(String name) {
 		super(name);

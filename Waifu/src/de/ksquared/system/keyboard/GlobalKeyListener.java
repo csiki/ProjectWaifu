@@ -38,6 +38,7 @@ public class GlobalKeyListener {
 
 	public void addKeyListener(KeyListener listener) { listeners.add(listener); }
 	public void removeKeyListener(KeyListener listener) { listeners.remove(listener); }
+	public void removeAllKeyListeners() { listeners.clear(); }
 
 	void keyPressed(KeyEvent event) {
 		try {

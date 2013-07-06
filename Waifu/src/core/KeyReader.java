@@ -12,42 +12,29 @@ import de.ksquared.system.keyboard.KeyEvent;
 
 
 
-public class KeyReader extends Sensor implements Runnable {
+public class KeyReader extends Sensor {
 	
 	volatile private int keyTyped;
 	private GlobalKeyListener gkl;
-	private KeyAdapter keyAdatper;
 	
 	public KeyReader(String name) {
 		super(name);
 		this.keyTyped = 0;
-	}
-	
-	@Override
-	public void run() {
-		//this.gkl = new GlobalKeyListener();
-		new GlobalKeyListener().addKeyListener(new KeyAdapter() {
-			@Override public void keyPressed(KeyEvent event) { System.out.println(event); }
+
+		this.gkl = new GlobalKeyListener();
+		this.gkl.addKeyListener(new KeyAdapter() {
+			@Override public void keyPressed(KeyEvent event) {}
+			
 			@Override public void keyReleased(KeyEvent event) {
-				System.out.println(event);
-				if(event.getVirtualKeyCode()==KeyEvent.VK_ADD
-				&& event.isCtrlPressed())
-					System.out.println("CTRL+ADD was just released (CTRL is still pressed)");
+				int keyCode = event.getVirtualKeyCode();
+
+				if (turnedOn && keyCode >= 65 && keyCode <= 90 && !(keyCode == KeyEvent.VK_C && event.isCtrlPressed())) {
+					System.out.println(keyCode);
+					keyTyped = keyCode;
+					notifyAllSubs();
+				}
 			}
 		});
-		
-		//this.gkl.addKeyListener(this.keyAdatper);
-		
-		while (this.turnedOn) {
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		System.out.println("[keyreaderend]");
 	}
 	
     public int getKeyTyped() {
@@ -57,8 +44,7 @@ public class KeyReader extends Sensor implements Runnable {
     @Override
     public void turnOff() {
     	this.turnedOn = false;
-    	this.gkl.removeKeyListener(this.keyAdatper);
-    	this.keyAdatper = null;
+    	this.gkl.removeAllKeyListeners();
     	this.gkl = null;
     }
 }

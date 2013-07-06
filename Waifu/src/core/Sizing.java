@@ -11,17 +11,22 @@ public class Sizing {
     public int menuElementFontSize;
     public int menuPanelWidth;
     public int menuPanelHeight;
+    public int frameWidth;
+	public int frameHeight;
     
     Sizing() {
-    	waifuWidth = 300;
-    	waifuHeight = 400;
-    	cloudWidth = 300;
-        cloudHeight = 250;
-        menuElementWidth = 100;
-        menuElementHeight = 60;
-        menuElementFontSize = 24;
+    	this.waifuWidth = 300;
+    	this.waifuHeight = 400;
+    	this.cloudWidth = 300;
+    	this.cloudHeight = 250;
+        this.menuElementWidth = 100;
+        this.menuElementHeight = 60;
+        this.menuElementFontSize = 24;
         this.menuPanelWidth = 300;
         this.menuPanelHeight = 200;
+        
+        this.frameWidth = this.waifuWidth + this.cloudWidth + 20;
+        this.frameHeight = 2 * this.cloudHeight + 20;
     }
     
     Sizing(int charWidth, int charHeight, int cloudWidth, int cloudHeight,

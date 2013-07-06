@@ -24,7 +24,7 @@ public class Settings implements Serializable {
     private int posX;
     private int posY;
     private String behaviorsPath;
-    private String chosenSizing;
+    private String currentSizingName;
     
     public static final Map<String, Sizing> sizes = new HashMap<String, Sizing>();
     
@@ -45,15 +45,16 @@ public class Settings implements Serializable {
     public final static int menuElementFontSize = 24;
     
     public Settings() {
+    	
     	// default settings
     	this.runOnStartUp = true;
     	this.placeOnTop = true;
     	this.behaviorsPath = "behaviors" + java.io.File.separator;
-    	this.chosenSizing = "300x400";
+    	this.currentSizingName = "300x400";
     	
     	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    	this.posX = (int) screenSize.getWidth() - 350 - Settings.cloudWidth;
-    	this.posY = (int) screenSize.getHeight() - 450;
+    	this.posX = (int) screenSize.getWidth() - this.getCurrentSizing().frameWidth;
+    	this.posY = (int) screenSize.getHeight() - this.getCurrentSizing().frameHeight;
     }
     
     public boolean isRunOnStartUp() {
@@ -97,16 +98,16 @@ public class Settings implements Serializable {
     }
     
     public Sizing getCurrentSizing() {
-    	return Settings.sizes.get(this.chosenSizing);
+    	return sizes.get(this.currentSizingName);
     }
     
     public String getCurrentSizingName() {
-    	return this.chosenSizing;
+    	return this.currentSizingName;
     }
     
     public void setCurrentSizing(String name) {
-    	if (Settings.sizes.containsKey(name)) {
-    		this.chosenSizing = name;
+    	if (sizes.containsKey(name)) {
+    		this.currentSizingName = name;
     	}
     }
 }

@@ -33,8 +33,6 @@ public class KeyTyped extends UserAction {
     public void update() {
     	this.key = Character.toChars(this.keyReader.getKeyTyped())[0];
     	
-    	System.out.println("[keytyped.update]: " + this.key);
-    	
     	if (this.key == this.keyExpected) {
     		this.deactivate();
     		this.behavior.notify(this);

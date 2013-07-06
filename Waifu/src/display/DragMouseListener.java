@@ -7,6 +7,7 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.JFrame;
 
+import core.Serializer;
 import core.Settings;
 
 class DragMouseListener implements MouseListener, MouseMotionListener {
@@ -49,8 +50,12 @@ class DragMouseListener implements MouseListener, MouseMotionListener {
 						.getY() + offset.getY()));
 		target.setLocation(new_location);
 		
+		// change settings
 		settings.setPosX(new_location.x);
 		settings.setPosY(new_location.y);
+				
+		// serialize settings
+		Serializer.serialize(null, settings, "settings.waifu");
 	}
 
 	public void mouseMoved(MouseEvent e) {}

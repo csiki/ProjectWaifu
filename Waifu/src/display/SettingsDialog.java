@@ -111,7 +111,7 @@ public class SettingsDialog extends JDialog {
 		settingsPanel.setLayout(gbl_settingsPanel);
 		
 		GridBagConstraints gbc_lblResolution = new GridBagConstraints();
-		gbc_lblResolution.anchor = GridBagConstraints.WEST;
+		gbc_lblResolution.anchor = GridBagConstraints.EAST;
 		gbc_lblResolution.insets = new Insets(0, 0, 5, 5);
 		gbc_lblResolution.gridx = 1;
 		gbc_lblResolution.gridy = 1;
@@ -125,7 +125,7 @@ public class SettingsDialog extends JDialog {
 		settingsPanel.add(resCombo, gbc_resCombo);
 		
 		GridBagConstraints gbc_lblRunOnStartup = new GridBagConstraints();
-		gbc_lblRunOnStartup.anchor = GridBagConstraints.WEST;
+		gbc_lblRunOnStartup.anchor = GridBagConstraints.EAST;
 		gbc_lblRunOnStartup.insets = new Insets(0, 0, 5, 5);
 		gbc_lblRunOnStartup.gridx = 1;
 		gbc_lblRunOnStartup.gridy = 2;
@@ -139,7 +139,7 @@ public class SettingsDialog extends JDialog {
 		settingsPanel.add(runOnSCheckb, gbc_runOnSCheckb);
 		
 		GridBagConstraints gbc_lblPlaceOnTop = new GridBagConstraints();
-		gbc_lblPlaceOnTop.anchor = GridBagConstraints.WEST;
+		gbc_lblPlaceOnTop.anchor = GridBagConstraints.EAST;
 		gbc_lblPlaceOnTop.insets = new Insets(0, 0, 0, 5);
 		gbc_lblPlaceOnTop.gridx = 1;
 		gbc_lblPlaceOnTop.gridy = 3;
@@ -151,15 +151,17 @@ public class SettingsDialog extends JDialog {
 		gbc_placeOnTCheckb.gridy = 3;
 		settingsPanel.add(placeOnTCheckb, gbc_placeOnTCheckb);
 		
-		// combo box select set
-		this.resCombo.setSelectedItem(this.settings.getCurrentSizingName());
-		
-		// checkboxes set set
-		this.placeOnTCheckb.setSelected(this.settings.isPlaceOnTop());
-		this.runOnSCheckb.setSelected(this.settings.isRunOnStartUp());
+		this.setResizable(false);
 	}
 	
 	public void showD() {
+		// combo box select set
+		this.resCombo.setSelectedItem(this.settings.getCurrentSizingName());
+				
+		// checkboxes set set
+		this.placeOnTCheckb.setSelected(this.settings.isPlaceOnTop());
+		this.runOnSCheckb.setSelected(this.settings.isRunOnStartUp());
+		
 		this.okAction.setEnabled(true);
 		this.cancelAction.setEnabled(true);
 		this.setVisible(true);

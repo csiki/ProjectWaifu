@@ -28,8 +28,11 @@ public abstract class Sensor {
     
     final protected void notifyAllSubs() {
     	
-    	for (UserAction sub : subs) {
-    		sub.update();
+    	// copying list due concurrency
+    	List<UserAction> subsCopy = new ArrayList<UserAction>(this.subs);
+
+    	for (UserAction ue : subsCopy) {
+    		ue.update();
     	}
     }
     
