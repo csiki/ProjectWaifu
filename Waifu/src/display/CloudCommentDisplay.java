@@ -1,8 +1,11 @@
 package display;
 
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+
+import core.Settings;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: CloudCommentDisplay.java
@@ -17,8 +20,10 @@ public class CloudCommentDisplay implements ElementDisplay {
 	private boolean popupped;
     private String comment;
     private BufferedImage cloudImg;
+    private Settings settings;
     
-    public CloudCommentDisplay(BufferedImage cloudImg) {
+    public CloudCommentDisplay(Settings settings, BufferedImage cloudImg) {
+    	this.settings = settings;
     	this.popupped = false;
     	this.comment = null;
     	this.cloudImg = cloudImg;
@@ -39,10 +44,11 @@ public class CloudCommentDisplay implements ElementDisplay {
 		Graphics2D g2 = (Graphics2D) g;
 		if (this.popupped) {
 			// draw image
-			g2.drawImage(cloudImg, x, y, x + cloudImg.getWidth(), y + cloudImg.getHeight(), 0, 0, cloudImg.getWidth(), cloudImg.getHeight(), null);
+			g2.drawImage(cloudImg, x, y, x + this.settings.getCurrentSizing().cloudWidth, y + this.settings.getCurrentSizing().cloudHeight, 0, 0, cloudImg.getWidth(), cloudImg.getHeight(), null);
 			
-			// draw text
-			g2.drawString(comment, x + 10, y + 10);
+			// draw string
+			g2.setFont(new Font("Arial", Font.BOLD, 20));
+			g2.drawString(comment, x + 90, y + 130);
 		}
 		else {
 			// TODO transparent draw

@@ -26,7 +26,7 @@ public class Sizing {
         this.menuPanelHeight = 200;
         
         this.frameWidth = this.waifuWidth + this.cloudWidth + 20;
-        this.frameHeight = 2 * this.cloudHeight + 20;
+        this.frameHeight = 2 * this.cloudHeight;
     }
     
     Sizing(int charWidth, int charHeight, int cloudWidth, int cloudHeight,

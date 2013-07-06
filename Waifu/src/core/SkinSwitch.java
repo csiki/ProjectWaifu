@@ -1,6 +1,7 @@
 package core;
 
 import display.SkinDisplay;
+import display.SkinPanel;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: SkinSwitch.java
@@ -15,10 +16,12 @@ public class SkinSwitch extends CounterAction {
     private int skin;
     private SkinDisplay skinDisplay;
     private SkinContainer skinContainer;
+    private SkinPanel skinPanel;
     
-    public SkinSwitch(int skinIndex, SkinDisplay skinDisplay, SkinContainer skinContainer) {
+    public SkinSwitch(int skinIndex, SkinDisplay skinDisplay, SkinContainer skinContainer, SkinPanel skinPanel) {
     	this.skinDisplay = skinDisplay;
     	this.skinContainer = skinContainer;
+    	this.skinPanel = skinPanel;
     	
     	this.setSkin(skinIndex);
     }
@@ -36,5 +39,6 @@ public class SkinSwitch extends CounterAction {
     
     public void trigger() {
     	this.skinDisplay.loadSkin(skinContainer.loadSkin(skin));
+    	this.skinPanel.repaint();
     }
 }

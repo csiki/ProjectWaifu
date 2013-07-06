@@ -139,7 +139,7 @@ public class WaifuBuilder {
 			e.printStackTrace();
 		}
 		
-		this.cloudCommentDisplay = new CloudCommentDisplay(cloudImg);
+		this.cloudCommentDisplay = new CloudCommentDisplay(this.settings, cloudImg);
 		// here setting the deafult sprite
 		this.skinDisplay = new SkinDisplay(this.settings, this.skinContainer.loadSkin(0));
 	}
@@ -173,10 +173,10 @@ public class WaifuBuilder {
 		this.menuPanel = new MenuPanel(wrenchImg, exitImg, this, skinOptionsDialog, aiOptionsDialog, settingsDialog);
 		
 		// skin panel
-		this.skinPanel = new SkinPanel(this.skinDisplay);
+		this.skinPanel = new SkinPanel(this.settings, this.skinDisplay);
 		
 		// cloud panel
-		this.cloudCommentPanel = new CloudCommentPanel(this.cloudCommentDisplay);
+		this.cloudCommentPanel = new CloudCommentPanel(this.settings, this.cloudCommentDisplay);
 	}
 	
 	private void buildCounterActionDialogs() {
@@ -187,7 +187,7 @@ public class WaifuBuilder {
 	
 	private void buildFactories() {
 		this.userActionFactory = new UserActionFactory(keyReader, timeChecker, highlightTracker);
-		this.counterActionFactory = new CounterActionFactory(skinContainer, skinDisplay, cloudCommentDisplay, cloudCommentPanel, inputBoxDialog, radioBtnDialog, checkBoxDialog);
+		this.counterActionFactory = new CounterActionFactory(skinContainer, skinDisplay, skinPanel, cloudCommentDisplay, cloudCommentPanel, inputBoxDialog, radioBtnDialog, checkBoxDialog);
 	}
 	
 	private void buildAI() {

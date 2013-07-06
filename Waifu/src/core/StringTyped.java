@@ -16,7 +16,7 @@ public class StringTyped extends UserAction {
     private boolean stringTyped;
     
     public StringTyped(String stringExpected, KeyReader keyReader) {
-    	this.stringExpected = stringExpected;
+    	this.stringExpected = stringExpected.toLowerCase();
     	this.keyReader = keyReader;
     	this.state = 0;
     	this.stringTyped = false;
@@ -27,8 +27,8 @@ public class StringTyped extends UserAction {
     }
     
     public void update() {
-    	char keyRead = Character.toChars(this.keyReader.getKeyTyped())[0];
-    	
+    	char keyRead = Character.toLowerCase(Character.toChars(this.keyReader.getKeyTyped())[0]);
+
     	if (keyRead == this.stringExpected.charAt(state)) {
     		++this.state;
     		if (this.state == this.stringExpected.length()) {

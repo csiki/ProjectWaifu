@@ -8,8 +8,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
-import behaviors.BahaviorExample;
 
+import behaviors.BehEx2;
+import behaviors.BehaviorExample;
 import core.Behavior;
 import misc.FileClassLoader;
 
@@ -75,7 +76,8 @@ public class BehaviorLoader implements Serializable {
     	}
     	
     	// TODO próba hozzáadása!
-    	bc.addBehavior(new BahaviorExample("pl"));
+    	bc.addBehavior(new BehaviorExample("pl"));
+    	bc.addBehavior(new BehEx2("pl2"));
     	
     	return bc;
     }

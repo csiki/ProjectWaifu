@@ -6,6 +6,7 @@ import display.InputBoxDialog;
 import display.RadioBtnDialog;
 import display.SkinDisplay;
 import display.CloudCommentDisplay;
+import display.SkinPanel;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: CounterActionFactory.java
@@ -19,6 +20,7 @@ public class CounterActionFactory {
 	
     private SkinContainer skinContainer;
     private SkinDisplay skinDisplay;
+    private SkinPanel skinPanel;
     private CloudCommentDisplay cloudCommentDisplay;
     private CloudCommentPanel cloudCommentPanel;
     private InputBoxDialog inputBoxDialog;
@@ -28,6 +30,7 @@ public class CounterActionFactory {
     public CounterActionFactory(
     		SkinContainer skinContainer,
     		SkinDisplay skinDisplay,
+    		SkinPanel skinPanel,
     		CloudCommentDisplay cloudCommentDisplay,
     		CloudCommentPanel cloudCommentPanel,
     		InputBoxDialog inputBoxDialog,
@@ -36,6 +39,7 @@ public class CounterActionFactory {
     {
     	this.skinContainer = skinContainer;
     	this.skinDisplay = skinDisplay;
+    	this.skinPanel = skinPanel;
     	this.cloudCommentDisplay = cloudCommentDisplay;
     	this.cloudCommentPanel = cloudCommentPanel;
     	this.inputBoxDialog = inputBoxDialog;
@@ -44,7 +48,7 @@ public class CounterActionFactory {
     }
     
     public SkinSwitch createSkinSwitch(int skinIndex) {
-    	return new SkinSwitch(skinIndex, skinDisplay, skinContainer);
+    	return new SkinSwitch(skinIndex, skinDisplay, skinContainer, skinPanel);
     }
     
     public CloudComment createCloudComment(String comment) {

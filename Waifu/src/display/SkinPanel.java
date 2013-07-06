@@ -19,11 +19,15 @@ public class SkinPanel extends JPanel {
 	
 	private static final long serialVersionUID = 1636142671454025185L;
 	
+	private Settings settings;
 	private ElementDisplay skinDisplay;
     
-	public SkinPanel(ElementDisplay skinDisplay) {
+	public SkinPanel(Settings settings, ElementDisplay skinDisplay) {
+		this.settings = settings;
 		this.skinDisplay = skinDisplay;
-		this.setPreferredSize(new Dimension(Settings.waifuWidth, Settings.waifuHeight));
+		
+		this.setPreferredSize(new Dimension(this.settings.getCurrentSizing().waifuWidth,
+				this.settings.getCurrentSizing().waifuHeight));
 	}
 	
 	@Override
