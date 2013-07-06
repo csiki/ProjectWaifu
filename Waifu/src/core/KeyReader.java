@@ -28,7 +28,7 @@ public class KeyReader extends Sensor {
 			@Override public void keyReleased(KeyEvent event) {
 				int keyCode = event.getVirtualKeyCode();
 
-				if (turnedOn && keyCode >= 65 && keyCode <= 90 && !(keyCode == KeyEvent.VK_C && event.isCtrlPressed())) {
+				if (turnedOn && !(keyCode == KeyEvent.VK_C && event.isCtrlPressed())) {
 					System.out.println(keyCode);
 					keyTyped = keyCode;
 					notifyAllSubs();

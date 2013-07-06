@@ -25,6 +25,10 @@ public class UserActionFactory {
     	return new KeyTyped(keyExpected, this.keyreader);
     }
     
+    public KeyTyped createKeyTyped(int keyExpectedUnicode) {
+    	return new KeyTyped(keyExpectedUnicode, this.keyreader);
+    }
+    
     /*public SoundChanged createSoundChanged(boolean soundStartExpected) {
     	return null;
     }*/

@@ -29,14 +29,22 @@ public class HighlightTracker extends Sensor implements Runnable, ClipboardOwner
     }
 	
 	private volatile String highlighted;
+	private String previous;
 	
     public HighlightTracker(String name) {
 		super(name);
 		this.highlighted = null;
+		this.previous = null;
 	}
     
     @Override
 	public void run() {
+    	
+    	try {
+			this.previous = this.getSelectedText(User32.INSTANCE, CustomUser32.INSTANCE);
+		} catch (Exception e) {
+			this.previous = null;
+		}
     	
 		while (this.turnedOn) {
 			
@@ -48,13 +56,14 @@ public class HighlightTracker extends Sensor implements Runnable, ClipboardOwner
 			}
 			
 			// set highlighted
-			if (selectedText != null) {
+			if (selectedText != null && !selectedText.equals(this.previous)) {
 				this.highlighted = selectedText;
+				this.previous = selectedText;
 				this.notifyAllSubs();
 			}
 			
 			try {
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
