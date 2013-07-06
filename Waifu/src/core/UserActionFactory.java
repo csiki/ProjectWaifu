@@ -13,7 +13,6 @@ public class UserActionFactory {
     private KeyReader keyreader;
     private TimeChecker timeChecker;
     private HighlightTracker highlightTracker;
-    //private SoundListener soundListener; // removed
     
     public UserActionFactory(KeyReader keyreader, TimeChecker timeChecker, HighlightTracker highlightTracker) {
     	this.keyreader = keyreader;
@@ -28,10 +27,6 @@ public class UserActionFactory {
     public KeyTyped createKeyTyped(int keyExpectedUnicode) {
     	return new KeyTyped(keyExpectedUnicode, this.keyreader);
     }
-    
-    /*public SoundChanged createSoundChanged(boolean soundStartExpected) {
-    	return null;
-    }*/
     
     public StringTyped createStringTyped(String stringExpected) {
     	return new StringTyped(stringExpected, this.keyreader);

@@ -21,6 +21,8 @@ public class SkinOptionsDialog extends JDialog {
 	public SkinOptionsDialog(SkinContainer skinContainer, JFrame parent) {
 		super(parent, true);
 		this.skinContainer = skinContainer;
+		
+		init();
 	}
 	
 	public void init() {

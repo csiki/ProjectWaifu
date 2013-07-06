@@ -169,7 +169,7 @@ public class SettingsDialog extends JDialog {
 	
 	private class OkAction extends AbstractAction {
 
-		private static final long serialVersionUID = 2718147188036426104L;
+		private static final long serialVersionUID = 4623275957298708592L;
 
 		public OkAction() {
 			putValue(NAME, "Ok");
@@ -196,9 +196,9 @@ public class SettingsDialog extends JDialog {
 	}
 	
 	private class CancelAction extends AbstractAction {
-
-		private static final long serialVersionUID = 5132265699678512529L;
 		
+		private static final long serialVersionUID = -6470808910237258184L;
+
 		public CancelAction() {
 			putValue(NAME, "Cancel");
 			putValue(SHORT_DESCRIPTION, ":(");

@@ -77,9 +77,9 @@ public class BehaviorLoader implements Serializable {
     	}
     	
     	// TODO próba hozzáadása!
-    	//bc.addBehavior(new BehaviorExample("pl"));
+    	bc.addBehavior(new BehaviorExample("pl"));
     	//bc.addBehavior(new BehEx2("pl2"));
-    	bc.addBehavior(new BehEx3("pl3"));
+    	//bc.addBehavior(new BehEx3("pl3"));
     	
     	return bc;
     }

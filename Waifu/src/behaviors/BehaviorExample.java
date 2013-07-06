@@ -35,13 +35,30 @@ public class BehaviorExample extends Behavior {
 
 	@Override
 	public void consequent(CounterActionFactory CAF) {
-
-		SkinSwitch sw = CAF.createSkinSwitch(5);
 		
-		CloudComment cc = CAF.createCloudComment("Type \"hi\"!");
+		CloudComment ccshort = CAF.createCloudComment("Type \"hi\"!");
+		CloudComment ccmedium = CAF.createCloudComment("Imma really confused on this one.. follow !");
+		CloudComment cclong = CAF.createCloudComment("This is the ignorant shit you like.. nigga fuck shit ass bitch.. The first thing I'm gonna do is free Seagal.");
 		
-		sw.trigger();
-		cc.trigger();
+		ccshort.trigger();
+		
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		ccmedium.trigger();
+		
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		cclong.trigger();
 	}
 
 }

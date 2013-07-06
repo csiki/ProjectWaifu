@@ -113,7 +113,7 @@ public class HighlightTracker extends Sensor implements Runnable, ClipboardOwner
         setClipboardText(before);
         
         // only return the text if it's not equal to the text that was on clipboard
-        if (before != highlightedText) {
+        if (!before.equals(highlightedText)) {
         	return highlightedText;
         }
         

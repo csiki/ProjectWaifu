@@ -31,12 +31,14 @@ public class TextHighlighted extends UserAction {
     	this.deactivate();
     	highlightedString = this.highlightTracker.getHighlightedText();
     	this.textHighlighted = true;
+    	this.behavior.notify(this);
     }
     
     public void activate(Behavior behavior) {
     	this.deactivate();
     	this.textHighlighted = false;
     	this.highlightedString = null;
+    	this.behavior = behavior;
     	this.highlightTracker.subscribe(this);
     }
     
