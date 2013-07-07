@@ -6,6 +6,7 @@ public class Sizing {
 	public int waifuHeight;
 	public int cloudWidth;
     public int cloudHeight;
+    public int cloudFontSize;
     public int menuElementWidth;
     public int menuElementHeight;
     public int menuElementFontSize;
@@ -19,6 +20,7 @@ public class Sizing {
     	this.waifuHeight = 400;
     	this.cloudWidth = 300;
     	this.cloudHeight = 250;
+    	this.cloudFontSize = 18;
         this.menuElementWidth = 100;
         this.menuElementHeight = 60;
         this.menuElementFontSize = 24;

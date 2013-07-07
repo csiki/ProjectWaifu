@@ -150,7 +150,7 @@ public class WaifuBuilder {
 	
 	private void buildDialogs() {
 		this.skinOptionsDialog = new SkinOptionsDialog(this.skinContainer, this.mainFrame.getFrame());
-		this.aiOptionsDialog = new AIOptionsDialog(this.behaviorContainer, this.behaviorLoader, this.settings);
+		this.aiOptionsDialog = new AIOptionsDialog(this.behaviorContainer, this.behaviorLoader, this.settings, this.mainFrame.getFrame());
 		this.settingsDialog = new SettingsDialog(this.settings, this.mainFrame.getFrame());
 	}
 	

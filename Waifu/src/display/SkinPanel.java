@@ -32,6 +32,7 @@ public class SkinPanel extends JPanel {
 	
 	@Override
 	public void paintComponent(Graphics g) {
+		this.setOpaque(false);
 		skinDisplay.paintComponent(g, 0, 0);
 	}
 }

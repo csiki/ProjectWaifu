@@ -34,6 +34,7 @@ public class CloudComment extends CounterAction {
     
     public void hide() {
     	this.cloudCommentDisplay.hideComment();
+    	this.cloudCommentPanel.setOpaque(false);
     	this.cloudCommentPanel.repaint();
     }
 }

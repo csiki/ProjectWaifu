@@ -12,6 +12,7 @@ import java.util.List;
 import behaviors.BehEx2;
 import behaviors.BehEx3;
 import behaviors.BehaviorExample;
+import behaviors.JyggaMyNigga;
 import core.Behavior;
 import misc.FileClassLoader;
 
@@ -77,9 +78,10 @@ public class BehaviorLoader implements Serializable {
     	}
     	
     	// TODO próba hozzáadása!
-    	bc.addBehavior(new BehaviorExample("pl"));
+    	//bc.addBehavior(new BehaviorExample("pl"));
     	//bc.addBehavior(new BehEx2("pl2"));
     	//bc.addBehavior(new BehEx3("pl3"));
+    	bc.addBehavior(new JyggaMyNigga("jygga"));
     	
     	return bc;
     }

@@ -11,9 +11,9 @@ import core.TimeReached;
 import core.UserAction;
 import core.UserActionFactory;
 
-public class BehaviorExample extends Behavior {
+public class JyggaMyNigga extends Behavior {
 
-	public BehaviorExample(String name) {
+	public JyggaMyNigga(String name) {
 		super(name);
 	}
 	
@@ -39,6 +39,7 @@ public class BehaviorExample extends Behavior {
 		CloudComment ccshort = CAF.createCloudComment("Type \"hi\"!");
 		CloudComment ccmedium = CAF.createCloudComment("Imma really confused on this one.. follow !");
 		CloudComment cclong = CAF.createCloudComment("This is the ignorant shit you like.. nigga fuck shit ass bitch.. The first thing I'm gonna do is free Seagal.");
+		SkinSwitch sw = CAF.createSkinSwitch(3);
 		
 		ccshort.trigger();
 		
@@ -50,6 +51,7 @@ public class BehaviorExample extends Behavior {
 		}
 		
 		ccmedium.trigger();
+		sw.trigger();
 		
 		try {
 			Thread.sleep(2000);
@@ -59,6 +61,17 @@ public class BehaviorExample extends Behavior {
 		}
 		
 		cclong.trigger();
+		sw.setSkin(7);
+		sw.trigger();
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		cclong.hide();
 	}
 
 }

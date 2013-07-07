@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 
 import core.BehaviorContainer;
 import core.BehaviorLoader;
@@ -30,7 +31,9 @@ public class AIOptionsDialog extends JDialog { // TODO no need for JDialog at th
     private JFileChooser chooser;
     private Settings settings;
     
-    public AIOptionsDialog(BehaviorContainer behContainer, BehaviorLoader behLoader, Settings settings) {
+    public AIOptionsDialog(BehaviorContainer behContainer, BehaviorLoader behLoader, Settings settings, JFrame frame) {
+    	super(frame);
+    	
     	this.behContainer = behContainer;
     	this.behLoader = behLoader;
     	this.settings = settings;
