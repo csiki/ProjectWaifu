@@ -109,6 +109,9 @@ public class WaifuBuilder {
 				this.skinContainer.addSkin(i-1, pathToSkins + "seibah" + i.toString() + ".png");
 			}
 		}
+		else {
+			this.skinContainer.init();
+		}
 	}
 	
 	private void loadBehaviors() {

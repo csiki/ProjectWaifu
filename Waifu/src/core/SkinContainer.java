@@ -28,12 +28,14 @@ public class SkinContainer implements Serializable {
     
     public SkinContainer() {
     	this.skins = new ArrayList<String>();
-    	this.loadedSkins = new HashMap<Integer, BufferedImage>();
-    	
     	// fill with null elements
     	for (int i = 0; i < Settings.maxNumOfSkins; ++i) {
     		this.skins.add(null);
     	}
+    }
+    
+    public void init() {
+    	this.loadedSkins = new HashMap<Integer, BufferedImage>();
     }
     
     public BufferedImage loadSkin(int index) {
@@ -68,6 +70,7 @@ public class SkinContainer implements Serializable {
     }
     
     public void addSkin(int index, String imgPath) {
+    	this.loadedSkins.remove(index);
     	this.skins.set(index, imgPath);
     }
     

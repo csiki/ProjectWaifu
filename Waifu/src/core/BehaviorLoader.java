@@ -103,7 +103,7 @@ public class BehaviorLoader implements Serializable {
     				
     			    String extension = behFile.getName().substring(i+1);
     			    
-    			    if (extension.equals("java")) {
+    			    if (extension.equals("class")) {
     			    	// add file behaviorFiles
     			    	behaviorFiles.add(behFile);
     			    }

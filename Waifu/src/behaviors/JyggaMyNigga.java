@@ -3,6 +3,7 @@ package behaviors;
 import core.Behavior;
 import core.CloudComment;
 import core.CounterActionFactory;
+import core.Emotion;
 import core.KeyTyped;
 import core.SkinSwitch;
 import core.StringTyped;
@@ -61,7 +62,7 @@ public class JyggaMyNigga extends Behavior {
 		}
 		
 		cclong.trigger();
-		sw.setSkin(7);
+		sw.setSkin(Emotion.angry.code);
 		sw.trigger();
 		
 		try {

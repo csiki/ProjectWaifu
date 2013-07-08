@@ -35,7 +35,7 @@ public class Settings implements Serializable {
     
     // static vars
     // TODO kicserélni Sizingra!!!
-    public final static int maxNumOfSkins = 100;
+    public final static int maxNumOfSkins = Emotion.values().length;
     public final static int waifuWidth = 300;
     public final static int waifuHeight = 400;
     public final static int cloudWidth = 300;
