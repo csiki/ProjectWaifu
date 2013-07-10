@@ -92,6 +92,8 @@ public class CheckBoxDialog extends JDialog {
 		super(parent, true);
 		this.settings = settings;
 		this.options = null;
+		
+		init();
 	}
 	
 	public void init() {
@@ -100,7 +102,12 @@ public class CheckBoxDialog extends JDialog {
 			return; // no options added
 		}
 		
-		setBounds(this.settings.getPosX() + 90, this.settings.getPosY() + 80, 150, 150);
+		int offsetX = (int) (Math.ceil((double) this.options.size() / 3.0) * 10);
+		int offsetY = (int) (Math.ceil((double) this.options.size() / 3.0) * 10);
+		
+		setBounds(this.settings.getPosX() + this.settings.getCurrentSizing().offsetInputDialogBoxX - offsetX,
+				this.settings.getPosY() + this.settings.getCurrentSizing().offsetInputDialogBoxY - offsetY,
+				150, 150);
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.getRootPane().setOpaque(false);
 		this.setUndecorated(true);
@@ -115,15 +122,15 @@ public class CheckBoxDialog extends JDialog {
 		checkBoxPane.setLayout(checkPanegridBagLayout);
 		checkBoxPane.setOpaque(false);
 		checkBoxPane.setBackground(new Color (0, 0, 0, 0));
-		checkBoxPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		checkBoxPane.setLayout(new GridBagLayout());
 		GridBagConstraints gbc_checkBoxPane = new GridBagConstraints();
-		gbc_checkBoxPane.anchor = GridBagConstraints.NORTH;
-		gbc_checkBoxPane.fill = GridBagConstraints.HORIZONTAL;
+		gbc_checkBoxPane.fill = GridBagConstraints.BOTH;
 		gbc_checkBoxPane.gridx = 1;
 		gbc_checkBoxPane.gridy = 1;
 		getContentPane().add(checkBoxPane, gbc_checkBoxPane);
 		
 		// checkbox grids
+		int x = 0;
 		int y = 0;
 		
 		for (JCheckBox cb : this.checkBoxes) {
@@ -131,16 +138,22 @@ public class CheckBoxDialog extends JDialog {
 			cb.setMargin(new Insets(3, 3, 3, 3));
 			GridBagConstraints gridBag = new GridBagConstraints();
 			gridBag.insets = new Insets(0, 0, 5, 0);
-			gridBag.gridx = 0;
+			gridBag.gridx = x;
 			gridBag.gridy = y;
 			checkBoxPane.add(cb, gridBag);
-			++y;
+
+			if (x == 2) {
+				x = -1;
+				++y;
+			}
+			++x;
 		}
 		
 		// clear
 		this.okButton.setEnabled(true);
 		this.cancelButton.setEnabled(true);
 		
+		// button pane
 		buttonPane.setOpaque(false);
 		buttonPane.setBackground(new Color (0, 0, 0, 0));
 		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));

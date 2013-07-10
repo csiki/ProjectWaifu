@@ -3,7 +3,10 @@ package display;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
+
 import javax.swing.JFrame;
+
 import core.Settings;
 
 //  @ Project		: ProjectWaifu
@@ -16,7 +19,8 @@ import core.Settings;
 public class MainFrame {
     
     private SkinPanel skinPanel;
-    private CloudCommentPanel cloudCommentPanel;
+    private CloudCommentPanel lowerCloudPanel;
+    private CloudCommentPanel upperCloudPanel;
     private MenuPanel menuPanel;
     private Settings settings;
     
@@ -47,27 +51,36 @@ public class MainFrame {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		frame.getContentPane().setLayout(gridBagLayout);
 		
+		// upper cloud panel gpc
+		GridBagConstraints upperCloudGBC = new GridBagConstraints();
+		upperCloudGBC.fill = GridBagConstraints.BOTH;
+		upperCloudGBC.gridwidth = 2;
+		upperCloudGBC.gridx = 0;
+		upperCloudGBC.gridy = 0;
+		upperCloudGBC.insets = new Insets(0,130,0,0);
+		frame.getContentPane().add(this.upperCloudPanel, upperCloudGBC);
+		
 		// skin panel gbc
 		GridBagConstraints skinGBC = new GridBagConstraints();
 		skinGBC.fill = GridBagConstraints.BOTH;
 		skinGBC.gridheight = 2;
 		skinGBC.gridx = 0;
-		skinGBC.gridy = 0;
+		skinGBC.gridy = 1;
 		frame.getContentPane().add(this.skinPanel, skinGBC);
 		
 		// menu panel gbc
 		GridBagConstraints menuGBC = new GridBagConstraints();
 		menuGBC.fill = GridBagConstraints.BOTH;
 		menuGBC.gridx = 1;
-		menuGBC.gridy = 0;
+		menuGBC.gridy = 1;
 		frame.getContentPane().add(this.menuPanel, menuGBC);
 		
-		// cloud comment panel gbc
-		GridBagConstraints cloudGBC = new GridBagConstraints();
-		cloudGBC.fill = GridBagConstraints.BOTH;
-		cloudGBC.gridx = 1;
-		cloudGBC.gridy = 1;
-		frame.getContentPane().add(this.cloudCommentPanel, cloudGBC);
+		// lower cloud panel gbc
+		GridBagConstraints lowerCloudGBC = new GridBagConstraints();
+		lowerCloudGBC.fill = GridBagConstraints.BOTH;
+		lowerCloudGBC.gridx = 1;
+		lowerCloudGBC.gridy = 2;
+		frame.getContentPane().add(this.lowerCloudPanel, lowerCloudGBC);
 		
 		// drag and drop
 		DragMouseListener dml = new DragMouseListener(this.frame, this.settings);
@@ -83,9 +96,10 @@ public class MainFrame {
 		return this.frame;
 	}
 	
-	public void providePanels(SkinPanel skinPanel, CloudCommentPanel cloudCommentPanel, MenuPanel menuPanel) {
+	public void providePanels(SkinPanel skinPanel, CloudCommentPanel lowerCloudPanel, CloudCommentPanel upperCloudPanel, MenuPanel menuPanel) {
 		this.skinPanel = skinPanel;
-		this.cloudCommentPanel = cloudCommentPanel;
+		this.lowerCloudPanel = lowerCloudPanel;
+		this.upperCloudPanel = upperCloudPanel;
 		this.menuPanel = menuPanel;
 	}
 }

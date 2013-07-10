@@ -2,6 +2,9 @@ package core;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import display.CloudCommentDisplay;
+import display.CloudCommentPanel;
 import display.RadioBtnDialog;
 
 //  @ Project		: ProjectWaifu
@@ -34,11 +37,23 @@ public class RadioBtn extends CounterAction {
     private RadioBtnDialog radioBtnDialog;
     
     /**
+     * For displaying lower cloud.
+     */
+    private CloudCommentDisplay cloudCommentDisplay;
+    
+    /**
+     * For displaying lower cloud.
+     */
+    private CloudCommentPanel cloudCommentPanel;
+    
+    /**
      * Constructor of RadioBtn.
      * @param radioBtnDialog
      */
-    public RadioBtn(RadioBtnDialog radioBtnDialog) {
+    public RadioBtn(RadioBtnDialog radioBtnDialog, CloudCommentDisplay cloudCommentDisplay, CloudCommentPanel cloudCommentPanel) {
     	this.radioBtnDialog = radioBtnDialog;
+    	this.cloudCommentDisplay = cloudCommentDisplay;
+    	this.cloudCommentPanel = cloudCommentPanel;
     	this.options = new ArrayList<String>();
     	this.selectedIndex = -1;
     }
@@ -81,8 +96,18 @@ public class RadioBtn extends CounterAction {
      * Shows window including the radio buttons for the user, waits till input is given.
      */
     public void trigger() {
+    	// popup lower cloud
+    	this.cloudCommentDisplay.popupComment("");
+    	this.cloudCommentPanel.repaint();
+    	
+    	// popup input
     	this.radioBtnDialog.addOptions(options);
     	this.radioBtnDialog.init();
     	this.selectedIndex = this.radioBtnDialog.getResponse();
+    	
+    	// hide lower cloud
+    	this.cloudCommentDisplay.hideComment();
+    	this.cloudCommentPanel.setOpaque(false);
+    	this.cloudCommentPanel.repaint();
     }
 }

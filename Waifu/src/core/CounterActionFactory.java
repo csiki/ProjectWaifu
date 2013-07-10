@@ -33,14 +33,24 @@ public class CounterActionFactory {
     private SkinPanel skinPanel;
     
     /**
-     * CloudCommentDisplay instance for creating CloudComment instances.
+     * CloudCommentDisplay instance for creating (lower) CloudComment instances.
      */
-    private CloudCommentDisplay cloudCommentDisplay;
+    private CloudCommentDisplay lowerCloudDisplay;
     
     /**
-     * CloudCommentPanel instance for creating CloudComment instances.
+     * CloudCommentDisplay instance for creating (upper) CloudComment instances.
      */
-    private CloudCommentPanel cloudCommentPanel;
+    private CloudCommentDisplay upperCloudDisplay;
+    
+    /**
+     * CloudCommentPanel instance for creating (lower) CloudComment instances.
+     */
+    private CloudCommentPanel lowerCloudPanel;
+    
+    /**
+     * CloudCommentPanel instance for creating (upper) CloudComment instances.
+     */
+    private CloudCommentPanel upperCloudPanel;
     
     /**
      * InputBoxDialog instance for creating InputBox instances.
@@ -72,8 +82,10 @@ public class CounterActionFactory {
     		SkinContainer skinContainer,
     		SkinDisplay skinDisplay,
     		SkinPanel skinPanel,
-    		CloudCommentDisplay cloudCommentDisplay,
-    		CloudCommentPanel cloudCommentPanel,
+    		CloudCommentDisplay lowerCloudDisplay,
+    		CloudCommentPanel lowerCloudPanel,
+    		CloudCommentDisplay upperCloudDisplay,
+    		CloudCommentPanel upperCloudPanel,
     		InputBoxDialog inputBoxDialog,
     		RadioBtnDialog radioBtnDialog,
     		CheckBoxDialog checkBoxDialog)
@@ -81,8 +93,10 @@ public class CounterActionFactory {
     	this.skinContainer = skinContainer;
     	this.skinDisplay = skinDisplay;
     	this.skinPanel = skinPanel;
-    	this.cloudCommentDisplay = cloudCommentDisplay;
-    	this.cloudCommentPanel = cloudCommentPanel;
+    	this.lowerCloudDisplay = lowerCloudDisplay;
+    	this.upperCloudDisplay = upperCloudDisplay;
+    	this.lowerCloudPanel = lowerCloudPanel;
+    	this.upperCloudPanel = upperCloudPanel;
     	this.inputBoxDialog = inputBoxDialog;
     	this.radioBtnDialog = radioBtnDialog;
     	this.checkBoxDialog = checkBoxDialog;
@@ -103,7 +117,7 @@ public class CounterActionFactory {
      * @return created CloudComment instance
      */
     public CloudComment createCloudComment(String comment) {
-    	return new CloudComment(comment, cloudCommentDisplay, cloudCommentPanel);
+    	return new CloudComment(comment, upperCloudDisplay, upperCloudPanel);
     }
     
     /**
@@ -111,7 +125,7 @@ public class CounterActionFactory {
      * @return created InputBox instance.
      */
     public InputBox createInputBox() {
-    	return new InputBox(this.inputBoxDialog);
+    	return new InputBox(this.inputBoxDialog, lowerCloudDisplay, lowerCloudPanel);
     }
     
     /**
@@ -119,7 +133,7 @@ public class CounterActionFactory {
      * @return created RadioBtn instance.
      */
     public RadioBtn createRadioBtn() {
-    	return new RadioBtn(this.radioBtnDialog);
+    	return new RadioBtn(this.radioBtnDialog, lowerCloudDisplay, lowerCloudPanel);
     }
     
     /**
@@ -128,6 +142,6 @@ public class CounterActionFactory {
      * @return
      */
     public CheckBox createCheckBox() {
-    	return new CheckBox(this.checkBoxDialog);
+    	return new CheckBox(this.checkBoxDialog, lowerCloudDisplay, lowerCloudPanel);
     }
 }

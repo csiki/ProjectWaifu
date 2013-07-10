@@ -28,6 +28,7 @@ public class CloudCommentPanel extends JPanel {
 	
 	@Override
 	public void paintComponent(Graphics g) {
+		this.setOpaque(false);
 		this.cloudCommentDisplay.paintComponent(g, 0, 0);
 	}
 }

@@ -57,7 +57,9 @@ public class InputBoxDialog extends JDialog {
 	
 	public void init() {
 		textField.setColumns(10);
-		this.setBounds(settings.getPosX() + 90, settings.getPosY() + 80, 150, 150);
+		setBounds(this.settings.getPosX() + this.settings.getCurrentSizing().offsetInputDialogBoxX + 18,
+				this.settings.getPosY() + this.settings.getCurrentSizing().offsetInputDialogBoxY,
+				150, 150);
 		this.setPreferredSize(new Dimension(150, 150));
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.getRootPane().setOpaque(false);

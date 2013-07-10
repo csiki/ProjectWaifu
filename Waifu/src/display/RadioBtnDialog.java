@@ -104,7 +104,12 @@ public class RadioBtnDialog extends JDialog {
 			return; // no options added
 		}
 		
-		setBounds(this.settings.getPosX() + 90, this.settings.getPosY() + 80, 150, 150);
+		int offsetX = (int) (Math.ceil((double) this.options.size() / 3.0) * 10);
+		int offsetY = (int) (Math.ceil((double) this.options.size() / 3.0) * 10);
+		
+		setBounds(this.settings.getPosX() + this.settings.getCurrentSizing().offsetInputDialogBoxX - offsetX,
+				this.settings.getPosY() + this.settings.getCurrentSizing().offsetInputDialogBoxY - offsetY,
+				150, 150);
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.getRootPane().setOpaque(false);
 		this.setUndecorated(true);
@@ -119,25 +124,32 @@ public class RadioBtnDialog extends JDialog {
 		radioBtnPane.setLayout(checkPanegridBagLayout);
 		radioBtnPane.setOpaque(false);
 		radioBtnPane.setBackground(new Color (0, 0, 0, 0));
-		radioBtnPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		radioBtnPane.setLayout(new GridBagLayout());
 		GridBagConstraints gbc_checkBoxPane = new GridBagConstraints();
 		gbc_checkBoxPane.anchor = GridBagConstraints.NORTH;
-		gbc_checkBoxPane.fill = GridBagConstraints.HORIZONTAL;
+		gbc_checkBoxPane.fill = GridBagConstraints.BOTH;
 		gbc_checkBoxPane.gridx = 1;
 		gbc_checkBoxPane.gridy = 1;
 		getContentPane().add(radioBtnPane, gbc_checkBoxPane);
 		
 		// radio btn grids
+		int x = 0;
 		int y = 0;
+		
 		for (JRadioButton rb : this.radioBtns) {
 			rb.setBorderPainted(true);
 			rb.setMargin(new Insets(3, 3, 3, 3));
 			GridBagConstraints gridBag = new GridBagConstraints();
 			gridBag.insets = new Insets(0, 0, 5, 0);
-			gridBag.gridx = 1;
+			gridBag.gridx = x;
 			gridBag.gridy = y;
 			radioBtnPane.add(rb, gridBag);
-			++y;
+
+			if (x == 2) {
+				x = -1;
+				++y;
+			}
+			++x;
 		}
 		
 		// clear

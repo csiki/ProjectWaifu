@@ -1,5 +1,7 @@
 package core;
 
+import display.CloudCommentDisplay;
+import display.CloudCommentPanel;
 import display.InputBoxDialog;
 
 //  @ Project		: ProjectWaifu
@@ -27,11 +29,23 @@ public class InputBox extends CounterAction {
     private InputBoxDialog inputBoxDialog;
     
     /**
+     * For displaying lower cloud.
+     */
+    private CloudCommentDisplay cloudCommentDisplay;
+    
+    /**
+     * For displaying lower cloud.
+     */
+    private CloudCommentPanel cloudCommentPanel;
+    
+    /**
      * Constructor of InputBox.
      * @param inputBoxDialog
      */
-    public InputBox(InputBoxDialog inputBoxDialog) {
+    public InputBox(InputBoxDialog inputBoxDialog, CloudCommentDisplay cloudCommentDisplay, CloudCommentPanel cloudCommentPanel) {
     	this.inputBoxDialog = inputBoxDialog;
+    	this.cloudCommentDisplay = cloudCommentDisplay;
+    	this.cloudCommentPanel = cloudCommentPanel;
     	this.input = null;
     }
     
@@ -48,7 +62,17 @@ public class InputBox extends CounterAction {
      * Shows the input box window for the user, waits till input is given.
      */
     public void trigger() {
+    	// popup lower cloud
+    	this.cloudCommentDisplay.popupComment("");
+    	this.cloudCommentPanel.repaint();
+    	
+    	// popup input
     	this.inputBoxDialog.init();
     	this.input = this.inputBoxDialog.getInput();
+    	
+    	// hide lower cloud
+    	this.cloudCommentDisplay.hideComment();
+    	this.cloudCommentPanel.setOpaque(false);
+    	this.cloudCommentPanel.repaint();
     }
 }

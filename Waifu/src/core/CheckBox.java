@@ -2,7 +2,10 @@ package core;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import display.CheckBoxDialog;
+import display.CloudCommentDisplay;
+import display.CloudCommentPanel;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: CheckBox.java
@@ -34,11 +37,23 @@ public class CheckBox extends CounterAction {
     private CheckBoxDialog checkBoxDialog;
     
     /**
+     * For displaying lower cloud.
+     */
+    private CloudCommentDisplay cloudCommentDisplay;
+    
+    /**
+     * For displaying lower cloud.
+     */
+    private CloudCommentPanel cloudCommentPanel;
+    
+    /**
      * Constructor of CheckBox.
      * @param checkBoxDialog
      */
-    public CheckBox(CheckBoxDialog checkBoxDialog) {
+    public CheckBox(CheckBoxDialog checkBoxDialog, CloudCommentDisplay cloudCommentDisplay, CloudCommentPanel cloudCommentPanel) {
     	this.checkBoxDialog = checkBoxDialog;
+    	this.cloudCommentDisplay = cloudCommentDisplay;
+    	this.cloudCommentPanel = cloudCommentPanel;
     	this.options = new ArrayList<String>();
     	this.selectedIndexes = new ArrayList<Integer>();
     }
@@ -99,8 +114,18 @@ public class CheckBox extends CounterAction {
      * Shows window including the check boxes for the user, waits till input is given.
      */
     public void trigger() {
+    	// popup lower cloud
+    	this.cloudCommentDisplay.popupComment("");
+    	this.cloudCommentPanel.repaint();
+    	
+    	// popup input
     	this.checkBoxDialog.addOptions(options);
     	this.checkBoxDialog.init();
     	this.selectedIndexes = this.checkBoxDialog.getResponse();
+    	
+    	// hide lower cloud
+    	this.cloudCommentDisplay.hideComment();
+    	this.cloudCommentPanel.setOpaque(false);
+    	this.cloudCommentPanel.repaint();
     }
 }

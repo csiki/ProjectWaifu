@@ -21,8 +21,15 @@ public class AfterDayConversation extends Behavior {
 	@Override
 	public void consequent(CounterActionFactory CAF) {
 		CloudComment cl = CAF.createCloudComment("zsíros lesz ez haver !!!");
+		InputBox ib = CAF.createInputBox();
+		RadioBtn rb = CAF.createRadioBtn();
+		CheckBox cb = CAF.createCheckBox();
 		
 		cl.trigger();
+		rb.addOption("egyik");
+		rb.addOption("masik");
+		rb.addOption("harmadik");
+		ib.trigger();
 	}
 
 }

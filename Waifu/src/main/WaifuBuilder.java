@@ -33,12 +33,14 @@ public class WaifuBuilder {
 	private AIOptionsDialog aiOptionsDialog;
 	
 	// panels
-	private CloudCommentPanel cloudCommentPanel;
+	private CloudCommentPanel lowerCloudCommentPanel;
+	private CloudCommentPanel upperCloudCommentPanel;
 	private MenuPanel menuPanel;
 	private SkinPanel skinPanel;
 	
 	// display elements
-	private CloudCommentDisplay cloudCommentDisplay;
+	private CloudCommentDisplay lowerCloudDisplay;
+	private CloudCommentDisplay upperCloudDisplay;
 	private SkinDisplay skinDisplay;
 	
 	// mainframe
@@ -64,7 +66,7 @@ public class WaifuBuilder {
 		this.buildDialogs();
 		
 		this.buildPanels();
-		this.mainFrame.providePanels(skinPanel, cloudCommentPanel, menuPanel);
+		this.mainFrame.providePanels(skinPanel, lowerCloudCommentPanel, upperCloudCommentPanel, menuPanel);
 		
 		this.buildCounterActionDialogs();
 		this.buildFactories();
@@ -132,16 +134,20 @@ public class WaifuBuilder {
 	private void buildDisplays() {
 		
 		// load image
-		File cloudImgFile = new File("img" + java.io.File.separator + "chatbubble.png");
-		BufferedImage cloudImg = null;
+		File upperCloudImgFile = new File("img" + java.io.File.separator + "speechbubble.png");
+		File lowerCloudImgFile = new File("img" + java.io.File.separator + "chatbubble.png");
+		BufferedImage upperCloudImg = null;
+		BufferedImage lowerCloudImg = null;
 		
 		try {
-			cloudImg = ImageIO.read(cloudImgFile);
+			upperCloudImg = ImageIO.read(upperCloudImgFile);
+			lowerCloudImg = ImageIO.read(lowerCloudImgFile);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		this.cloudCommentDisplay = new CloudCommentDisplay(this.settings, cloudImg);
+		this.lowerCloudDisplay = new CloudCommentDisplay(this.settings, lowerCloudImg);
+		this.upperCloudDisplay = new CloudCommentDisplay(this.settings, upperCloudImg);
 		// here setting the deafult sprite
 		this.skinDisplay = new SkinDisplay(this.settings, this.skinContainer.loadSkin(0));
 	}
@@ -178,7 +184,8 @@ public class WaifuBuilder {
 		this.skinPanel = new SkinPanel(this.settings, this.skinDisplay);
 		
 		// cloud panel
-		this.cloudCommentPanel = new CloudCommentPanel(this.settings, this.cloudCommentDisplay);
+		this.lowerCloudCommentPanel = new CloudCommentPanel(this.settings, this.lowerCloudDisplay);
+		this.upperCloudCommentPanel = new CloudCommentPanel(this.settings, this.upperCloudDisplay);
 	}
 	
 	private void buildCounterActionDialogs() {
@@ -189,7 +196,7 @@ public class WaifuBuilder {
 	
 	private void buildFactories() {
 		this.userActionFactory = new UserActionFactory(keyReader, timeChecker, highlightTracker);
-		this.counterActionFactory = new CounterActionFactory(skinContainer, skinDisplay, skinPanel, cloudCommentDisplay, cloudCommentPanel, inputBoxDialog, radioBtnDialog, checkBoxDialog);
+		this.counterActionFactory = new CounterActionFactory(skinContainer, skinDisplay, skinPanel, lowerCloudDisplay, lowerCloudCommentPanel, upperCloudDisplay, upperCloudCommentPanel, inputBoxDialog, radioBtnDialog, checkBoxDialog);
 	}
 	
 	private void buildAI() {
