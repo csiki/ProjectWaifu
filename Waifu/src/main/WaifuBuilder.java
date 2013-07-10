@@ -1,13 +1,13 @@
 package main;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.imageio.ImageIO;
-
+import javax.swing.UIManager;
 import core.*;
 import display.*;
 
@@ -52,7 +52,8 @@ public class WaifuBuilder {
 	private SkinContainer skinContainer;
 	
 	public void build() {
-		
+
+		this.setUIstyle();
 		this.loadSettings();
 		this.loadSkins();
 		this.loadBehaviors();
@@ -68,21 +69,18 @@ public class WaifuBuilder {
 		this.buildCounterActionDialogs();
 		this.buildFactories();
 		this.buildAI();
-		this.provideAItoBehaviors();
+		this.provideAItoOthers();
 		
 	}
 	
 	public void start() {
 		this.mainFrame.initialize();
 		
-		// start behaviors // TODO ezt majd áttenni AIba !
-		for (int i = 0; i < this.behaviorContainer.getNumOfBehaviors(); ++i) {
-			this.behaviorContainer.getBehavior(i).condition(userActionFactory);
-		}
+		this.ai.newBehaviorsLoaded();
 	}
 	
 	public void exit() {
-		this.mainFrame.getFrame().dispose(); // TODO
+		this.mainFrame.getFrame().dispose();
 		
 		// stop extra threads
 		this.highlightTracker.turnOff();
@@ -105,8 +103,8 @@ public class WaifuBuilder {
 			this.skinContainer = new SkinContainer();
 			
 			String pathToSkins = "skins" + java.io.File.separator + "default" + java.io.File.separator;
-			for (Integer i = 1; i <= 10; ++i) {
-				this.skinContainer.addSkin(i-1, pathToSkins + "seibah" + i.toString() + ".png");
+			for (Integer i = 0; i < 9; ++i) {
+				this.skinContainer.addSkin(i, pathToSkins + i.toString() + ".png");
 			}
 		}
 		else {
@@ -136,6 +134,7 @@ public class WaifuBuilder {
 		// load image
 		File cloudImgFile = new File("img" + java.io.File.separator + "chatbubble.png");
 		BufferedImage cloudImg = null;
+		
 		try {
 			cloudImg = ImageIO.read(cloudImgFile);
 		} catch (IOException e) {
@@ -173,7 +172,7 @@ public class WaifuBuilder {
 		}
 		
 		// load menu panel
-		this.menuPanel = new MenuPanel(wrenchImg, exitImg, this, skinOptionsDialog, aiOptionsDialog, settingsDialog);
+		this.menuPanel = new MenuPanel(settings, wrenchImg, exitImg, this, skinOptionsDialog, aiOptionsDialog, settingsDialog);
 		
 		// skin panel
 		this.skinPanel = new SkinPanel(this.settings, this.skinDisplay);
@@ -183,9 +182,9 @@ public class WaifuBuilder {
 	}
 	
 	private void buildCounterActionDialogs() {
-		this.checkBoxDialog = new CheckBoxDialog(this.mainFrame.getFrame());
-		this.inputBoxDialog = new InputBoxDialog(this.mainFrame.getFrame());
-		this.radioBtnDialog = new RadioBtnDialog(this.mainFrame.getFrame());
+		this.checkBoxDialog = new CheckBoxDialog(this.settings, this.mainFrame.getFrame());
+		this.inputBoxDialog = new InputBoxDialog(this.settings, this.mainFrame.getFrame());
+		this.radioBtnDialog = new RadioBtnDialog(this.settings, this.mainFrame.getFrame());
 	}
 	
 	private void buildFactories() {
@@ -202,11 +201,19 @@ public class WaifuBuilder {
 		this.ai = new AI(sensors, behaviorContainer, userActionFactory, counterActionFactory);
 	}
 	
-	private void provideAItoBehaviors() {
+	private void provideAItoOthers() {
 		
+		// to behaviors
 		for (int i = 0; i < this.behaviorContainer.getNumOfBehaviors(); ++i) {
 			this.behaviorContainer.getBehavior(i).provideAI(this.ai);
 		}
 		
+		// to AI options
+		this.aiOptionsDialog.provideAI(this.ai);
+	}
+	
+	private void setUIstyle() {
+		UIManager.put("MenuItem.selectionBackground", new Color(47, 105, 202));
+		UIManager.put("MenuItem.selectionForeground", Color.WHITE);
 	}
 }

@@ -4,8 +4,11 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
+import core.Settings;
+import core.Sizing;
 import main.WaifuBuilder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -26,6 +29,7 @@ public class MenuPanel extends JPanel {
     private BufferedImage exitIcon;
     private WaifuBuilder exitInterface;
     private JPopupMenu popupMenu;
+    private Settings settings;
     
     private CustomMenuItem skinOpMI;
     private CustomMenuItem settingsMI;
@@ -35,8 +39,9 @@ public class MenuPanel extends JPanel {
     AIOptionsDialog aiOptionsDialog;
     SettingsDialog settingsDialog;
     
-    public MenuPanel(BufferedImage settingsIcon, BufferedImage exitIcon, WaifuBuilder exitInterface,
+    public MenuPanel(Settings settings, BufferedImage settingsIcon, BufferedImage exitIcon, WaifuBuilder exitInterface,
     		final SkinOptionsDialog skinOptionsDialog, final AIOptionsDialog aiOptionsDialog, final SettingsDialog settingsDialog) {
+    	this.settings = settings;
     	this.settingsIcon = settingsIcon;
     	this.exitIcon = exitIcon;
     	this.exitInterface = exitInterface;
@@ -44,17 +49,21 @@ public class MenuPanel extends JPanel {
 		this.aiOptionsDialog = aiOptionsDialog;
 		this.settingsDialog = settingsDialog;
     	
-    	this.setPreferredSize(new Dimension(300, 200)); // TODO set to sizing
+		Sizing currentSizing = this.settings.getCurrentSizing();
+    	this.setPreferredSize(new Dimension(currentSizing.menuPanelWidth, currentSizing.menuPanelHeight));
     	
-    	// popupmenu
+    	// popup menu
     	this.popupMenu = new JPopupMenu();
-    	this.skinOpMI = new CustomMenuItem("Skin options");
-    	this.settingsMI = new CustomMenuItem("Settings..");
-    	this.aiOpMI = new CustomMenuItem("A.I. options");
+    	this.skinOpMI = new CustomMenuItem(currentSizing, "Skin options");
+    	this.settingsMI = new CustomMenuItem(currentSizing, "Settings..");
+    	this.aiOpMI = new CustomMenuItem(currentSizing, "A.I. options");
     	
     	this.popupMenu.add(this.skinOpMI);
     	this.popupMenu.add(this.settingsMI);
     	this.popupMenu.add(this.aiOpMI);
+    	
+    	// popup style
+    	this.popupMenu.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
     	
     	// popupmenu elements mouse listeners
     	this.skinOpMI.addMouseListener(new MouseAdapter() {
@@ -83,7 +92,6 @@ public class MenuPanel extends JPanel {
     }
     
     public void exitClicked() {
-    	// TODO
     	this.exitInterface.exit();
     }
     

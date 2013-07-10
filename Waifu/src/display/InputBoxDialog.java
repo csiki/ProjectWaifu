@@ -15,12 +15,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.JTextField;
+import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
+import core.Settings;
 
 public class InputBoxDialog extends JDialog {
 
@@ -33,6 +35,7 @@ public class InputBoxDialog extends JDialog {
 	
 	private int result = -1;
 	private String input;
+	private Settings settings;
 	private final Action okAction = new OkAction();
 	private final Action cancelAction = new CancelAction();
 	
@@ -47,13 +50,15 @@ public class InputBoxDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public InputBoxDialog(JFrame parent) {
+	public InputBoxDialog(Settings settings, JFrame parent) {
 		super(parent, true);
+		this.settings = settings;
 	}
 	
 	public void init() {
 		textField.setColumns(10);
-		setBounds(100, 100, 150, 150);
+		this.setBounds(settings.getPosX() + 90, settings.getPosY() + 80, 150, 150);
+		this.setPreferredSize(new Dimension(150, 150));
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.getRootPane().setOpaque(false);
 		this.setUndecorated(true);

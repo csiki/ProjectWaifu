@@ -6,9 +6,15 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+
+//@ Project			: ProjectWaifu
+//@ File Name		: SkinOptionsSkinPanel.java
+//@ Date			: 2013.07.02.
+//@ Author			: csiki
+//@ Copyright		: All rights reserved
+
 
 public class SkinOptionsSkinPanel extends JPanel {
 

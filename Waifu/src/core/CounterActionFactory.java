@@ -15,18 +15,59 @@ import display.SkinPanel;
 //  @ Copyright		: All rights reserved
 
 
-
 public class CounterActionFactory {
 	
+	/**
+	 * SkinContainer instance for creating SkinSwitch instances.
+	 */
     private SkinContainer skinContainer;
+    
+    /**
+     * SkinDisplay instance for creating SkinSwitch instances.
+     */
     private SkinDisplay skinDisplay;
+    
+    /**
+     * SkinPanel instance for creating SkinSwitch instances.
+     */
     private SkinPanel skinPanel;
+    
+    /**
+     * CloudCommentDisplay instance for creating CloudComment instances.
+     */
     private CloudCommentDisplay cloudCommentDisplay;
+    
+    /**
+     * CloudCommentPanel instance for creating CloudComment instances.
+     */
     private CloudCommentPanel cloudCommentPanel;
+    
+    /**
+     * InputBoxDialog instance for creating InputBox instances.
+     */
     private InputBoxDialog inputBoxDialog;
+    
+    /**
+     * RadioBtnDialog instance for creating RadioBtn instances.
+     */
     private RadioBtnDialog radioBtnDialog;
+    
+    /**
+     * CheckBoxDialog instance for creating CheckBox instances.
+     */
     private CheckBoxDialog checkBoxDialog;
     
+    /**
+     * Constructor of CounterActionFactory.
+     * @param skinContainer
+     * @param skinDisplay
+     * @param skinPanel
+     * @param cloudCommentDisplay
+     * @param cloudCommentPanel
+     * @param inputBoxDialog
+     * @param radioBtnDialog
+     * @param checkBoxDialog
+     */
     public CounterActionFactory(
     		SkinContainer skinContainer,
     		SkinDisplay skinDisplay,
@@ -47,22 +88,45 @@ public class CounterActionFactory {
     	this.checkBoxDialog = checkBoxDialog;
     }
     
+    /**
+     * Creates a SkinSwitch instance.
+     * @param skinIndex index of the skin to switch to (use Emotion.XY.code).
+     * @return created SkinSwitch instance
+     */
     public SkinSwitch createSkinSwitch(int skinIndex) {
     	return new SkinSwitch(skinIndex, skinDisplay, skinContainer, skinPanel);
     }
     
+    /**
+     * Creates a CloudComment instance.
+     * @param comment the text to show in the cloud.
+     * @return created CloudComment instance
+     */
     public CloudComment createCloudComment(String comment) {
     	return new CloudComment(comment, cloudCommentDisplay, cloudCommentPanel);
     }
     
+    /**
+     * Creates an InputBox instance.
+     * @return created InputBox instance.
+     */
     public InputBox createInputBox() {
     	return new InputBox(this.inputBoxDialog);
     }
     
+    /**
+     * Creates a RadioBtn instance.
+     * @return created RadioBtn instance.
+     */
     public RadioBtn createRadioBtn() {
     	return new RadioBtn(this.radioBtnDialog);
     }
     
+    /**
+     * Creates a CheckBox instance.
+     * created CheckBox instance.
+     * @return
+     */
     public CheckBox createCheckBox() {
     	return new CheckBox(this.checkBoxDialog);
     }

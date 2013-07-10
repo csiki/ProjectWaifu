@@ -12,8 +12,7 @@ public class Main {
 		WaifuBuilder waifu = new WaifuBuilder();
 		
 		waifu.build();
-		System.out.println("builded");
 		waifu.start();
-		System.out.println("started");
+		
 	}
 }

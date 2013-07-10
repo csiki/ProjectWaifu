@@ -2,9 +2,7 @@ package display;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
-
 import javax.swing.JPanel;
-
 import core.Settings;
 
 //  @ Project		: ProjectWaifu
@@ -12,7 +10,6 @@ import core.Settings;
 //  @ Date			: 2013.07.02.
 //  @ Author		: csiki
 //  @ Copyright		: All rights reserved
-
 
 
 public class CloudCommentPanel extends JPanel {

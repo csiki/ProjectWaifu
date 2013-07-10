@@ -1,13 +1,11 @@
 package display;
 
-import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
-
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-
+import core.AI;
 import core.BehaviorContainer;
 import core.BehaviorLoader;
 import core.Serializer;
@@ -21,8 +19,7 @@ import core.Settings;
 //  @ Copyright		: All rights reserved
 
 
-
-public class AIOptionsDialog extends JDialog { // TODO no need for JDialog at the moment
+public class AIOptionsDialog extends JDialog {
 	
 	private static final long serialVersionUID = -9028400984896993344L;
 	
@@ -30,6 +27,7 @@ public class AIOptionsDialog extends JDialog { // TODO no need for JDialog at th
     private BehaviorLoader behLoader;
     private JFileChooser chooser;
     private Settings settings;
+    private AI ai;
     
     public AIOptionsDialog(BehaviorContainer behContainer, BehaviorLoader behLoader, Settings settings, JFrame frame) {
     	super(frame);
@@ -49,11 +47,13 @@ public class AIOptionsDialog extends JDialog { // TODO no need for JDialog at th
     	            // wrong
     	            return;
     	        }
-    	        else
+    	        else {
     	            super.approveSelection();
+    	        }
     	    }
     	};
-    	chooser.setFileSelectionMode( JFileChooser.FILES_AND_DIRECTORIES );
+    	
+    	this.chooser.setFileSelectionMode( JFileChooser.FILES_AND_DIRECTORIES );
     	this.setVisible(false);
     }
     
@@ -73,9 +73,14 @@ public class AIOptionsDialog extends JDialog { // TODO no need for JDialog at th
     		this.behContainer.clearBehaviors();
     		this.behLoader.loadBehaviors(behContainer);
     		this.settings.setBehaviorsPath(path);
+    		this.ai.newBehaviorsLoaded();
     		
     		// serialize settings
     		Serializer.serialize(null, settings, "settings.waifu");
     	}
 	}
+    
+    public void provideAI(AI ai) {
+    	this.ai = ai;
+    }
 }

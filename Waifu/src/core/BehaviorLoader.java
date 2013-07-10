@@ -8,22 +8,14 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
-
-import behaviors.BehEx2;
-import behaviors.BehEx3;
-import behaviors.BehaviorExample;
-import behaviors.JyggaMyNigga;
 import core.Behavior;
 import misc.FileClassLoader;
-
-import javax.tools.*;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: BehaviorLoader.java
 //  @ Date			: 2013.07.02.
 //  @ Author		: csiki
 //  @ Copyright		: All rights reserved
-
 
 
 public class BehaviorLoader implements Serializable {
@@ -41,17 +33,6 @@ public class BehaviorLoader implements Serializable {
     
     public BehaviorContainer loadBehaviors(BehaviorContainer bc) {
     	
-    	// TODO ez még a compileos verzió
-    	/*File behFile = new File(behSource+behPath);
-    	if (behFile.exists()) {
-    		
-    		File compiledFile = compileBehavior(behSource+behPath);
-    		
-    		if (compiledFile != null && compiledFile.exists()) {
-    			return this.loadBehaviorClass(compiledFile);
-    		}
-    	}*/
-    	
     	// create BehaviorContainer
     	if (bc == null) {
     		bc = new BehaviorContainer();
@@ -61,27 +42,21 @@ public class BehaviorLoader implements Serializable {
     	// check if behSource folder exists
     	File behFolder = new File(behSource);
     	
-    	if (behFolder.exists()) {
-    		
+    	if (behFolder.canRead()) {
+
     		List<File> behaviorFiles = new ArrayList<File>();
     		
     		this.FindAllBehaviorsInDirectory(behFolder, behaviorFiles);
     		
     		// iterate through behaviorFiles list loading classes
-        	for (final File behFile : behaviorFiles) {
+        	for (File behFile : behaviorFiles) {
+
         		Behavior beh = loadBehaviorClass(behFile);
-        		
         		if (beh != null) {
         			bc.addBehavior(beh);
         		}
         	}
     	}
-    	
-    	// TODO próba hozzáadása!
-    	//bc.addBehavior(new BehaviorExample("pl"));
-    	//bc.addBehavior(new BehEx2("pl2"));
-    	//bc.addBehavior(new BehEx3("pl3"));
-    	bc.addBehavior(new JyggaMyNigga("jygga"));
     	
     	return bc;
     }
@@ -91,8 +66,9 @@ public class BehaviorLoader implements Serializable {
     }
     
     private void FindAllBehaviorsInDirectory(final File behFolder, List<File> behaviorFiles) {
-    	
-    	for (final File behFile : behFolder.listFiles()) {
+
+    	for (File behFile : behFolder.listFiles()) {
+    		
     		if (behFile.isDirectory()) {
     			this.FindAllBehaviorsInDirectory(behFile, behaviorFiles);
     		}
@@ -100,9 +76,8 @@ public class BehaviorLoader implements Serializable {
     			// check behFile extension
     			int i = behFile.getName().lastIndexOf('.');
     			if (i > 0) {
-    				
     			    String extension = behFile.getName().substring(i+1);
-    			    
+
     			    if (extension.equals("class")) {
     			    	// add file behaviorFiles
     			    	behaviorFiles.add(behFile);
@@ -110,22 +85,6 @@ public class BehaviorLoader implements Serializable {
     			}
     		}
     	}
-    	
-    }
-    
-    private File compileBehavior(String behPath) {
-    	
-    	System.setProperty("java.home", "C:"+java.io.File.separator+"Program Files"+java.io.File.separator+"Java"+java.io.File.separator+"jdk1.7.0");
-    	JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-    	// TODO compiler null ha jre-vel fordítják, ez problémás lehet !
-    	
-    	int compilationResult = compiler.run(null, null, null, behPath, "-d", "behaviors");
-    	
-    	if (compilationResult == 0) {
-    		return new File("behaviors"+java.io.File.separator+behPath);
-        }
-    	
-    	return null;
     }
     
     @SuppressWarnings("unchecked")
@@ -140,8 +99,10 @@ public class BehaviorLoader implements Serializable {
     		behClass = fcl.loadClassFromFile(compiledFile);
     	} catch (FileNotFoundException e) {
     		e.printStackTrace();
+    		return null;
     	} catch (IOException e) {
     		e.printStackTrace();
+    		return null;
     	}
     	
     	// get the constructor
@@ -150,8 +111,10 @@ public class BehaviorLoader implements Serializable {
     		behConstructor = behClass.getConstructor();
     	} catch (SecurityException e) {
     		e.printStackTrace();
+    		return null;
     	} catch (NoSuchMethodException e) {
     		e.printStackTrace();
+    		return null;
     	}
     	
     	// construct the player
@@ -160,12 +123,16 @@ public class BehaviorLoader implements Serializable {
     		beh = behConstructor.newInstance();
     	} catch (IllegalArgumentException e) {
     		e.printStackTrace();
+    		return null;
     	} catch (InstantiationException e) {
     		e.printStackTrace();
+    		return null;
     	} catch (IllegalAccessException e) {
     		e.printStackTrace();
+    		return null;
     	} catch (InvocationTargetException e) {
     		e.printStackTrace();
+    		return null;
     	}
     	
     	return beh;

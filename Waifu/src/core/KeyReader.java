@@ -11,7 +11,6 @@ import de.ksquared.system.keyboard.KeyEvent;
 //  @ Copyright		: All rights reserved
 
 
-
 public class KeyReader extends Sensor {
 	
 	volatile private int keyTyped;
@@ -28,8 +27,8 @@ public class KeyReader extends Sensor {
 			@Override public void keyReleased(KeyEvent event) {
 				int keyCode = event.getVirtualKeyCode();
 
-				if (turnedOn && !(keyCode == KeyEvent.VK_C && event.isCtrlPressed())) {
-					System.out.println(keyCode);
+				if (turnedOn && !(keyCode == KeyEvent.VK_C && event.isCtrlPressed()) && keyCode != 162) {
+					//System.out.println("[keyTyped]: " + keyCode);
 					keyTyped = keyCode;
 					notifyAllSubs();
 				}

@@ -4,11 +4,15 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
 import javax.swing.JFrame;
-
 import core.Serializer;
 import core.Settings;
+
+//@ Project			: ProjectWaifu
+//@ File Name		: DragMouseListener.java
+//@ Date			: 2013.07.02.
+//@ Author			: csiki
+//@ Copyright		: All rights reserved
 
 class DragMouseListener implements MouseListener, MouseMotionListener {
 	JFrame target;

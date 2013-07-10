@@ -9,10 +9,9 @@ import java.util.List;
 //  @ Copyright		: All rights reserved
 
 
-
 public class AI {
 	
-    private List<Sensor> sensors;
+    //private List<Sensor> sensors; // later may be used
     private UserActionFactory userActionFactory;
     private CounterActionFactory counterActionFactory;
     private BehaviorContainer behContainer;
@@ -24,7 +23,7 @@ public class AI {
     		UserActionFactory userActionFactory,
     		CounterActionFactory counterActionFactory
     		) {
-    	this.sensors = sensors;
+    	//this.sensors = sensors; // later may be used
     	this.behContainer = behContainer;
     	this.userActionFactory = userActionFactory;
     	this.counterActionFactory = counterActionFactory;
@@ -39,7 +38,16 @@ public class AI {
     	}
     	else {
     		beh.condition(userActionFactory);
-    		// TODO ezt még átgondolni
+    	}
+    }
+    
+    public void newBehaviorsLoaded() {
+    	
+    	// call condition to all activated behaviors
+    	for (int i = 0; i < this.behContainer.getNumOfBehaviors(); ++i) {
+    		if (this.behContainer.isBehaviorActivated(i)) {
+    			this.behContainer.getBehavior(i).condition(userActionFactory);
+    		}
     	}
     }
 }

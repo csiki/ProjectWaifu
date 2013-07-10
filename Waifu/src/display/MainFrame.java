@@ -3,19 +3,14 @@ package display;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-
 import javax.swing.JFrame;
-
 import core.Settings;
-import javax.swing.JPanel;
-import java.awt.Insets;
 
 //  @ Project		: ProjectWaifu
 //  @ File Name		: MainFrame.java
 //  @ Date			: 2013.07.02.
 //  @ Author		: csiki
 //  @ Copyright		: All rights reserved
-
 
 
 public class MainFrame {

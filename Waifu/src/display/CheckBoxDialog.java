@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.Action;
 import javax.swing.JCheckBox;
+import core.Settings;
 
 public class CheckBoxDialog extends JDialog {
 	
@@ -36,6 +37,7 @@ public class CheckBoxDialog extends JDialog {
 	private final JButton okButton = new JButton("OK");
 	
 	private int result = -1;
+	private Settings settings;
 	private final Action okAction = new OkAction();
 	private final Action cancelAction = new CancelAction();
 	
@@ -86,12 +88,19 @@ public class CheckBoxDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public CheckBoxDialog(JFrame parent) {
+	public CheckBoxDialog(Settings settings, JFrame parent) {
 		super(parent, true);
+		this.settings = settings;
+		this.options = null;
 	}
 	
 	public void init() {
-		setBounds(100, 100, 150, 150);
+		
+		if (this.options == null) {
+			return; // no options added
+		}
+		
+		setBounds(this.settings.getPosX() + 90, this.settings.getPosY() + 80, 150, 150);
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.getRootPane().setOpaque(false);
 		this.setUndecorated(true);
@@ -116,7 +125,10 @@ public class CheckBoxDialog extends JDialog {
 		
 		// checkbox grids
 		int y = 0;
+		
 		for (JCheckBox cb : this.checkBoxes) {
+			cb.setBorderPainted(true);
+			cb.setMargin(new Insets(3, 3, 3, 3));
 			GridBagConstraints gridBag = new GridBagConstraints();
 			gridBag.insets = new Insets(0, 0, 5, 0);
 			gridBag.gridx = 0;

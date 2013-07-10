@@ -19,7 +19,6 @@ import com.sun.jna.win32.StdCallLibrary;
 //  @ Copyright		: All rights reserved
 
 
-
 public class HighlightTracker extends Sensor implements Runnable, ClipboardOwner {
 	
 	public interface CustomUser32 extends StdCallLibrary {

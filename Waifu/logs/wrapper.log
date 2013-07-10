@@ -1,0 +1,1374 @@
+STATUS | wrapper  | 2013/07/09 14:33:07 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 14:33:07 | Java Service Wrapper Community Edition 32-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 14:33:07 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 14:33:07 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 14:33:07 | 
+STATUS | wrapper  | 2013/07/09 14:33:08 | Launching a JVM...
+FATAL  | wrapper  | 2013/07/09 14:33:08 | Unable to execute Java command.  A rendszer nem találja a megadott fájlt. (0x2)
+FATAL  | wrapper  | 2013/07/09 14:33:08 |     "c:\Program Files\Java\jdk1.7.0\bin\java\bin\java" -Djava.library.path="../lib" -classpath "c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\/lib/wrapper.jar;c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\/bin/run.jar;c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\/lib/tools.jar" -Dwrapper.key="2_Ujfl4Ype9XpTe4" -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=3248 -Dwrapper.version="3.5.19" -Dwrapper.native_library="wrapper" -Dwrapper.arch="x86" -Dwrapper.cpu.timeout="10" -Dwrapper.jvmid=1 org.tanukisoftware.wrapper.WrapperSimpleApp main.Main
+ADVICE | wrapper  | 2013/07/09 14:33:08 | 
+ADVICE | wrapper  | 2013/07/09 14:33:08 | --------------------------------------------------------------------
+ADVICE | wrapper  | 2013/07/09 14:33:08 | Advice:
+ADVICE | wrapper  | 2013/07/09 14:33:08 | Usually when the Wrapper fails to start the JVM process, it is
+ADVICE | wrapper  | 2013/07/09 14:33:08 | because of a problem with the value of the configured Java command.
+ADVICE | wrapper  | 2013/07/09 14:33:08 | Currently:
+ADVICE | wrapper  | 2013/07/09 14:33:08 | wrapper.java.command=c:\Program Files\Java\jdk1.7.0\bin\java\bin\java
+ADVICE | wrapper  | 2013/07/09 14:33:08 | Please make sure that the PATH or any other referenced environment
+ADVICE | wrapper  | 2013/07/09 14:33:08 | variables are correctly defined for the current environment.
+ADVICE | wrapper  | 2013/07/09 14:33:08 | --------------------------------------------------------------------
+ADVICE | wrapper  | 2013/07/09 14:33:08 | 
+FATAL  | wrapper  | 2013/07/09 14:33:09 | Critical error: wait for JVM process failed
+STATUS | wrapper  | 2013/07/09 14:34:23 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 14:34:23 | Java Service Wrapper Community Edition 32-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 14:34:23 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 14:34:23 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 14:34:23 | 
+STATUS | wrapper  | 2013/07/09 14:34:24 | Launching a JVM...
+FATAL  | wrapper  | 2013/07/09 14:34:24 | Unable to execute Java command.  A rendszer nem találja a megadott fájlt. (0x2)
+FATAL  | wrapper  | 2013/07/09 14:34:24 |     "c:\Program Files\Java\jdk1.7.0\bin\java.exe\bin\java" -Djava.library.path="../lib" -classpath "c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\/lib/wrapper.jar;c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\/bin/run.jar;c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\/lib/tools.jar" -Dwrapper.key="2Vj6asiaI_P1LfIh" -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=4312 -Dwrapper.version="3.5.19" -Dwrapper.native_library="wrapper" -Dwrapper.arch="x86" -Dwrapper.cpu.timeout="10" -Dwrapper.jvmid=1 org.tanukisoftware.wrapper.WrapperSimpleApp main.Main
+ADVICE | wrapper  | 2013/07/09 14:34:24 | 
+ADVICE | wrapper  | 2013/07/09 14:34:24 | --------------------------------------------------------------------
+ADVICE | wrapper  | 2013/07/09 14:34:24 | Advice:
+ADVICE | wrapper  | 2013/07/09 14:34:24 | Usually when the Wrapper fails to start the JVM process, it is
+ADVICE | wrapper  | 2013/07/09 14:34:24 | because of a problem with the value of the configured Java command.
+ADVICE | wrapper  | 2013/07/09 14:34:24 | Currently:
+ADVICE | wrapper  | 2013/07/09 14:34:24 | wrapper.java.command=c:\Program Files\Java\jdk1.7.0\bin\java.exe\bin\java
+ADVICE | wrapper  | 2013/07/09 14:34:24 | Please make sure that the PATH or any other referenced environment
+ADVICE | wrapper  | 2013/07/09 14:34:24 | variables are correctly defined for the current environment.
+ADVICE | wrapper  | 2013/07/09 14:34:24 | --------------------------------------------------------------------
+ADVICE | wrapper  | 2013/07/09 14:34:24 | 
+FATAL  | wrapper  | 2013/07/09 14:34:24 | Critical error: wait for JVM process failed
+STATUS | wrapper  | 2013/07/09 14:35:15 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 14:35:15 | Java Service Wrapper Community Edition 32-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 14:35:15 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 14:35:15 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 14:35:15 | 
+STATUS | wrapper  | 2013/07/09 14:35:17 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:           could not be loaded:
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\..\lib\wrapper.dll
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:           Reported cause:
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 14:35:17 | 
+INFO   | jvm 1    | 2013/07/09 14:35:17 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 14:35:17 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 14:35:17 | 
+INFO   | jvm 1    | 2013/07/09 14:35:17 | Where:
+INFO   | jvm 1    | 2013/07/09 14:35:17 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 14:35:17 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 14:35:17 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:35:19 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:35:24 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager: Initializing...
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:           could not be loaded:
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\..\lib\wrapper.dll
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:           Reported cause:
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 2    | 2013/07/09 14:35:24 | 
+INFO   | jvm 2    | 2013/07/09 14:35:24 | WrapperSimpleApp Usage:
+INFO   | jvm 2    | 2013/07/09 14:35:24 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 2    | 2013/07/09 14:35:24 | 
+INFO   | jvm 2    | 2013/07/09 14:35:24 | Where:
+INFO   | jvm 2    | 2013/07/09 14:35:24 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 2    | 2013/07/09 14:35:24 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 2    | 2013/07/09 14:35:24 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:35:26 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:35:30 | Launching a JVM...
+INFO   | jvm 3    | 2013/07/09 14:35:30 | WrapperManager: Initializing...
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager: 
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:           could not be loaded:
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\..\lib\wrapper.dll
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:           Reported cause:
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperManager: 
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 3    | 2013/07/09 14:35:31 | 
+INFO   | jvm 3    | 2013/07/09 14:35:31 | WrapperSimpleApp Usage:
+INFO   | jvm 3    | 2013/07/09 14:35:31 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 3    | 2013/07/09 14:35:31 | 
+INFO   | jvm 3    | 2013/07/09 14:35:31 | Where:
+INFO   | jvm 3    | 2013/07/09 14:35:31 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 3    | 2013/07/09 14:35:31 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 3    | 2013/07/09 14:35:31 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:35:32 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:35:37 | Launching a JVM...
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager: Initializing...
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager: 
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:           could not be loaded:
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\..\lib\wrapper.dll
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:           Reported cause:
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperManager: 
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 4    | 2013/07/09 14:35:37 | 
+INFO   | jvm 4    | 2013/07/09 14:35:37 | WrapperSimpleApp Usage:
+INFO   | jvm 4    | 2013/07/09 14:35:37 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 4    | 2013/07/09 14:35:37 | 
+INFO   | jvm 4    | 2013/07/09 14:35:37 | Where:
+INFO   | jvm 4    | 2013/07/09 14:35:37 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 4    | 2013/07/09 14:35:37 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 4    | 2013/07/09 14:35:37 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:35:39 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:35:44 | Launching a JVM...
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager: Initializing...
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager: 
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:           could not be loaded:
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\..\lib\wrapper.dll
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:           Reported cause:
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperManager: 
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 5    | 2013/07/09 14:35:44 | 
+INFO   | jvm 5    | 2013/07/09 14:35:44 | WrapperSimpleApp Usage:
+INFO   | jvm 5    | 2013/07/09 14:35:44 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 5    | 2013/07/09 14:35:44 | 
+INFO   | jvm 5    | 2013/07/09 14:35:44 | Where:
+INFO   | jvm 5    | 2013/07/09 14:35:44 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 5    | 2013/07/09 14:35:44 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 5    | 2013/07/09 14:35:44 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:35:46 | JVM exited while loading the application.
+FATAL  | wrapper  | 2013/07/09 14:35:46 | There were 5 failed launches in a row, each lasting less than 300 seconds.  Giving up.
+FATAL  | wrapper  | 2013/07/09 14:35:46 |   There may be a configuration problem: please check the logs.
+STATUS | wrapper  | 2013/07/09 14:35:46 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 14:38:38 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 14:38:38 | Java Service Wrapper Community Edition 32-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 14:38:38 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 14:38:38 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 14:38:38 | 
+STATUS | wrapper  | 2013/07/09 14:38:39 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:           could not be loaded:
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:           Reported cause:
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 14:38:39 | 
+INFO   | jvm 1    | 2013/07/09 14:38:39 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 14:38:39 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 14:38:39 | 
+INFO   | jvm 1    | 2013/07/09 14:38:39 | Where:
+INFO   | jvm 1    | 2013/07/09 14:38:39 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 14:38:39 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 14:38:39 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:38:41 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:38:45 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 14:38:45 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 14:43:28 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 14:43:28 | Java Service Wrapper Community Edition 32-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 14:43:28 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 14:43:28 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 14:43:28 | 
+STATUS | wrapper  | 2013/07/09 14:43:28 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:           could not be loaded:
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:           Reported cause:
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 14:43:28 | 
+INFO   | jvm 1    | 2013/07/09 14:43:28 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 14:43:28 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 14:43:28 | 
+INFO   | jvm 1    | 2013/07/09 14:43:28 | Where:
+INFO   | jvm 1    | 2013/07/09 14:43:28 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 14:43:28 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 14:43:28 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:43:30 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:43:35 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager: Initializing...
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:           could not be loaded:
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:           Reported cause:
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 2    | 2013/07/09 14:43:35 | 
+INFO   | jvm 2    | 2013/07/09 14:43:35 | WrapperSimpleApp Usage:
+INFO   | jvm 2    | 2013/07/09 14:43:35 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 2    | 2013/07/09 14:43:35 | 
+INFO   | jvm 2    | 2013/07/09 14:43:35 | Where:
+INFO   | jvm 2    | 2013/07/09 14:43:35 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 2    | 2013/07/09 14:43:35 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 2    | 2013/07/09 14:43:35 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:43:37 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:43:41 | Launching a JVM...
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager: Initializing...
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager: 
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:           could not be loaded:
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:           Reported cause:
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperManager: 
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 3    | 2013/07/09 14:43:41 | 
+INFO   | jvm 3    | 2013/07/09 14:43:41 | WrapperSimpleApp Usage:
+INFO   | jvm 3    | 2013/07/09 14:43:41 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 3    | 2013/07/09 14:43:41 | 
+INFO   | jvm 3    | 2013/07/09 14:43:41 | Where:
+INFO   | jvm 3    | 2013/07/09 14:43:41 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 3    | 2013/07/09 14:43:41 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 3    | 2013/07/09 14:43:41 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:43:43 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:43:48 | Launching a JVM...
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager: Initializing...
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager: 
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:           could not be loaded:
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:           Reported cause:
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperManager: 
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 4    | 2013/07/09 14:43:48 | 
+INFO   | jvm 4    | 2013/07/09 14:43:48 | WrapperSimpleApp Usage:
+INFO   | jvm 4    | 2013/07/09 14:43:48 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 4    | 2013/07/09 14:43:48 | 
+INFO   | jvm 4    | 2013/07/09 14:43:48 | Where:
+INFO   | jvm 4    | 2013/07/09 14:43:48 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 4    | 2013/07/09 14:43:48 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 4    | 2013/07/09 14:43:48 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:43:50 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:43:54 | Launching a JVM...
+INFO   | jvm 5    | 2013/07/09 14:43:54 | WrapperManager: Initializing...
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager: 
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:           could not be loaded:
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:           Reported cause:
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperManager: 
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 5    | 2013/07/09 14:43:55 | 
+INFO   | jvm 5    | 2013/07/09 14:43:55 | WrapperSimpleApp Usage:
+INFO   | jvm 5    | 2013/07/09 14:43:55 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 5    | 2013/07/09 14:43:55 | 
+INFO   | jvm 5    | 2013/07/09 14:43:55 | Where:
+INFO   | jvm 5    | 2013/07/09 14:43:55 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 5    | 2013/07/09 14:43:55 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 5    | 2013/07/09 14:43:55 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:43:56 | JVM exited while loading the application.
+FATAL  | wrapper  | 2013/07/09 14:43:57 | There were 5 failed launches in a row, each lasting less than 300 seconds.  Giving up.
+FATAL  | wrapper  | 2013/07/09 14:43:57 |   There may be a configuration problem: please check the logs.
+STATUS | wrapper  | 2013/07/09 14:43:57 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 14:46:21 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 14:46:21 | Java Service Wrapper Community Edition 32-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 14:46:21 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 14:46:21 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 14:46:21 | 
+STATUS | wrapper  | 2013/07/09 14:46:21 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:           could not be loaded:
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:           Reported cause:
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\ : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\
+INFO   | jvm 1    | 2013/07/09 14:46:21 | 
+INFO   | jvm 1    | 2013/07/09 14:46:21 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 14:46:21 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 14:46:21 | 
+INFO   | jvm 1    | 2013/07/09 14:46:21 | Where:
+INFO   | jvm 1    | 2013/07/09 14:46:21 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 14:46:22 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 14:46:22 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:46:23 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:46:28 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager: Initializing...
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:           could not be loaded:
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:           Reported cause:
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\ : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\
+INFO   | jvm 2    | 2013/07/09 14:46:28 | 
+INFO   | jvm 2    | 2013/07/09 14:46:28 | WrapperSimpleApp Usage:
+INFO   | jvm 2    | 2013/07/09 14:46:28 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 2    | 2013/07/09 14:46:28 | 
+INFO   | jvm 2    | 2013/07/09 14:46:28 | Where:
+INFO   | jvm 2    | 2013/07/09 14:46:28 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 2    | 2013/07/09 14:46:28 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 2    | 2013/07/09 14:46:28 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:46:30 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:46:34 | Launching a JVM...
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager: Initializing...
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager: 
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:           could not be loaded:
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:           Reported cause:
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperManager: 
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\ : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\
+INFO   | jvm 3    | 2013/07/09 14:46:35 | 
+INFO   | jvm 3    | 2013/07/09 14:46:35 | WrapperSimpleApp Usage:
+INFO   | jvm 3    | 2013/07/09 14:46:35 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 3    | 2013/07/09 14:46:35 | 
+INFO   | jvm 3    | 2013/07/09 14:46:35 | Where:
+INFO   | jvm 3    | 2013/07/09 14:46:35 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 3    | 2013/07/09 14:46:35 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 3    | 2013/07/09 14:46:35 |                   application.
+STATUS | wrapper  | 2013/07/09 14:46:36 | CTRL-C trapped.  Shutting down.
+WARN   | wrapper  | 2013/07/09 14:46:36 | JVM exited unexpectedly while stopping the application.
+STATUS | wrapper  | 2013/07/09 14:46:37 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 14:47:33 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 14:47:33 | Java Service Wrapper Community Edition 32-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 14:47:33 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 14:47:33 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 14:47:33 | 
+STATUS | wrapper  | 2013/07/09 14:47:34 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:           could not be loaded:
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:           Reported cause:
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class
+INFO   | jvm 1    | 2013/07/09 14:47:34 | 
+INFO   | jvm 1    | 2013/07/09 14:47:34 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 14:47:34 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 14:47:34 | 
+INFO   | jvm 1    | 2013/07/09 14:47:34 | Where:
+INFO   | jvm 1    | 2013/07/09 14:47:34 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 14:47:34 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 14:47:34 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:47:36 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:47:40 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager: Initializing...
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:           could not be loaded:
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:           Reported cause:
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class
+INFO   | jvm 2    | 2013/07/09 14:47:41 | 
+INFO   | jvm 2    | 2013/07/09 14:47:41 | WrapperSimpleApp Usage:
+INFO   | jvm 2    | 2013/07/09 14:47:41 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 2    | 2013/07/09 14:47:41 | 
+INFO   | jvm 2    | 2013/07/09 14:47:41 | Where:
+INFO   | jvm 2    | 2013/07/09 14:47:41 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 2    | 2013/07/09 14:47:41 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 2    | 2013/07/09 14:47:41 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:47:42 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:47:47 | Launching a JVM...
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager: Initializing...
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager: 
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:           could not be loaded:
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:           Reported cause:
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperManager: 
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class
+INFO   | jvm 3    | 2013/07/09 14:47:47 | 
+INFO   | jvm 3    | 2013/07/09 14:47:47 | WrapperSimpleApp Usage:
+INFO   | jvm 3    | 2013/07/09 14:47:47 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 3    | 2013/07/09 14:47:47 | 
+INFO   | jvm 3    | 2013/07/09 14:47:47 | Where:
+INFO   | jvm 3    | 2013/07/09 14:47:47 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 3    | 2013/07/09 14:47:47 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 3    | 2013/07/09 14:47:47 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:47:49 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:47:54 | Launching a JVM...
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager: Initializing...
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager: 
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:           could not be loaded:
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:           Reported cause:
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperManager: 
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class
+INFO   | jvm 4    | 2013/07/09 14:47:54 | 
+INFO   | jvm 4    | 2013/07/09 14:47:54 | WrapperSimpleApp Usage:
+INFO   | jvm 4    | 2013/07/09 14:47:54 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 4    | 2013/07/09 14:47:54 | 
+INFO   | jvm 4    | 2013/07/09 14:47:54 | Where:
+INFO   | jvm 4    | 2013/07/09 14:47:54 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 4    | 2013/07/09 14:47:54 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 4    | 2013/07/09 14:47:54 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:47:55 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:48:00 | Launching a JVM...
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager: Initializing...
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager: 
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:           could not be loaded:
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:           Reported cause:
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperManager: 
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\\bin\main\Main.class
+INFO   | jvm 5    | 2013/07/09 14:48:00 | 
+INFO   | jvm 5    | 2013/07/09 14:48:00 | WrapperSimpleApp Usage:
+INFO   | jvm 5    | 2013/07/09 14:48:00 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 5    | 2013/07/09 14:48:00 | 
+INFO   | jvm 5    | 2013/07/09 14:48:00 | Where:
+INFO   | jvm 5    | 2013/07/09 14:48:00 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 5    | 2013/07/09 14:48:00 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 5    | 2013/07/09 14:48:00 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:48:02 | JVM exited while loading the application.
+FATAL  | wrapper  | 2013/07/09 14:48:02 | There were 5 failed launches in a row, each lasting less than 300 seconds.  Giving up.
+FATAL  | wrapper  | 2013/07/09 14:48:02 |   There may be a configuration problem: please check the logs.
+STATUS | wrapper  | 2013/07/09 14:48:02 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 14:48:49 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 14:48:49 | Java Service Wrapper Community Edition 32-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 14:48:49 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 14:48:49 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 14:48:49 | 
+STATUS | wrapper  | 2013/07/09 14:48:50 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:           could not be loaded:
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:           Reported cause:
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\main\Main.class : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\main\Main.class
+INFO   | jvm 1    | 2013/07/09 14:48:50 | 
+INFO   | jvm 1    | 2013/07/09 14:48:50 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 14:48:50 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 14:48:50 | 
+INFO   | jvm 1    | 2013/07/09 14:48:50 | Where:
+INFO   | jvm 1    | 2013/07/09 14:48:50 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 14:48:50 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 14:48:50 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:48:52 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:48:56 | Launching a JVM...
+STATUS | wrapper  | 2013/07/09 14:48:56 | CTRL-C trapped.  Shutting down.
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager: Initializing...
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:           could not be loaded:
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:           Reported cause:
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperManager: 
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperSimpleApp Error: Unable to locate the class c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\main\Main.class : java.lang.ClassNotFoundException: c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\main\Main.class
+INFO   | jvm 2    | 2013/07/09 14:48:56 | 
+INFO   | jvm 2    | 2013/07/09 14:48:56 | WrapperSimpleApp Usage:
+INFO   | jvm 2    | 2013/07/09 14:48:56 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 2    | 2013/07/09 14:48:56 | 
+INFO   | jvm 2    | 2013/07/09 14:48:56 | Where:
+INFO   | jvm 2    | 2013/07/09 14:48:56 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 2    | 2013/07/09 14:48:56 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 2    | 2013/07/09 14:48:56 |                   application.
+STATUS | wrapper  | 2013/07/09 14:48:58 | CTRL-C trapped.  Forcing immediate shutdown.
+ERROR  | wrapper  | 2013/07/09 14:48:58 | JVM did not exit on request, termination requested.
+STATUS | wrapper  | 2013/07/09 14:48:58 | JVM exited after being requested to terminate.
+STATUS | wrapper  | 2013/07/09 14:48:58 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 14:49:27 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 14:49:27 | Java Service Wrapper Community Edition 32-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 14:49:27 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 14:49:27 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 14:49:27 | 
+STATUS | wrapper  | 2013/07/09 14:49:27 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager: WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:           The file is located on the path at the following location but
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:           could not be loaded:
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:             c:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:           Please verify that the file is both readable and executable by the
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:           current user and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:           This is a 64-bit JVM.
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:           Reported cause:
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:             C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\lib\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager:           System signals will not be handled correctly.
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperManager: 
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 14:49:27 | 
+INFO   | jvm 1    | 2013/07/09 14:49:27 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 14:49:27 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 14:49:27 | 
+INFO   | jvm 1    | 2013/07/09 14:49:27 | Where:
+INFO   | jvm 1    | 2013/07/09 14:49:27 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 14:49:27 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 14:49:27 |                   application.
+ERROR  | wrapper  | 2013/07/09 14:49:29 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 14:49:30 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 14:49:30 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:01:12 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:01:12 | Java Service Wrapper Standard Edition 64-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 15:01:12 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:01:12 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:01:12 | 
+ERROR  | wrapper  | 2013/07/09 15:01:12 | License Error:
+ERROR  | wrapper  | 2013/07/09 15:01:12 | A valid license was not found in the Wrapper configuration file.
+ERROR  | wrapper  | 2013/07/09 15:01:12 | 
+ERROR  | wrapper  | 2013/07/09 15:01:12 | The Java Service Wrapper requires a License Key to activate the
+ERROR  | wrapper  | 2013/07/09 15:01:12 | software.  License Keys can be purchased on the Java Service Wrapper
+ERROR  | wrapper  | 2013/07/09 15:01:12 | web site:
+ERROR  | wrapper  | 2013/07/09 15:01:12 |   http://wrapper.tanukisoftware.com/purchase
+ERROR  | wrapper  | 2013/07/09 15:01:12 | 
+ERROR  | wrapper  | 2013/07/09 15:01:12 | You can also immediately obtain a one-month Free trial license:
+ERROR  | wrapper  | 2013/07/09 15:01:12 |   http://wrapper.tanukisoftware.com/trial
+ERROR  | wrapper  | 2013/07/09 15:01:12 | 
+ERROR  | wrapper  | 2013/07/09 15:01:12 | License Keys can be generated for any of the following HostIds.
+STATUS | wrapper  | 2013/07/09 15:01:12 |   HostId(s):
+STATUS | wrapper  | 2013/07/09 15:01:12 |     00ffcab5e95f (#1)
+STATUS | wrapper  | 2013/07/09 15:01:12 |     7a79190f290e (#2)
+ERROR  | wrapper  | 2013/07/09 15:01:12 | 
+STATUS | wrapper  | 2013/07/09 15:01:12 | 
+STATUS | wrapper  | 2013/07/09 15:01:12 | Optional host name for license: csiki-acer
+STATUS | wrapper  | 2013/07/09 15:01:12 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:02:04 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:02:04 | Java Service Wrapper Standard Edition 64-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 15:02:04 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:02:04 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:02:04 | 
+ERROR  | wrapper  | 2013/07/09 15:02:04 | License Error:
+ERROR  | wrapper  | 2013/07/09 15:02:04 | A valid license was not found in the Wrapper configuration file.
+ERROR  | wrapper  | 2013/07/09 15:02:04 | 
+ERROR  | wrapper  | 2013/07/09 15:02:04 | The Java Service Wrapper requires a License Key to activate the
+ERROR  | wrapper  | 2013/07/09 15:02:04 | software.  License Keys can be purchased on the Java Service Wrapper
+ERROR  | wrapper  | 2013/07/09 15:02:04 | web site:
+ERROR  | wrapper  | 2013/07/09 15:02:04 |   http://wrapper.tanukisoftware.com/purchase
+ERROR  | wrapper  | 2013/07/09 15:02:04 | 
+ERROR  | wrapper  | 2013/07/09 15:02:04 | You can also immediately obtain a one-month Free trial license:
+ERROR  | wrapper  | 2013/07/09 15:02:04 |   http://wrapper.tanukisoftware.com/trial
+ERROR  | wrapper  | 2013/07/09 15:02:04 | 
+ERROR  | wrapper  | 2013/07/09 15:02:04 | License Keys can be generated for any of the following HostIds.
+STATUS | wrapper  | 2013/07/09 15:02:04 |   HostId(s):
+STATUS | wrapper  | 2013/07/09 15:02:04 |     00ffcab5e95f (#1)
+STATUS | wrapper  | 2013/07/09 15:02:04 |     7a79190f290e (#2)
+ERROR  | wrapper  | 2013/07/09 15:02:04 | 
+STATUS | wrapper  | 2013/07/09 15:02:04 | 
+STATUS | wrapper  | 2013/07/09 15:02:04 | Optional host name for license: csiki-acer
+STATUS | wrapper  | 2013/07/09 15:02:04 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:03:29 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:03:29 | Java Service Wrapper Standard Edition 64-bit 3.5.19
+STATUS | wrapper  | 2013/07/09 15:03:29 |   Copyright (C) 1999-2013 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:03:29 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:03:29 | 
+ERROR  | wrapper  | 2013/07/09 15:03:29 | License Error:
+ERROR  | wrapper  | 2013/07/09 15:03:29 | A valid license was not found in the Wrapper configuration file.
+ERROR  | wrapper  | 2013/07/09 15:03:29 | 
+ERROR  | wrapper  | 2013/07/09 15:03:29 | The Java Service Wrapper requires a License Key to activate the
+ERROR  | wrapper  | 2013/07/09 15:03:29 | software.  License Keys can be purchased on the Java Service Wrapper
+ERROR  | wrapper  | 2013/07/09 15:03:29 | web site:
+ERROR  | wrapper  | 2013/07/09 15:03:29 |   http://wrapper.tanukisoftware.com/purchase
+ERROR  | wrapper  | 2013/07/09 15:03:29 | 
+ERROR  | wrapper  | 2013/07/09 15:03:29 | You can also immediately obtain a one-month Free trial license:
+ERROR  | wrapper  | 2013/07/09 15:03:29 |   http://wrapper.tanukisoftware.com/trial
+ERROR  | wrapper  | 2013/07/09 15:03:29 | 
+ERROR  | wrapper  | 2013/07/09 15:03:29 | License Keys can be generated for any of the following HostIds.
+STATUS | wrapper  | 2013/07/09 15:03:29 |   HostId(s):
+STATUS | wrapper  | 2013/07/09 15:03:29 |     00ffcab5e95f (#1)
+STATUS | wrapper  | 2013/07/09 15:03:29 |     7a79190f290e (#2)
+ERROR  | wrapper  | 2013/07/09 15:03:29 | 
+STATUS | wrapper  | 2013/07/09 15:03:29 | 
+STATUS | wrapper  | 2013/07/09 15:03:29 | Optional host name for license: csiki-acer
+STATUS | wrapper  | 2013/07/09 15:03:29 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:05:19 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:05:19 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:05:19 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:05:19 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:05:19 | 
+STATUS | wrapper  | 2013/07/09 15:05:19 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:05:19 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:05:19 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:05:19 | 
+INFO   | jvm 1    | 2013/07/09 15:05:19 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:05:19 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:05:19 | 
+INFO   | jvm 1    | 2013/07/09 15:05:19 | Where:
+INFO   | jvm 1    | 2013/07/09 15:05:19 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:05:19 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:05:19 |                   application.
+ERROR  | wrapper  | 2013/07/09 15:05:21 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:05:25 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 15:05:25 | WrapperManager: Initializing...
+INFO   | jvm 2    | 2013/07/09 15:05:26 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 2    | 2013/07/09 15:05:26 | 
+INFO   | jvm 2    | 2013/07/09 15:05:26 | WrapperSimpleApp Usage:
+INFO   | jvm 2    | 2013/07/09 15:05:26 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 2    | 2013/07/09 15:05:26 | 
+INFO   | jvm 2    | 2013/07/09 15:05:26 | Where:
+INFO   | jvm 2    | 2013/07/09 15:05:26 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 2    | 2013/07/09 15:05:26 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 2    | 2013/07/09 15:05:26 |                   application.
+STATUS | wrapper  | 2013/07/09 15:05:27 | CTRL-C trapped.  Shutting down.
+WARN   | wrapper  | 2013/07/09 15:05:27 | JVM exited unexpectedly while stopping the application.
+STATUS | wrapper  | 2013/07/09 15:05:28 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:07:28 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:07:28 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:07:28 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:07:28 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:07:28 | 
+STATUS | wrapper  | 2013/07/09 15:07:28 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:07:28 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:07:28 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:07:28 | 
+INFO   | jvm 1    | 2013/07/09 15:07:28 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:07:28 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:07:28 | 
+INFO   | jvm 1    | 2013/07/09 15:07:28 | Where:
+INFO   | jvm 1    | 2013/07/09 15:07:28 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:07:28 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:07:28 |                   application.
+ERROR  | wrapper  | 2013/07/09 15:07:30 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:07:35 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 15:07:35 | WrapperManager: Initializing...
+INFO   | jvm 2    | 2013/07/09 15:07:35 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 2    | 2013/07/09 15:07:35 | 
+INFO   | jvm 2    | 2013/07/09 15:07:35 | WrapperSimpleApp Usage:
+INFO   | jvm 2    | 2013/07/09 15:07:35 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 2    | 2013/07/09 15:07:35 | 
+INFO   | jvm 2    | 2013/07/09 15:07:35 | Where:
+INFO   | jvm 2    | 2013/07/09 15:07:35 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 2    | 2013/07/09 15:07:35 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 2    | 2013/07/09 15:07:35 |                   application.
+STATUS | wrapper  | 2013/07/09 15:07:36 | CTRL-C trapped.  Shutting down.
+WARN   | wrapper  | 2013/07/09 15:07:37 | JVM exited unexpectedly while stopping the application.
+STATUS | wrapper  | 2013/07/09 15:07:37 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:09:01 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:09:01 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:09:01 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:09:01 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:09:01 | 
+STATUS | wrapper  | 2013/07/09 15:09:02 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:09:02 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:09:02 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:09:02 | 
+INFO   | jvm 1    | 2013/07/09 15:09:02 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:09:02 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:09:02 | 
+INFO   | jvm 1    | 2013/07/09 15:09:02 | Where:
+INFO   | jvm 1    | 2013/07/09 15:09:02 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:09:02 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:09:02 |                   application.
+ERROR  | wrapper  | 2013/07/09 15:09:04 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:09:08 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:09:08 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:11:30 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:11:30 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:11:30 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:11:30 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:11:30 | 
+STATUS | wrapper  | 2013/07/09 15:11:30 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:11:30 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:11:30 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:11:30 | 
+INFO   | jvm 1    | 2013/07/09 15:11:30 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:11:30 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:11:30 | 
+INFO   | jvm 1    | 2013/07/09 15:11:30 | Where:
+INFO   | jvm 1    | 2013/07/09 15:11:30 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:11:30 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:11:30 |                   application.
+ERROR  | wrapper  | 2013/07/09 15:11:32 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:11:32 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:11:32 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:11:47 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:11:47 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:11:47 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:11:47 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:11:47 | 
+STATUS | wrapper  | 2013/07/09 15:11:47 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:11:47 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:11:47 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:11:47 | 
+INFO   | jvm 1    | 2013/07/09 15:11:47 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:11:47 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:11:47 | 
+INFO   | jvm 1    | 2013/07/09 15:11:47 | Where:
+INFO   | jvm 1    | 2013/07/09 15:11:47 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:11:47 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:11:47 |                   application.
+ERROR  | wrapper  | 2013/07/09 15:11:49 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:11:54 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 15:11:54 | WrapperManager: Initializing...
+INFO   | jvm 2    | 2013/07/09 15:11:54 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 2    | 2013/07/09 15:11:54 | 
+INFO   | jvm 2    | 2013/07/09 15:11:54 | WrapperSimpleApp Usage:
+INFO   | jvm 2    | 2013/07/09 15:11:54 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 2    | 2013/07/09 15:11:54 | 
+INFO   | jvm 2    | 2013/07/09 15:11:54 | Where:
+INFO   | jvm 2    | 2013/07/09 15:11:54 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 2    | 2013/07/09 15:11:54 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 2    | 2013/07/09 15:11:54 |                   application.
+STATUS | wrapper  | 2013/07/09 15:11:55 | CTRL-C trapped.  Shutting down.
+WARN   | wrapper  | 2013/07/09 15:11:56 | JVM exited unexpectedly while stopping the application.
+STATUS | wrapper  | 2013/07/09 15:11:56 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:15:30 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:15:30 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:15:30 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:15:30 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:15:30 | 
+STATUS | wrapper  | 2013/07/09 15:15:31 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:15:31 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:15:31 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:15:35 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 15:15:35 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:15:35 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:15:37 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:15:37 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:16:27 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:16:27 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:16:27 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:16:27 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:16:27 | 
+STATUS | wrapper  | 2013/07/09 15:16:27 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:16:27 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:16:27 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:16:29 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:16:29 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:17:39 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:17:39 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:17:39 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:17:39 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:17:39 | 
+STATUS | wrapper  | 2013/07/09 15:17:40 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:17:40 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:17:40 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:17:44 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 15:17:44 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:17:44 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:17:49 | Launching a JVM...
+INFO   | jvm 3    | 2013/07/09 15:17:49 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:17:49 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:17:52 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:17:52 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:18:54 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:18:54 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:18:54 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:18:54 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:18:54 | 
+STATUS | wrapper  | 2013/07/09 15:18:55 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:18:55 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:18:55 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:18:55 | 
+INFO   | jvm 1    | 2013/07/09 15:18:55 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:18:55 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:18:55 | 
+INFO   | jvm 1    | 2013/07/09 15:18:55 | Where:
+INFO   | jvm 1    | 2013/07/09 15:18:55 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:18:55 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:18:55 |                   application.
+ERROR  | wrapper  | 2013/07/09 15:18:57 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:18:59 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:18:59 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:19:45 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:19:45 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:19:45 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:19:45 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:19:45 | 
+STATUS | wrapper  | 2013/07/09 15:19:45 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:19:45 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:19:45 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:19:45 | 
+INFO   | jvm 1    | 2013/07/09 15:19:45 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:19:45 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:19:45 | 
+INFO   | jvm 1    | 2013/07/09 15:19:45 | Where:
+INFO   | jvm 1    | 2013/07/09 15:19:45 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:19:45 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:19:45 |                   application.
+STATUS | wrapper  | 2013/07/09 15:19:47 | CTRL-C trapped.  Shutting down.
+WARN   | wrapper  | 2013/07/09 15:19:47 | JVM exited unexpectedly while stopping the application.
+STATUS | wrapper  | 2013/07/09 15:19:47 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:19:53 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:19:53 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:19:53 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:19:53 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:19:53 | 
+STATUS | wrapper  | 2013/07/09 15:19:54 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:19:54 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:19:54 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:19:54 | 
+INFO   | jvm 1    | 2013/07/09 15:19:54 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:19:54 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:19:54 | 
+INFO   | jvm 1    | 2013/07/09 15:19:54 | Where:
+INFO   | jvm 1    | 2013/07/09 15:19:54 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:19:54 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:19:54 |                   application.
+ERROR  | wrapper  | 2013/07/09 15:19:56 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:19:59 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:19:59 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:20:48 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:20:48 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:20:48 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:20:48 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:20:48 | 
+STATUS | wrapper  | 2013/07/09 15:20:48 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:20:48 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:20:48 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:20:48 | 
+INFO   | jvm 1    | 2013/07/09 15:20:48 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:20:48 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:20:48 | 
+INFO   | jvm 1    | 2013/07/09 15:20:48 | Where:
+INFO   | jvm 1    | 2013/07/09 15:20:48 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:20:48 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:20:48 |                   application.
+ERROR  | wrapper  | 2013/07/09 15:20:50 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:20:50 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:20:50 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:21:35 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:21:35 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:21:35 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:21:35 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:21:35 | 
+STATUS | wrapper  | 2013/07/09 15:21:35 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:21:35 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:21:35 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:21:35 | 
+INFO   | jvm 1    | 2013/07/09 15:21:35 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:21:35 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:21:35 | 
+INFO   | jvm 1    | 2013/07/09 15:21:35 | Where:
+INFO   | jvm 1    | 2013/07/09 15:21:35 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:21:35 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:21:35 |                   application.
+STATUS | wrapper  | 2013/07/09 15:21:37 | CTRL-C trapped.  Shutting down.
+WARN   | wrapper  | 2013/07/09 15:21:37 | JVM exited unexpectedly while stopping the application.
+STATUS | wrapper  | 2013/07/09 15:21:37 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:22:54 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:22:54 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:22:54 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:22:54 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:22:54 | 
+STATUS | wrapper  | 2013/07/09 15:22:54 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:22:55 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:22:55 | WrapperSimpleApp Error: Unable to locate the class main.Main : java.lang.ClassNotFoundException: main.Main
+INFO   | jvm 1    | 2013/07/09 15:22:55 | 
+INFO   | jvm 1    | 2013/07/09 15:22:55 | WrapperSimpleApp Usage:
+INFO   | jvm 1    | 2013/07/09 15:22:55 |   java org.tanukisoftware.wrapper.WrapperSimpleApp {app_class{/app_method}} [app_arguments]
+INFO   | jvm 1    | 2013/07/09 15:22:55 | 
+INFO   | jvm 1    | 2013/07/09 15:22:55 | Where:
+INFO   | jvm 1    | 2013/07/09 15:22:55 |   app_class:      The fully qualified class name of the application to run.
+INFO   | jvm 1    | 2013/07/09 15:22:55 |   app_arguments:  The arguments that would normally be passed to the
+INFO   | jvm 1    | 2013/07/09 15:22:55 |                   application.
+STATUS | wrapper  | 2013/07/09 15:22:56 | CTRL-C trapped.  Shutting down.
+WARN   | wrapper  | 2013/07/09 15:22:56 | JVM exited unexpectedly while stopping the application.
+STATUS | wrapper  | 2013/07/09 15:22:57 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:23:09 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:23:09 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:23:09 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:23:09 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:23:09 | 
+STATUS | wrapper  | 2013/07/09 15:23:09 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:23:09 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:23:09 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at main.WaifuBuilder.buildDisplays(WaifuBuilder.java:140)
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at main.WaifuBuilder.build(WaifuBuilder.java:63)
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:23:09 | 	at java.lang.Thread.run(Thread.java:722)
+STATUS | wrapper  | 2013/07/09 15:23:10 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:23:10 | CTRL-C trapped.  Forcing immediate shutdown.
+ERROR  | wrapper  | 2013/07/09 15:23:10 | JVM did not exit on request, terminated
+STATUS | wrapper  | 2013/07/09 15:23:10 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:23:17 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:23:17 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:23:17 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:23:17 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:23:17 | 
+STATUS | wrapper  | 2013/07/09 15:23:17 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:23:17 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:23:17 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at main.WaifuBuilder.buildDisplays(WaifuBuilder.java:140)
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at main.WaifuBuilder.build(WaifuBuilder.java:63)
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:23:17 | 	at java.lang.Thread.run(Thread.java:722)
+STATUS | wrapper  | 2013/07/09 15:23:18 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:23:18 | CTRL-C trapped.  Forcing immediate shutdown.
+INFO   | jvm 1    | 2013/07/09 15:23:18 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at display.SkinOptionsDialog.<init>(SkinOptionsDialog.java:96)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at main.WaifuBuilder.buildDialogs(WaifuBuilder.java:155)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at main.WaifuBuilder.build(WaifuBuilder.java:66)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:23:18 | 	at java.lang.Thread.run(Thread.java:722)
+ERROR  | wrapper  | 2013/07/09 15:23:18 | JVM did not exit on request, terminated
+STATUS | wrapper  | 2013/07/09 15:23:18 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:23:27 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:23:27 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:23:27 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:23:27 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:23:27 | 
+STATUS | wrapper  | 2013/07/09 15:23:28 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:23:28 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:23:28 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at main.WaifuBuilder.buildDisplays(WaifuBuilder.java:140)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at main.WaifuBuilder.build(WaifuBuilder.java:63)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at display.SkinOptionsDialog.<init>(SkinOptionsDialog.java:96)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at main.WaifuBuilder.buildDialogs(WaifuBuilder.java:155)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at main.WaifuBuilder.build(WaifuBuilder.java:66)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:23:28 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at main.WaifuBuilder.buildPanels(WaifuBuilder.java:169)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at main.WaifuBuilder.build(WaifuBuilder.java:68)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp: 
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: Encountered an error running main:
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: java.lang.NullPointerException
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at display.MenuMouseListener.<init>(MenuMouseListener.java:26)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at display.MenuPanel.<init>(MenuPanel.java:96)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at main.WaifuBuilder.buildPanels(WaifuBuilder.java:176)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at main.WaifuBuilder.build(WaifuBuilder.java:68)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:23:29 | WrapperSimpleApp Error: 	at java.lang.Thread.run(Thread.java:722)
+STATUS | wrapper  | 2013/07/09 15:23:31 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:26:03 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:26:03 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:26:03 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:26:03 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:26:03 | 
+STATUS | wrapper  | 2013/07/09 15:26:03 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:26:04 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:26:04 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at main.WaifuBuilder.buildDisplays(WaifuBuilder.java:140)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at main.WaifuBuilder.build(WaifuBuilder.java:63)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at java.lang.Thread.run(Thread.java:722)
+STATUS | wrapper  | 2013/07/09 15:26:04 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:26:04 | CTRL-C trapped.  Forcing immediate shutdown.
+INFO   | jvm 1    | 2013/07/09 15:26:04 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at display.SkinOptionsDialog.<init>(SkinOptionsDialog.java:96)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at main.WaifuBuilder.buildDialogs(WaifuBuilder.java:155)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at main.WaifuBuilder.build(WaifuBuilder.java:66)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:26:04 | 	at java.lang.Thread.run(Thread.java:722)
+ERROR  | wrapper  | 2013/07/09 15:26:04 | JVM did not exit on request, terminated
+STATUS | wrapper  | 2013/07/09 15:26:05 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:26:24 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:26:24 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:26:24 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:26:24 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:26:24 | 
+STATUS | wrapper  | 2013/07/09 15:26:24 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:26:24 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:26:25 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at main.WaifuBuilder.buildDisplays(WaifuBuilder.java:140)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at main.WaifuBuilder.build(WaifuBuilder.java:63)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | [keyTyped]: 164
+INFO   | jvm 1    | 2013/07/09 15:26:25 | [keyTyped]: 9
+INFO   | jvm 1    | 2013/07/09 15:26:25 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at display.SkinOptionsDialog.<init>(SkinOptionsDialog.java:96)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at main.WaifuBuilder.buildDialogs(WaifuBuilder.java:155)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at main.WaifuBuilder.build(WaifuBuilder.java:66)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at main.WaifuBuilder.buildPanels(WaifuBuilder.java:169)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at main.WaifuBuilder.build(WaifuBuilder.java:68)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp: 
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: Encountered an error running main:
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: java.lang.NullPointerException
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at display.MenuMouseListener.<init>(MenuMouseListener.java:26)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at display.MenuPanel.<init>(MenuPanel.java:96)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at main.WaifuBuilder.buildPanels(WaifuBuilder.java:176)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at main.WaifuBuilder.build(WaifuBuilder.java:68)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:26:25 | WrapperSimpleApp Error: 	at java.lang.Thread.run(Thread.java:722)
+STATUS | wrapper  | 2013/07/09 15:26:28 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:28:07 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:28:07 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:28:07 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:28:07 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:28:07 | 
+STATUS | wrapper  | 2013/07/09 15:28:07 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:28:08 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at main.WaifuBuilder.buildDisplays(WaifuBuilder.java:140)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at main.WaifuBuilder.build(WaifuBuilder.java:63)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at display.SkinOptionsDialog.<init>(SkinOptionsDialog.java:96)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at main.WaifuBuilder.buildDialogs(WaifuBuilder.java:155)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at main.WaifuBuilder.build(WaifuBuilder.java:66)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at main.WaifuBuilder.buildPanels(WaifuBuilder.java:169)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at main.WaifuBuilder.build(WaifuBuilder.java:68)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp: 
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: Encountered an error running main:
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: java.lang.NullPointerException
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at display.MenuMouseListener.<init>(MenuMouseListener.java:26)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at display.MenuPanel.<init>(MenuPanel.java:96)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at main.WaifuBuilder.buildPanels(WaifuBuilder.java:176)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at main.WaifuBuilder.build(WaifuBuilder.java:68)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:28:08 | WrapperSimpleApp Error: 	at java.lang.Thread.run(Thread.java:722)
+STATUS | wrapper  | 2013/07/09 15:28:11 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:32:14 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:32:14 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:32:14 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:32:14 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:32:14 | 
+STATUS | wrapper  | 2013/07/09 15:32:14 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:32:15 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:32:15 | C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\img\chatbubble.png
+INFO   | jvm 1    | 2013/07/09 15:32:15 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at main.WaifuBuilder.buildDisplays(WaifuBuilder.java:148)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at main.WaifuBuilder.build(WaifuBuilder.java:63)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at java.lang.Thread.run(Thread.java:722)
+STATUS | wrapper  | 2013/07/09 15:32:15 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:32:15 | CTRL-C trapped.  Forcing immediate shutdown.
+INFO   | jvm 1    | 2013/07/09 15:32:15 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at display.SkinOptionsDialog.<init>(SkinOptionsDialog.java:96)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at main.WaifuBuilder.buildDialogs(WaifuBuilder.java:163)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at main.WaifuBuilder.build(WaifuBuilder.java:66)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:32:15 | 	at java.lang.Thread.run(Thread.java:722)
+ERROR  | wrapper  | 2013/07/09 15:32:15 | JVM did not exit on request, terminated
+STATUS | wrapper  | 2013/07/09 15:32:16 | <-- Wrapper Stopped
+STATUS | wrapper  | 2013/07/09 15:32:19 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:32:19 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:32:19 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:32:19 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:32:19 | 
+STATUS | wrapper  | 2013/07/09 15:32:19 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:32:19 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:32:20 | C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\bin\img\chatbubble.png
+INFO   | jvm 1    | 2013/07/09 15:32:20 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at main.WaifuBuilder.buildDisplays(WaifuBuilder.java:148)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at main.WaifuBuilder.build(WaifuBuilder.java:63)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at display.SkinOptionsDialog.<init>(SkinOptionsDialog.java:96)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at main.WaifuBuilder.buildDialogs(WaifuBuilder.java:163)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at main.WaifuBuilder.build(WaifuBuilder.java:66)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | javax.imageio.IIOException: Can't read input file!
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at javax.imageio.ImageIO.read(ImageIO.java:1301)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at main.WaifuBuilder.buildPanels(WaifuBuilder.java:177)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at main.WaifuBuilder.build(WaifuBuilder.java:68)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | 	at java.lang.Thread.run(Thread.java:722)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp: 
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: Encountered an error running main:
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: java.lang.NullPointerException
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at display.MenuMouseListener.<init>(MenuMouseListener.java:26)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at display.MenuPanel.<init>(MenuPanel.java:96)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at main.WaifuBuilder.buildPanels(WaifuBuilder.java:184)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at main.WaifuBuilder.build(WaifuBuilder.java:68)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at main.Main.main(Main.java:14)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at java.lang.reflect.Method.invoke(Method.java:601)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:287)
+INFO   | jvm 1    | 2013/07/09 15:32:20 | WrapperSimpleApp Error: 	at java.lang.Thread.run(Thread.java:722)
+STATUS | wrapper  | 2013/07/09 15:32:23 | <-- Wrapper Stopped

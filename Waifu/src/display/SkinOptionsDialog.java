@@ -3,34 +3,27 @@ package display;
 import javax.imageio.ImageIO;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-
 import core.Serializer;
 import core.SkinContainer;
 import core.Emotion;
 import core.Settings;
-
 import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
-
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-
 import javax.swing.AbstractAction;
-
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.Action;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -40,7 +33,6 @@ import javax.swing.JScrollPane;
 //  @ Date			: 2013.07.02.
 //  @ Author		: csiki
 //  @ Copyright		: All rights reserved
-
 
 
 public class SkinOptionsDialog extends JDialog {

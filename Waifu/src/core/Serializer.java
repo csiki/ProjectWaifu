@@ -14,7 +14,6 @@ import java.io.Serializable;
 //  @ Copyright		: All rights reserved
 
 
-
 public class Serializer {
 	
 	static String mainFolder = "serialized" + java.io.File.separator;

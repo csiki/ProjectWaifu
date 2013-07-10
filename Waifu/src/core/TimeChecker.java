@@ -7,7 +7,6 @@ package core;
 //  @ Copyright		: All rights reserved
 
 
-
 public class TimeChecker extends Sensor implements Runnable {
 	
     public TimeChecker(String name) {
@@ -18,11 +17,11 @@ public class TimeChecker extends Sensor implements Runnable {
 	public void run() {
 
     	while (this.turnedOn) {
-    		// notify all subs every 5 minutes
+    		// notify all subs in every minute
     		this.notifyAllSubs();
     		
-    		// wait 5 minutes
-    		for (int i = 0; i < 300; ++i) {
+    		// wait 1 minute
+    		for (int i = 0; i < 60; ++i) {
     			
     			if (!this.turnedOn) {
     				break;

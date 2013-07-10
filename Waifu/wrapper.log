@@ -1,0 +1,143 @@
+FATAL  | wrapper  | 2013/07/09 15:33:46 | Failed to load configuration.
+WARN   | wrapper  | 2013/07/09 15:34:23 | Unable to write to the configured log directory: ..\logs (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:34:23 |   The directory does not exist.
+WARN   | wrapper  | 2013/07/09 15:34:23 | Unable to write to the configured log file: ..\logs\wrapper.log (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:34:23 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2013/07/09 15:34:23 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:34:23 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:34:23 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:34:23 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:34:23 | 
+STATUS | wrapper  | 2013/07/09 15:34:23 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:34:24 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:34:24 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:34:28 | Launching a JVM...
+INFO   | jvm 2    | 2013/07/09 15:34:28 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:34:28 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:34:33 | Launching a JVM...
+INFO   | jvm 3    | 2013/07/09 15:34:33 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:34:33 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:34:37 | Launching a JVM...
+INFO   | jvm 4    | 2013/07/09 15:34:37 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
+ERROR  | wrapper  | 2013/07/09 15:34:37 | JVM exited while loading the application.
+STATUS | wrapper  | 2013/07/09 15:34:39 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2013/07/09 15:34:39 | <-- Wrapper Stopped
+WARN   | wrapper  | 2013/07/09 15:35:31 | Unable to write to the configured log directory: ..\logs (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:35:31 |   The directory does not exist.
+WARN   | wrapper  | 2013/07/09 15:35:31 | Unable to write to the configured log file: ..\logs\wrapper.log (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:35:31 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2013/07/09 15:35:31 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:35:31 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:35:31 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:35:31 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:35:31 | 
+STATUS | wrapper  | 2013/07/09 15:35:31 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:35:32 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:35:32 | C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\img\chatbubble.png
+INFO   | jvm 1    | 2013/07/09 15:35:32 | builded
+INFO   | jvm 1    | 2013/07/09 15:35:37 | started
+INFO   | jvm 1    | 2013/07/09 15:35:40 | [keyTyped]: 72
+INFO   | jvm 1    | 2013/07/09 15:35:40 | [keyTyped]: 73
+STATUS | wrapper  | 2013/07/09 15:36:10 | <-- Wrapper Stopped
+WARN   | wrapper  | 2013/07/09 15:37:04 | Unable to write to the configured log directory: ..\logs (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:37:04 |   The directory does not exist.
+WARN   | wrapper  | 2013/07/09 15:37:04 | Unable to write to the configured log file: ..\logs\wrapper.log (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:37:04 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2013/07/09 15:37:04 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:37:04 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:37:04 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:37:04 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:37:04 | 
+STATUS | wrapper  | 2013/07/09 15:37:05 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:37:05 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:37:05 | C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\img\chatbubble.png
+INFO   | jvm 1    | 2013/07/09 15:37:06 | builded
+INFO   | jvm 1    | 2013/07/09 15:37:09 | [keyTyped]: 72
+INFO   | jvm 1    | 2013/07/09 15:37:10 | [keyTyped]: 73
+INFO   | jvm 1    | 2013/07/09 15:37:11 | started
+INFO   | jvm 1    | 2013/07/09 15:37:11 | [keyTyped]: 72
+INFO   | jvm 1    | 2013/07/09 15:37:12 | [keyTyped]: 73
+WARN   | wrapper  | 2013/07/09 15:46:59 | Unable to write to the configured log directory: ..\logs (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:46:59 |   The directory does not exist.
+WARN   | wrapper  | 2013/07/09 15:46:59 | Unable to write to the configured log file: ..\logs\wrapper.log (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:46:59 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2013/07/09 15:46:59 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:46:59 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:46:59 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:46:59 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:46:59 | 
+STATUS | wrapper  | 2013/07/09 15:47:00 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:47:00 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:47:00 | C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\img\chatbubble.png
+INFO   | jvm 1    | 2013/07/09 15:47:00 | builded
+INFO   | jvm 1    | 2013/07/09 15:47:03 | [keyTyped]: 27
+INFO   | jvm 1    | 2013/07/09 15:47:03 | [keyTyped]: 160
+INFO   | jvm 1    | 2013/07/09 15:47:06 | started
+INFO   | jvm 1    | 2013/07/09 15:47:11 | [keyTyped]: 87
+INFO   | jvm 1    | 2013/07/09 15:47:22 | [keyTyped]: 164
+INFO   | jvm 1    | 2013/07/09 15:47:22 | [keyTyped]: 9
+STATUS | wrapper  | 2013/07/09 15:47:29 | <-- Wrapper Stopped
+WARN   | wrapper  | 2013/07/09 15:50:12 | Unable to write to the configured log directory: ..\logs (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:50:12 |   The directory does not exist.
+WARN   | wrapper  | 2013/07/09 15:50:12 | Unable to write to the configured log file: ..\logs\wrapper.log (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:50:12 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2013/07/09 15:50:12 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:50:12 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:50:12 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:50:12 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:50:12 | 
+STATUS | wrapper  | 2013/07/09 15:50:12 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:50:12 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:50:12 | C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\img\chatbubble.png
+INFO   | jvm 1    | 2013/07/09 15:50:13 | builded
+INFO   | jvm 1    | 2013/07/09 15:50:16 | [keyTyped]: 27
+INFO   | jvm 1    | 2013/07/09 15:50:16 | [keyTyped]: 160
+INFO   | jvm 1    | 2013/07/09 15:50:18 | started
+INFO   | jvm 1    | 2013/07/09 15:50:28 | [keyTyped]: 161
+INFO   | jvm 1    | 2013/07/09 15:50:28 | [keyTyped]: 87
+INFO   | jvm 1    | 2013/07/09 15:50:28 | [keyTyped]: 65
+INFO   | jvm 1    | 2013/07/09 15:50:29 | [keyTyped]: 73
+INFO   | jvm 1    | 2013/07/09 15:50:29 | [keyTyped]: 70
+INFO   | jvm 1    | 2013/07/09 15:50:29 | [keyTyped]: 85
+INFO   | jvm 1    | 2013/07/09 15:50:29 | [keyTyped]: 83
+INFO   | jvm 1    | 2013/07/09 15:50:34 | [keyTyped]: 164
+INFO   | jvm 1    | 2013/07/09 15:50:34 | [keyTyped]: 9
+INFO   | jvm 1    | 2013/07/09 15:50:35 | [keyTyped]: 164
+INFO   | jvm 1    | 2013/07/09 15:50:35 | [keyTyped]: 9
+STATUS | wrapper  | 2013/07/09 15:50:39 | <-- Wrapper Stopped
+WARN   | wrapper  | 2013/07/09 15:50:41 | Unable to write to the configured log directory: ..\logs (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:50:41 |   The directory does not exist.
+WARN   | wrapper  | 2013/07/09 15:50:41 | Unable to write to the configured log file: ..\logs\wrapper.log (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:50:41 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2013/07/09 15:50:41 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:50:41 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:50:41 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:50:41 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:50:41 | 
+STATUS | wrapper  | 2013/07/09 15:50:41 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:50:42 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:50:42 | C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\img\chatbubble.png
+INFO   | jvm 1    | 2013/07/09 15:50:42 | builded
+INFO   | jvm 1    | 2013/07/09 15:50:44 | [keyTyped]: 27
+INFO   | jvm 1    | 2013/07/09 15:50:45 | [keyTyped]: 160
+INFO   | jvm 1    | 2013/07/09 15:50:47 | started
+STATUS | wrapper  | 2013/07/09 15:50:53 | <-- Wrapper Stopped
+WARN   | wrapper  | 2013/07/09 15:51:32 | Unable to write to the configured log directory: ..\logs (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:51:32 |   The directory does not exist.
+WARN   | wrapper  | 2013/07/09 15:51:32 | Unable to write to the configured log file: ..\logs\wrapper.log (A rendszer nem találja a megadott elérési utat. (0x3))
+WARN   | wrapper  | 2013/07/09 15:51:32 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2013/07/09 15:51:32 | --> Wrapper Started as Console
+STATUS | wrapper  | 2013/07/09 15:51:32 | Java Service Wrapper Community Edition 64-bit 3.5.7
+STATUS | wrapper  | 2013/07/09 15:51:32 |   Copyright (C) 1999-2010 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2013/07/09 15:51:32 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2013/07/09 15:51:32 | 
+STATUS | wrapper  | 2013/07/09 15:51:32 | Launching a JVM...
+INFO   | jvm 1    | 2013/07/09 15:51:32 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2013/07/09 15:51:32 | C:\CSIKI\PROGRAMING\Java\ProjectWaifu\Waifu\img\chatbubble.png
+INFO   | jvm 1    | 2013/07/09 15:51:33 | builded
+INFO   | jvm 1    | 2013/07/09 15:51:35 | [keyTyped]: 27
+INFO   | jvm 1    | 2013/07/09 15:51:35 | [keyTyped]: 160
+INFO   | jvm 1    | 2013/07/09 15:51:38 | started
+INFO   | jvm 1    | 2013/07/09 15:51:40 | [keyTyped]: 87
+INFO   | jvm 1    | 2013/07/09 15:51:40 | [keyTyped]: 65
+STATUS | wrapper  | 2013/07/09 15:51:50 | <-- Wrapper Stopped

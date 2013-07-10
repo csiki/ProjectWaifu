@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.regex.Pattern;
 
 public class FileClassLoader extends ClassLoader {
 	
@@ -12,7 +11,7 @@ public class FileClassLoader extends ClassLoader {
 		super(cl);
 	}
 	
-	@SuppressWarnings({ "rawtypes", "resource" })
+	@SuppressWarnings({ "rawtypes" })
 	public Class loadClassFromFile(File file) throws FileNotFoundException, IOException {
 		
 		FileInputStream input = new FileInputStream(file);

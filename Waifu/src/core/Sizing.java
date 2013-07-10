@@ -1,5 +1,12 @@
 package core;
 
+//@ Project			: ProjectWaifu
+//@ File Name		: Sizing.java
+//@ Date			: 2013.07.02.
+//@ Author			: csiki
+//@ Copyright		: All rights reserved
+
+
 public class Sizing {
 	
 	public int waifuWidth;
@@ -21,9 +28,9 @@ public class Sizing {
     	this.cloudWidth = 300;
     	this.cloudHeight = 250;
     	this.cloudFontSize = 18;
-        this.menuElementWidth = 100;
-        this.menuElementHeight = 60;
-        this.menuElementFontSize = 24;
+        this.menuElementWidth = 130;
+        this.menuElementHeight = 38;
+        this.menuElementFontSize = 20;
         this.menuPanelWidth = 300;
         this.menuPanelHeight = 200;
         

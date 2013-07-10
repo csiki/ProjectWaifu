@@ -7,7 +7,11 @@ package core;
 //  @ Copyright		: All rights reserved
 
 
-
+/**
+ * Base class of user actions like KeyTyped, TimeReached etc.
+ * @author csiki
+ *
+ */
 public abstract class UserAction {
 	
     protected Behavior behavior;

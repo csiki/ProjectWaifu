@@ -13,14 +13,12 @@ import java.util.Map;
 //  @ Copyright		: All rights reserved
 
 
-
 public class Settings implements Serializable {
 	
 	private static final long serialVersionUID = 2422256491766180618L;
 	
 	private boolean runOnStartUp;
     private boolean placeOnTop;
-    //private Dimension resolution;
     private int posX;
     private int posY;
     private String behaviorsPath;
@@ -33,16 +31,7 @@ public class Settings implements Serializable {
     	sizes.put("300x400", new Sizing()); // default
     }
     
-    // static vars
-    // TODO kicserélni Sizingra!!!
     public final static int maxNumOfSkins = Emotion.values().length;
-    public final static int waifuWidth = 300;
-    public final static int waifuHeight = 400;
-    public final static int cloudWidth = 300;
-    public final static int cloudHeight = 250;
-    public final static int menuElementWidth = 100;
-    public final static int menuElementHeight = 60;
-    public final static int menuElementFontSize = 24;
     
     public Settings() {
     	

@@ -7,7 +7,6 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
-
 import core.Settings;
 
 //  @ Project		: ProjectWaifu
@@ -15,7 +14,6 @@ import core.Settings;
 //  @ Date			: 2013.07.02.
 //  @ Author		: csiki
 //  @ Copyright		: All rights reserved
-
 
 
 public class CloudCommentDisplay implements ElementDisplay {
@@ -52,23 +50,12 @@ public class CloudCommentDisplay implements ElementDisplay {
 			// set string font
 			g2.setFont(new Font("Arial", Font.BOLD, this.settings.getCurrentSizing().cloudFontSize));
 			
-			// calculate length of comment in px
-			FontMetrics fm = g2.getFontMetrics();
-			int textLength = fm.stringWidth(comment);
-			
 			// calculate space for text (80% in length and height of cloud)
 			int cW = (int) (this.settings.getCurrentSizing().cloudWidth * 0.8);
 			int cH = (int) (this.settings.getCurrentSizing().cloudHeight * 0.8);
 			
-			// calculate number of rows (minimum)
-			int numOfRowsAtLeast = (int) Math.ceil((double) textLength / (double) cW);
-			
-			// string wrapping
-			int divider = textLength / numOfRowsAtLeast; // number of characters in every rows (but the last) at least
-			
-			int prevSpacePos = 0;
-			
-			// split comment by spaces
+			// split comment by spaces then create rows from the words
+			FontMetrics fm = g2.getFontMetrics();
 			String[] words = comment.split(" ");
 			String tmp = words[0];
 			List<String> rows = new ArrayList<String>();

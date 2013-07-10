@@ -1,35 +1,20 @@
 package display;
 
 import javax.swing.JDialog;
-
 import core.Serializer;
 import core.Settings;
-
-import java.awt.Dimension;
-import java.awt.Frame;
 import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-
-import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
-import javax.swing.JTextField;
-
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-
 import javax.swing.AbstractAction;
-
 import java.awt.event.ActionEvent;
-import java.util.Set;
-
 import javax.swing.Action;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
@@ -40,7 +25,6 @@ import javax.swing.JCheckBox;
 //  @ Date			: 2013.07.02.
 //  @ Author		: csiki
 //  @ Copyright		: All rights reserved
-
 
 
 public class SettingsDialog extends JDialog {
@@ -54,14 +38,13 @@ public class SettingsDialog extends JDialog {
 	private final JButton cancelButton = new JButton("Cancel");
 	private final JButton okButton = new JButton("OK");
 	
-	private int result = -1;
-	private String input;
+	//private int result = -1;
 	private final Action okAction = new OkAction();
 	private final Action cancelAction = new CancelAction();
 	private final JPanel settingsPanel = new JPanel();
 	private final JLabel lblResolution = new JLabel("Resolution");
-	@SuppressWarnings("unchecked")
-	private final JComboBox resCombo = new JComboBox(Settings.sizes.keySet().toArray());
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	private final JComboBox<String> resCombo = new JComboBox(Settings.sizes.keySet().toArray());
 	private final JLabel lblRunOnStartup = new JLabel("Run on startup");
 	private final JCheckBox runOnSCheckb = new JCheckBox("");
 	private final JLabel lblPlaceOnTop = new JLabel("Place on top");
@@ -178,7 +161,7 @@ public class SettingsDialog extends JDialog {
 		
 		public void actionPerformed(ActionEvent e) {
 			this.setEnabled(false);
-			result = JOptionPane.YES_OPTION;
+			//result = JOptionPane.YES_OPTION;
 			
 			// settings
 			settings.setPlaceOnTop(placeOnTCheckb.isSelected());
@@ -190,6 +173,9 @@ public class SettingsDialog extends JDialog {
 			
 			// manipulate mainframe
 			mainFrame.setAlwaysOnTop(placeOnTCheckb.isSelected());
+			
+			// run on startup
+			// TODO
 			
 			dispose();
 		}
@@ -206,7 +192,7 @@ public class SettingsDialog extends JDialog {
 		
 		public void actionPerformed(ActionEvent e) {
 			this.setEnabled(false);
-			result = JOptionPane.CANCEL_OPTION;
+			//result = JOptionPane.CANCEL_OPTION;
 			dispose();
 		}
 	}

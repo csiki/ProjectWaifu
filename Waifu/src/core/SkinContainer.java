@@ -18,7 +18,6 @@ import javax.imageio.ImageIO;
 //  @ Copyright		: All rights reserved
 
 
-
 public class SkinContainer implements Serializable {
 	
 	private static final long serialVersionUID = -1870357066579605091L;
@@ -32,6 +31,8 @@ public class SkinContainer implements Serializable {
     	for (int i = 0; i < Settings.maxNumOfSkins; ++i) {
     		this.skins.add(null);
     	}
+    	
+    	init();
     }
     
     public void init() {

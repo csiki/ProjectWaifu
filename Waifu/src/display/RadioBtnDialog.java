@@ -24,6 +24,7 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.Action;
+import core.Settings;
 
 public class RadioBtnDialog extends JDialog {
 
@@ -37,6 +38,7 @@ public class RadioBtnDialog extends JDialog {
 	private final JButton okButton = new JButton("OK");
 	
 	private int result = -1;
+	private Settings settings;
 	private final Action okAction = new OkAction();
 	private final Action cancelAction = new CancelAction();
 	private ButtonGroup buttonGroup;
@@ -90,12 +92,19 @@ public class RadioBtnDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public RadioBtnDialog(JFrame parent) {
+	public RadioBtnDialog(Settings settings, JFrame parent) {
 		super(parent, true);
+		this.settings = settings;
+		this.options = null;
 	}
 	
 	public void init() {
-		setBounds(100, 100, 150, 150);
+		
+		if (this.options == null) {
+			return; // no options added
+		}
+		
+		setBounds(this.settings.getPosX() + 90, this.settings.getPosY() + 80, 150, 150);
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.getRootPane().setOpaque(false);
 		this.setUndecorated(true);
@@ -121,6 +130,8 @@ public class RadioBtnDialog extends JDialog {
 		// radio btn grids
 		int y = 0;
 		for (JRadioButton rb : this.radioBtns) {
+			rb.setBorderPainted(true);
+			rb.setMargin(new Insets(3, 3, 3, 3));
 			GridBagConstraints gridBag = new GridBagConstraints();
 			gridBag.insets = new Insets(0, 0, 5, 0);
 			gridBag.gridx = 1;

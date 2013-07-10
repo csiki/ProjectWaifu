@@ -11,7 +11,6 @@ import java.util.List;
 //  @ Copyright		: All rights reserved
 
 
-
 public abstract class Sensor {
 	
 	protected volatile boolean turnedOn;

@@ -5,6 +5,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
+//@ Project			: ProjectWaifu
+//@ File Name		: MenuMouseListener.java
+//@ Date			: 2013.07.02.
+//@ Author			: csiki
+//@ Copyright		: All rights reserved
+
 public class MenuMouseListener implements MouseListener {
 	
 	private BufferedImage exitImg;
@@ -16,7 +22,7 @@ public class MenuMouseListener implements MouseListener {
 	private Dimension wrDim1;
 	private Dimension wrDim2;
 	
-	public MenuMouseListener(MenuPanel mp, BufferedImage wrenchImg, BufferedImage exitImg) { // TODO helyette exit interface !
+	public MenuMouseListener(MenuPanel mp, BufferedImage wrenchImg, BufferedImage exitImg) {
 		super();
 		this.mp = mp;
 		this.wrenchImg = wrenchImg;
@@ -29,6 +35,7 @@ public class MenuMouseListener implements MouseListener {
 	}
 	
 	private boolean isInInterval(MouseEvent arg, Dimension dim1, Dimension dim2) {
+		
 		if (arg.getX() >= dim1.getWidth()
 				&& arg.getX() < dim2.getWidth()
 				&& arg.getY() >= dim1.getHeight()
@@ -44,16 +51,10 @@ public class MenuMouseListener implements MouseListener {
 	public void mouseClicked(MouseEvent arg0) {}
 
 	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void mouseEntered(MouseEvent arg0) {}
 
 	@Override
-	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void mouseExited(MouseEvent arg0) {}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {}

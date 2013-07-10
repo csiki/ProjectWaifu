@@ -10,7 +10,6 @@ import java.util.List;
 //  @ Copyright		: All rights reserved
 
 
-
 public class BehaviorContainer {
 	
 	private volatile List<Boolean> behaviorActivated;

@@ -3,7 +3,6 @@ package display;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-
 import core.Settings;
 
 //  @ Project		: ProjectWaifu
@@ -11,7 +10,6 @@ import core.Settings;
 //  @ Date			: 2013.07.02.
 //  @ Author		: csiki
 //  @ Copyright		: All rights reserved
-
 
 
 public class SkinDisplay implements ElementDisplay {

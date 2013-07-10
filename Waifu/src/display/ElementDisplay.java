@@ -9,7 +9,6 @@ import java.awt.Graphics;
 //  @ Copyright		: All rights reserved
 
 
-
 public interface ElementDisplay {
 	
     public void paintComponent(Graphics g, int x, int y);
