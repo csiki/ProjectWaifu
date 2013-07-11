@@ -37,17 +37,17 @@ public abstract class Behavior {
     }
     
     /**
-     * This method is called, when a user action is created, activated with the actual behavior passed and the user action gone off.
-     * @param userAction the user action that has gone off, and now notifies the actual behavior.
-     */
-    public abstract void notify(UserAction userAction);
-    
-    /**
      * Contains the "condition" for the "consequent" to run.
      * The place where user actions should be created and activated.
      * @param UAF UserActionFactory instance is passed, so user actions can be created here.
      */
     public abstract void condition(UserActionFactory UAF);
+    
+    /**
+     * This method is called, when a user action is created, activated with the actual behavior passed and the user action gone off.
+     * @param userAction the user action that has gone off, and now notifies the actual behavior.
+     */
+    public abstract void actionPerformed(UserAction userAction);
     
     /**
      * The "consequent" sequence of program, that would run if the "condition" part is fulfilled, and the AI let it to do so.

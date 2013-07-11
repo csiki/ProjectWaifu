@@ -28,6 +28,7 @@ public class InputBoxDialog extends JDialog {
 
 	private static final long serialVersionUID = 27985878973149436L;
 	private final JPanel buttonPane = new JPanel();
+	private JFrame parentFrame;
 	
 	private final JButton cancelButton = new JButton("Cancel");
 	private final JButton okButton = new JButton("OK");
@@ -50,16 +51,14 @@ public class InputBoxDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public InputBoxDialog(Settings settings, JFrame parent) {
-		super(parent, true);
+	public InputBoxDialog(Settings settings, JFrame parentFrame) {
+		super(parentFrame, true);
+		this.parentFrame = parentFrame;
 		this.settings = settings;
 	}
 	
 	public void init() {
 		textField.setColumns(10);
-		setBounds(this.settings.getPosX() + this.settings.getCurrentSizing().offsetInputDialogBoxX + 18,
-				this.settings.getPosY() + this.settings.getCurrentSizing().offsetInputDialogBoxY,
-				150, 150);
 		this.setPreferredSize(new Dimension(150, 150));
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.getRootPane().setOpaque(false);
@@ -102,6 +101,16 @@ public class InputBoxDialog extends JDialog {
 		cancelButton.setAction(cancelAction);
 		cancelButton.setActionCommand("Cancel");
 		buttonPane.add(cancelButton);
+		
+		this.pack();
+		
+		// position
+		int offsetX = (this.settings.getCurrentSizing().cloudWidth - this.getSize().width) / 2;
+		int offsetY = (this.settings.getCurrentSizing().cloudHeight - this.getSize().height) / 2 + 50;
+				
+		setBounds(parentFrame.getLocation().x + this.settings.getCurrentSizing().offsetInputDialogBoxX + offsetX,
+				parentFrame.getLocation().y + this.settings.getCurrentSizing().offsetInputDialogBoxY + offsetY,
+				this.getSize().width, this.getSize().height);
 		
 		setVisible(true);
 	}

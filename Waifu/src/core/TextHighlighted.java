@@ -66,7 +66,7 @@ public class TextHighlighted extends UserAction {
     	this.textHighlighted = true;
     	
     	if (this.behavior != null) {
-    		this.behavior.notify(this);
+    		this.behavior.actionPerformed(this);
     	}
     }
     

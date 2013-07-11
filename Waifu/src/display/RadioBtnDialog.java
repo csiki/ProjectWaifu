@@ -31,6 +31,7 @@ public class RadioBtnDialog extends JDialog {
 	private static final long serialVersionUID = -6641501166870458281L;
 	
 	private List<String> options;
+	private JFrame parentFrame;
 	
 	private final JPanel buttonPane = new JPanel();
 	private final JPanel radioBtnPane = new JPanel();
@@ -92,8 +93,9 @@ public class RadioBtnDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public RadioBtnDialog(Settings settings, JFrame parent) {
-		super(parent, true);
+	public RadioBtnDialog(Settings settings, JFrame parentFrame) {
+		super(parentFrame, true);
+		this.parentFrame = parentFrame;
 		this.settings = settings;
 		this.options = null;
 	}
@@ -104,12 +106,6 @@ public class RadioBtnDialog extends JDialog {
 			return; // no options added
 		}
 		
-		int offsetX = (int) (Math.ceil((double) this.options.size() / 3.0) * 10);
-		int offsetY = (int) (Math.ceil((double) this.options.size() / 3.0) * 10);
-		
-		setBounds(this.settings.getPosX() + this.settings.getCurrentSizing().offsetInputDialogBoxX - offsetX,
-				this.settings.getPosY() + this.settings.getCurrentSizing().offsetInputDialogBoxY - offsetY,
-				150, 150);
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.getRootPane().setOpaque(false);
 		this.setUndecorated(true);
@@ -135,8 +131,17 @@ public class RadioBtnDialog extends JDialog {
 		// radio btn grids
 		int x = 0;
 		int y = 0;
+		int numOfCharsInRow = 0;
 		
 		for (JRadioButton rb : this.radioBtns) {
+			
+			if (numOfCharsInRow > 20 || x == 5) {
+				x = 0;
+				++y;
+				numOfCharsInRow = 0;
+			}
+			numOfCharsInRow += rb.getText().length();
+			
 			rb.setBorderPainted(true);
 			rb.setMargin(new Insets(3, 3, 3, 3));
 			GridBagConstraints gridBag = new GridBagConstraints();
@@ -145,10 +150,6 @@ public class RadioBtnDialog extends JDialog {
 			gridBag.gridy = y;
 			radioBtnPane.add(rb, gridBag);
 
-			if (x == 2) {
-				x = -1;
-				++y;
-			}
 			++x;
 		}
 		
@@ -175,6 +176,15 @@ public class RadioBtnDialog extends JDialog {
 		buttonPane.add(cancelButton);
 		
 		this.pack();
+		
+		// position
+		int offsetX = (this.settings.getCurrentSizing().cloudWidth - this.getSize().width) / 2;
+		int offsetY = (this.settings.getCurrentSizing().cloudHeight - this.getSize().height) / 2;
+		
+		setBounds(parentFrame.getLocation().x + this.settings.getCurrentSizing().offsetInputDialogBoxX + offsetX,
+				parentFrame.getLocation().y + this.settings.getCurrentSizing().offsetInputDialogBoxY + offsetY,
+				this.getSize().width, this.getSize().height);
+		
 		setVisible(true);
 	}
 

@@ -66,11 +66,11 @@ public class StringTyped extends UserAction {
     		++this.state;
     		if (this.state == this.stringExpected.length()) {
     			this.deactivate();
+    			this.stringTyped = true;
     			
     			if (this.behavior != null) {
-    				this.behavior.notify(this);
+    				this.behavior.actionPerformed(this);
     			}
-    			this.stringTyped = true;
     		}
     	}
     	else {

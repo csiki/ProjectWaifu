@@ -45,7 +45,7 @@ public class SettingsDialog extends JDialog {
 	private final JLabel lblResolution = new JLabel("Resolution");
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private final JComboBox<String> resCombo = new JComboBox(Settings.sizes.keySet().toArray());
-	private final JLabel lblRunOnStartup = new JLabel("Run on startup");
+	//private final JLabel lblRunOnStartup = new JLabel("Run on startup"); // TODO later
 	private final JCheckBox runOnSCheckb = new JCheckBox("");
 	private final JLabel lblPlaceOnTop = new JLabel("Place on top");
 	private final JCheckBox placeOnTCheckb = new JCheckBox("");
@@ -66,7 +66,9 @@ public class SettingsDialog extends JDialog {
 		// clear
 		this.okButton.setEnabled(true);
 		this.cancelButton.setEnabled(true);
-		this.setBounds(this.settings.getPosX(), this.settings.getPosY(), 300, 150);
+		this.setBounds(this.settings.getPosX() + this.settings.getCurrentSizing().offsetInputDialogBoxX - 100,
+				this.settings.getPosY() + this.settings.getCurrentSizing().offsetInputDialogBoxY - 100,
+				300, 150);
 		buttonPane.setOpaque(false);
 		buttonPane.setBackground(new Color (0, 0, 0, 0));
 		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -95,21 +97,21 @@ public class SettingsDialog extends JDialog {
 		
 		GridBagConstraints gbc_lblResolution = new GridBagConstraints();
 		gbc_lblResolution.anchor = GridBagConstraints.EAST;
-		gbc_lblResolution.insets = new Insets(0, 0, 5, 5);
+		gbc_lblResolution.insets = new Insets(10, 0, 5, 5);
 		gbc_lblResolution.gridx = 1;
 		gbc_lblResolution.gridy = 1;
 		settingsPanel.add(lblResolution, gbc_lblResolution);
 		
 		GridBagConstraints gbc_resCombo = new GridBagConstraints();
-		gbc_resCombo.insets = new Insets(0, 0, 5, 0);
+		gbc_resCombo.insets = new Insets(10, 0, 5, 0);
 		gbc_resCombo.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_resCombo.gridx = 3;
 		gbc_resCombo.gridy = 1;
 		settingsPanel.add(resCombo, gbc_resCombo);
 		
-		GridBagConstraints gbc_lblRunOnStartup = new GridBagConstraints();
+		/*GridBagConstraints gbc_lblRunOnStartup = new GridBagConstraints();
 		gbc_lblRunOnStartup.anchor = GridBagConstraints.EAST;
-		gbc_lblRunOnStartup.insets = new Insets(0, 0, 5, 5);
+		gbc_lblRunOnStartup.insets = new Insets(0, 30, 5, 5);
 		gbc_lblRunOnStartup.gridx = 1;
 		gbc_lblRunOnStartup.gridy = 2;
 		settingsPanel.add(lblRunOnStartup, gbc_lblRunOnStartup);
@@ -119,11 +121,12 @@ public class SettingsDialog extends JDialog {
 		gbc_runOnSCheckb.anchor = GridBagConstraints.WEST;
 		gbc_runOnSCheckb.gridx = 3;
 		gbc_runOnSCheckb.gridy = 2;
-		settingsPanel.add(runOnSCheckb, gbc_runOnSCheckb);
+		settingsPanel.add(runOnSCheckb, gbc_runOnSCheckb);*/
+		// TODO
 		
 		GridBagConstraints gbc_lblPlaceOnTop = new GridBagConstraints();
 		gbc_lblPlaceOnTop.anchor = GridBagConstraints.EAST;
-		gbc_lblPlaceOnTop.insets = new Insets(0, 0, 0, 5);
+		gbc_lblPlaceOnTop.insets = new Insets(0, 30, 0, 5);
 		gbc_lblPlaceOnTop.gridx = 1;
 		gbc_lblPlaceOnTop.gridy = 3;
 		settingsPanel.add(lblPlaceOnTop, gbc_lblPlaceOnTop);

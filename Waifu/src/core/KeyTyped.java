@@ -96,11 +96,11 @@ public class KeyTyped extends UserAction {
     	
     	if (this.key == this.keyExpected) {
     		this.deactivate();
+    		this.keyTyped = true;
     		
     		if (this.behavior != null) {
-    			this.behavior.notify(this);
+    			this.behavior.actionPerformed(this);
     		}
-    		this.keyTyped = true;
     	}
     }
     

@@ -1,5 +1,6 @@
 package core;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -31,9 +32,21 @@ public class Serializer {
     		path += "misc" + java.io.File.separator;
     	}
     	
+    	// create folder if does not exists
+    	new File(path).mkdirs();
+    	
+    	// create file if does not exists
+    	File file = new File(path + filePathWithNameAndExtension);
+    	try {
+			file.createNewFile();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			return;
+		}
+    	
     	// serialize
     	try {
-			FileOutputStream fout = new FileOutputStream(path + filePathWithNameAndExtension);
+			FileOutputStream fout = new FileOutputStream(file, false);
 			ObjectOutputStream out = new ObjectOutputStream(fout);
 			out.writeObject(object);
 			
@@ -41,6 +54,7 @@ public class Serializer {
 			fout.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+			return;
 		}
     }
     

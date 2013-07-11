@@ -35,8 +35,8 @@ public class Sizing {
         this.menuElementFontSize = 20;
         this.menuPanelWidth = 300;
         this.menuPanelHeight = 200;
-        this.offsetInputDialogBoxX = 370;
-        this.offsetInputDialogBoxY = 590;
+        this.offsetInputDialogBoxX = 310;
+        this.offsetInputDialogBoxY = 490;
         
         this.frameWidth = this.waifuWidth + this.cloudWidth + 20;
         this.frameHeight = 3 * this.cloudHeight;

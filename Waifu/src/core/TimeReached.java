@@ -164,6 +164,33 @@ public class TimeReached extends UserAction {
     }
     
     /**
+     * Sets year, month, day, hour and minute as in time (time is serializable).
+     * @param time
+     */
+    public void setTime(Time time) {
+    	this.year = time.getYear();
+    	this.month = time.getMonth();
+    	this.day = time.getDay();
+    	this.hour = time.getHour();
+    	this.minute = time.getMinute();
+    }
+    
+    /**
+     * Sets the time to the current + min minutes.
+     * @param min
+     */
+    public void nextMinutes(int min) {
+    	Calendar cal = Calendar.getInstance();
+    	cal.add(Calendar.MINUTE, min);
+    	
+    	this.setYear(cal.get(Calendar.YEAR));
+    	this.setMonth(cal.get(Calendar.MONTH));
+    	this.setDay(cal.get(Calendar.DAY_OF_MONTH));
+    	this.setHour(cal.get(Calendar.HOUR));
+    	this.setMinute(cal.get(Calendar.MINUTE));
+    }
+    
+    /**
      * TimeChecker calls it every minute.
      * Behavior should NOT call it!
      */
@@ -198,7 +225,7 @@ public class TimeReached extends UserAction {
     		this.timeReached = true;
     		
     		if (this.behavior != null) {
-    			this.behavior.notify(this);
+    			this.behavior.actionPerformed(this);
     		}
     	}
     }
