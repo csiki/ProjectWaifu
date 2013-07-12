@@ -68,7 +68,7 @@ public class AIOptionsDialog extends JDialog {
 			} catch (IOException e) {
 				return;
 			}
-			
+			System.out.println(path + "|" + this.settings.getBehaviorsPath());
     		this.behLoader.setSource(path);
     		this.behContainer.clearBehaviors();
     		this.behLoader.loadBehaviors(behContainer);

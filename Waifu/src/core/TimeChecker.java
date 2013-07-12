@@ -20,8 +20,8 @@ public class TimeChecker extends Sensor implements Runnable {
     		// notify all subs in every minute
     		this.notifyAllSubs();
     		
-    		// wait 1 minute
-    		for (int i = 0; i < 60; ++i) {
+    		// wait 10 sec
+    		for (int i = 0; i < 10; ++i) {
     			
     			if (!this.turnedOn) {
     				break;

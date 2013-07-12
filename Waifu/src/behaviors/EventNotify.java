@@ -16,6 +16,7 @@ public class EventNotify extends Behavior {
 	HashMap<Time, String> events;
 	TimeReached timer;
 	String chosenEventName = null;
+	Time chosenEventTime = null;
 
 	@Override
 	public void condition(UserActionFactory UAF) {
@@ -24,10 +25,10 @@ public class EventNotify extends Behavior {
 		timer.activate(this);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void actionPerformed(UserAction userAction) {
-		// notify every 5 minutes
-		timer.nextMinutes(5);
+		timer.nextMinutes(1);
 		timer.activate(this);
 		// load events data
 		events = (HashMap<Time, String>) Serializer.deserialize(this, "events.dat");
@@ -39,6 +40,8 @@ public class EventNotify extends Behavior {
 		
 		// find already reached times
 		Iterator<Entry<Time, String>> it = events.entrySet().iterator();
+		this.chosenEventName = null;
+		this.chosenEventTime = null;
 		while (it.hasNext()) {
 			Entry<Time, String> one = it.next();
 			Time time = one.getKey();
@@ -46,8 +49,14 @@ public class EventNotify extends Behavior {
 			if (this.timePassed(time)) {
 				// notify user
 				chosenEventName = one.getValue();
-				// TODO delete this entry, aztán mehet conseqent ami a végén törli a stringet
+				this.chosenEventTime = one.getKey();
+				events.remove(one.getKey());
+				break;
 			}
+		}
+		
+		if (this.chosenEventName != null) {
+			this.conditionFulfilled();
 		}
 	}
 	
@@ -55,7 +64,7 @@ public class EventNotify extends Behavior {
 		
 		Calendar cal = Calendar.getInstance();
     	int currY = cal.get(Calendar.YEAR);
-    	int currMo = cal.get(Calendar.MONTH);
+    	int currMo = cal.get(Calendar.MONTH) + 1;
     	int currD = cal.get(Calendar.DAY_OF_MONTH);
     	int currH = cal.get(Calendar.HOUR_OF_DAY);
     	int currMi = cal.get(Calendar.MINUTE);
@@ -76,13 +85,44 @@ public class EventNotify extends Behavior {
     	
     	int reached = (currY - y) * 535680 + (currMo - mo) * 44640 + (currD - d) * 1440 + (currH - h) * 60 + (currMi - mi);
     	
+    	System.out.println("reached: " + reached);
+    	
     	return reached >= 0;
 	}
 
 	@Override
+	
 	public void consequent(CounterActionFactory CAF) {
-		// TODO Auto-generated method stub
 		
+		// save event changes
+		Serializer.serialize(this, this.events, "events.dat");
+		
+		// if it was yesterday (or earlier) we just mention it
+		Calendar cal = Calendar.getInstance();
+		CloudComment cl;
+		SkinSwitch ss;
+		if (cal.get(Calendar.DAY_OF_MONTH) > this.chosenEventTime.getDay()) {
+			cl = CAF.createCloudComment("I forgot to tell you about " + this.chosenEventName + "! I'm so sorry..");
+			ss = CAF.createSkinSwitch(Emotion.embarassed.code);
+		}
+		else {
+			cl = CAF.createCloudComment("Hey! I should notify you about an event: " + this.chosenEventName + ".");
+			ss = CAF.createSkinSwitch(Emotion.happy.code);
+		}
+		
+		cl.trigger();
+		ss.trigger();
+		
+		try {
+			Thread.sleep(6000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		this.chosenEventName = null;
+		
+		ss.setSkin(Emotion.neutral.code);
+		cl.hide();
+		ss.trigger();
 	}
 
 }

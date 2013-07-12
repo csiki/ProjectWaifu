@@ -29,7 +29,7 @@ public class Serializer {
     		path += behavior.getName() + java.io.File.separator;
     	}
     	else {
-    		path += "misc" + java.io.File.separator;
+    		path += "shared" + java.io.File.separator;
     	}
     	
     	// create folder if does not exists
@@ -66,7 +66,7 @@ public class Serializer {
     		path += behavior.getName() + java.io.File.separator;
     	}
     	else {
-    		path += "misc" + java.io.File.separator;
+    		path += "shared" + java.io.File.separator;
     	}
     	
     	// deserialize

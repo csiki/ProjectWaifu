@@ -37,7 +37,7 @@ public class AI {
     		this.busy = false;
     	}
     	else {
-    		beh.condition(userActionFactory);
+    		//beh.condition(userActionFactory);
     	}
     }
     

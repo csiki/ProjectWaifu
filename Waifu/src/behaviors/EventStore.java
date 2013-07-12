@@ -1,7 +1,6 @@
 package behaviors;
 
 import core.*;
-
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Random;
@@ -23,13 +22,13 @@ public class EventStore extends Behavior {
 		
 		// set a TimeReached to the next waitTime minute
 		this.askTime = UAF.createTimeReached();
-		this.askTime.nextMinutes(0); // TODO
+		this.askTime.nextMinutes(waitMinute);
 		
 		// this behavior is run only once a day, now we see if it has run already
 		// by loading a serialized file, that contains only an Integer, the day of the last run
-		Integer lastRun = (Integer) Serializer.deserialize(this, "lastrun.dat");
+		Integer lastRun = (Integer) Serializer.deserialize(this, "lastrunhour.dat");
 		if (lastRun != null) {
-			if (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) != lastRun) {
+			if (Calendar.getInstance().get(Calendar.HOUR_OF_DAY) != lastRun) {
 				// activate TimeReached
 				// it will call actionPerformed() method of this behavior..
 				// ..(when the given time reached)
@@ -53,7 +52,7 @@ public class EventStore extends Behavior {
 	public void consequent(CounterActionFactory CAF) {
 		
 		// save last run
-		Serializer.serialize(this, new Integer(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)), "lastrun.dat");
+		Serializer.serialize(this, new Integer(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)), "lastrunhour.dat");
 		
 		// now condition is fulfilled and AI has given the permission
 		// ask for any events in the future
@@ -151,14 +150,30 @@ public class EventStore extends Behavior {
 					
 					cloudComment.trigger();
 					eventHour.trigger();
-					
 					if (eventHour.getInput() == null) {
 						// rejected
 						rejected = true;
 						break;
 					}
 					else {
-						int hour = Integer.parseInt(eventHour.getInput());
+						int hour;
+						try {
+							hour = Integer.parseInt(eventHour.getInput());
+						} catch (Exception e) {
+							cloudComment.setComment("That was not a number!");
+							skinSwitch.setSkin(Emotion.mad.code);
+							
+							cloudComment.trigger();
+							skinSwitch.trigger();
+							
+							try {
+								Thread.sleep(3000);
+							} catch (InterruptedException e1) {
+								e1.printStackTrace();
+							}
+							this.actionPerformed(null);
+							return;
+						}
 						
 						cloudComment.setComment("When shall I notify you (minute 0-59)?");
 						InputBox eventMinute = CAF.createInputBox();
@@ -172,7 +187,24 @@ public class EventStore extends Behavior {
 							break;
 						}
 						else {
-							int minute = Integer.parseInt(eventMinute.getInput());
+							int minute;
+							try {
+								minute = Integer.parseInt(eventMinute.getInput());
+							} catch (Exception e) {
+								cloudComment.setComment("That was not a number!");
+								skinSwitch.setSkin(Emotion.mad.code);
+								
+								cloudComment.trigger();
+								skinSwitch.trigger();
+								
+								try {
+									Thread.sleep(3000);
+								} catch (InterruptedException e1) {
+									e1.printStackTrace();
+								}
+								this.actionPerformed(null);
+								return;
+							}
 							
 							// now we got the hour, minute, save the data
 							// create time that we can serialize (save)
@@ -182,6 +214,7 @@ public class EventStore extends Behavior {
 							// year, month, day automatically filled
 							
 							// deserialize existing events
+							@SuppressWarnings("unchecked")
 							HashMap<Time, String> events = (HashMap<Time, String>) Serializer.deserialize(this, "events.dat");
 							if (events == null) {
 								// no data exists
@@ -201,7 +234,7 @@ public class EventStore extends Behavior {
 							skinSwitch.trigger();
 							
 							try {
-								Thread.sleep(3500);
+								Thread.sleep(3000);
 							} catch (InterruptedException e) {
 								e.printStackTrace();
 							}
@@ -246,7 +279,24 @@ public class EventStore extends Behavior {
 							break;
 						}
 						else {
-							int day = Integer.parseInt(eventDay.getInput());
+							int day;
+							try {
+								day = Integer.parseInt(eventDay.getInput());
+							} catch (Exception e) {
+								cloudComment.setComment("That was not a number!");
+								skinSwitch.setSkin(Emotion.mad.code);
+								
+								cloudComment.trigger();
+								skinSwitch.trigger();
+								
+								try {
+									Thread.sleep(3000);
+								} catch (InterruptedException e1) {
+									e1.printStackTrace();
+								}
+								this.actionPerformed(null);
+								return;
+							}
 							
 							// hour
 							cloudComment.setComment("What hour?");
@@ -260,7 +310,24 @@ public class EventStore extends Behavior {
 								break;
 							}
 							else {
-								int hour = Integer.parseInt(eventHour.getInput());
+								int hour;
+								try {
+									hour = Integer.parseInt(eventHour.getInput());
+								} catch (Exception e) {
+									cloudComment.setComment("That was not a number!");
+									skinSwitch.setSkin(Emotion.mad.code);
+									
+									cloudComment.trigger();
+									skinSwitch.trigger();
+									
+									try {
+										Thread.sleep(3000);
+									} catch (InterruptedException e1) {
+										e1.printStackTrace();
+									}
+									this.actionPerformed(null);
+									return;
+								}
 								
 								// minute
 								cloudComment.setComment("When exactly (minute)?");
@@ -274,7 +341,24 @@ public class EventStore extends Behavior {
 									break;
 								}
 								else {
-									int minute = Integer.parseInt(eventMinute.getInput());
+									int minute;
+									try {
+										minute = Integer.parseInt(eventMinute.getInput());
+									} catch (Exception e) {
+										cloudComment.setComment("That was not a number!");
+										skinSwitch.setSkin(Emotion.mad.code);
+										
+										cloudComment.trigger();
+										skinSwitch.trigger();
+										
+										try {
+											Thread.sleep(3000);
+										} catch (InterruptedException e1) {
+											e1.printStackTrace();
+										}
+										this.actionPerformed(null);
+										return;
+									}
 									
 									// we've got everything, now save data
 									Time time = new Time();
@@ -284,6 +368,7 @@ public class EventStore extends Behavior {
 									time.setMinute(minute);
 									
 									// deserialize existing events
+									@SuppressWarnings("unchecked")
 									HashMap<Time, String> events = (HashMap<Time, String>) Serializer.deserialize(this, "events.dat");
 									if (events == null) {
 										// no data exists
@@ -303,7 +388,7 @@ public class EventStore extends Behavior {
 									skinSwitch.trigger();
 									
 									try {
-										Thread.sleep(3500);
+										Thread.sleep(3000);
 									} catch (InterruptedException e) {
 										e.printStackTrace();
 									}
@@ -372,7 +457,7 @@ public class EventStore extends Behavior {
 			
 		}
 		else {
-			cloudComment.setComment("What a borint day it's gonna be..");
+			cloudComment.setComment("What a boring day..");
 			skinSwitch.setSkin(Emotion.sleepy.code);
 			
 			cloudComment.trigger();

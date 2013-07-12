@@ -184,9 +184,9 @@ public class TimeReached extends UserAction {
     	cal.add(Calendar.MINUTE, min);
     	
     	this.setYear(cal.get(Calendar.YEAR));
-    	this.setMonth(cal.get(Calendar.MONTH));
+    	this.setMonth(cal.get(Calendar.MONTH) + 1);
     	this.setDay(cal.get(Calendar.DAY_OF_MONTH));
-    	this.setHour(cal.get(Calendar.HOUR));
+    	this.setHour(cal.get(Calendar.HOUR_OF_DAY));
     	this.setMinute(cal.get(Calendar.MINUTE));
     }
     
@@ -198,7 +198,7 @@ public class TimeReached extends UserAction {
     	
     	Calendar cal = Calendar.getInstance();
     	int currY = cal.get(Calendar.YEAR);
-    	int currMo = cal.get(Calendar.MONTH);
+    	int currMo = cal.get(Calendar.MONTH) + 1;
     	int currD = cal.get(Calendar.DAY_OF_MONTH);
     	int currH = cal.get(Calendar.HOUR_OF_DAY);
     	int currMi = cal.get(Calendar.MINUTE);
