@@ -16,9 +16,9 @@ public class EventStore extends Behavior {
 	@Override
 	public void condition(UserActionFactory UAF) {
 
-		// rand time between 1-2 minutes
+		// rand time between 2-3 minutes
 		Random generator = new Random();
-		int waitMinute = generator.nextInt(1) + 1;
+		int waitMinute = generator.nextInt(2) + 1;
 		
 		// set a TimeReached to the next waitTime minute
 		this.askTime = UAF.createTimeReached();
@@ -43,13 +43,19 @@ public class EventStore extends Behavior {
 
 	@Override
 	public void actionPerformed(UserAction userAction) {
-
+		this.askTime.nextMinutes(1);
+		this.askTime.activate(this);
 		// ask for running consequent
 		this.conditionFulfilled();
 	}
 
 	@Override
 	public void consequent(CounterActionFactory CAF) {
+		
+		// set askTime to half an hour later
+		this.askTime.deactivate();
+		this.askTime.nextMinutes(30);
+		this.askTime.activate(this);
 		
 		// save last run
 		Serializer.serialize(this, new Integer(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)), "lastrunhour.dat");

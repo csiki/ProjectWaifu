@@ -402,8 +402,6 @@ public class WaifuMenuBehavior extends Behavior {
 		@SuppressWarnings("unchecked")
 		HashMap<Time, String> events = (HashMap<Time, String>) Serializer.deserialize(this, "events.dat");
 		
-		System.out.println(events == null);
-		
 		if (events == null) {
 			ss.setSkin(Emotion.sleepy.code);
 			cc.setComment("There's no event I know about.");

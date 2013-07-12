@@ -62,7 +62,7 @@ public class TextHighlighted extends UserAction {
      */
     public void update() {
     	this.deactivate();
-    	highlightedString = this.highlightTracker.getHighlightedText();
+    	this.highlightedString = this.highlightTracker.getHighlightedText();
     	this.textHighlighted = true;
     	
     	if (this.behavior != null) {

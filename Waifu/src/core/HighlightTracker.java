@@ -51,6 +51,7 @@ public class HighlightTracker extends Sensor implements Runnable, ClipboardOwner
 			try {
 				selectedText = this.getSelectedText(User32.INSTANCE, CustomUser32.INSTANCE);
 			} catch (Exception e) {
+				e.printStackTrace();
 				selectedText = null;
 			}
 			
@@ -99,7 +100,13 @@ public class HighlightTracker extends Sensor implements Runnable, ClipboardOwner
     	HWND hwnd = customUser32.GetForegroundWindow();
         char[] windowText = new char[512];
         user32.GetWindowText(hwnd, windowText, 512);
-        String before = getClipboardText();
+        
+        String before = null;
+        try {
+        	before = getClipboardText();
+        } catch (Exception c) {
+        	before = "";
+        }
         
         // emulate Ctrl C
         controlC(customUser32);
