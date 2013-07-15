@@ -1,15 +1,21 @@
 package display;
 
+import java.awt.AlphaComposite;
+import java.awt.Color;
+import java.awt.Composite;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
+
 import core.Settings;
 import core.Sizing;
 import main.WaifuBuilder;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -30,6 +36,7 @@ public class MenuPanel extends JPanel {
     private WaifuBuilder exitInterface;
     private JPopupMenu popupMenu;
     private Settings settings;
+    private float opacity;
     
     private CustomMenuItem skinOpMI;
     private CustomMenuItem settingsMI;
@@ -48,6 +55,7 @@ public class MenuPanel extends JPanel {
     	this.skinOptionsDialog = skinOptionsDialog;
 		this.aiOptionsDialog = aiOptionsDialog;
 		this.settingsDialog = settingsDialog;
+		this.opacity = 0.2f;
     	
 		Sizing currentSizing = this.settings.getCurrentSizing();
     	this.setPreferredSize(new Dimension(currentSizing.menuPanelWidth, currentSizing.menuPanelHeight));
@@ -100,9 +108,25 @@ public class MenuPanel extends JPanel {
     	this.popupMenu.repaint();
     }
     
+    public void increaseOpacity() {
+    	this.opacity = 1f;
+    	this.repaint();
+    }
+    
+    public void decreaseOpacity() {
+    	this.opacity = 0.2f;
+    	this.repaint();
+    }
+    
     @Override
 	public void paintComponent(Graphics g) {
     	Graphics2D g2 = (Graphics2D) g;
+    	this.setOpaque(false);
+    	
+    	// set opacity
+    	int rule = AlphaComposite.SRC_OVER;
+    	Composite comp = AlphaComposite.getInstance(rule, this.opacity);
+    	g2.setComposite(comp);
     	
     	// draw icons
     	g2.drawImage(settingsIcon,
@@ -111,5 +135,7 @@ public class MenuPanel extends JPanel {
     	g2.drawImage(exitIcon,
     			settingsIcon.getWidth() + 5, 0, exitIcon.getWidth() + settingsIcon.getWidth() + 5, exitIcon.getHeight(),
     			0, 0, exitIcon.getWidth(), exitIcon.getHeight(), null);
+    	
+    	this.setBackground(new Color(0, 0, 0, this.opacity));
     }
 }

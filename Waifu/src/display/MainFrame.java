@@ -83,7 +83,7 @@ public class MainFrame {
 		frame.getContentPane().add(this.lowerCloudPanel, lowerCloudGBC);
 		
 		// drag and drop
-		DragMouseListener dml = new DragMouseListener(this.frame, this.settings);
+		DragMouseListener dml = new DragMouseListener(this.frame, this.settings, this.menuPanel);
 		this.frame.getContentPane().addMouseListener(dml);
 		this.frame.getContentPane().addMouseMotionListener(dml);
 		

@@ -43,6 +43,10 @@ public abstract class Sensor {
     	this.subs.remove(unsubber);
     }
     
+    final public boolean isThereAnySubs() {
+    	return this.subs.size() > 0;
+    }
+    
     final public String getName() {
     	return this.name;
     }

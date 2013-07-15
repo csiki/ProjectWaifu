@@ -139,7 +139,7 @@ public class CounterActionFactory {
     /**
      * Creates a CheckBox instance.
      * created CheckBox instance.
-     * @return
+     * @return new CheckBox instance
      */
     public CheckBox createCheckBox() {
     	return new CheckBox(this.checkBoxDialog, lowerCloudDisplay, lowerCloudPanel);

@@ -15,13 +15,15 @@ import core.Settings;
 //@ Copyright		: All rights reserved
 
 class DragMouseListener implements MouseListener, MouseMotionListener {
-	JFrame target;
-	Point start_drag;
-	Point start_loc;
-	Settings settings;
+	private JFrame target;
+	private Point start_drag;
+	private Point start_loc;
+	private Settings settings;
+	private MenuPanel mp;
 
-	public DragMouseListener(JFrame target, Settings settings) {
+	public DragMouseListener(JFrame target, Settings settings, MenuPanel mp) {
 		this.target = target;
+		this.mp = mp;
 		this.settings = settings;
 	}
 
@@ -34,9 +36,13 @@ class DragMouseListener implements MouseListener, MouseMotionListener {
 
 	public void mouseClicked(MouseEvent e) {}
 
-	public void mouseEntered(MouseEvent e) {}
+	public void mouseEntered(MouseEvent e) {
+		this.mp.increaseOpacity();
+	}
 
-	public void mouseExited(MouseEvent e) {}
+	public void mouseExited(MouseEvent e) {
+		this.mp.decreaseOpacity();
+	}
 
 	public void mousePressed(MouseEvent e) {
 		this.start_drag = this.getScreenLocation(e);

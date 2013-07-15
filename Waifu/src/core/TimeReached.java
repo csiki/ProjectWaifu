@@ -22,29 +22,9 @@ public class TimeReached extends UserAction {
     private volatile boolean timeReached;
     
     /**
-     * A full numeric representation of a year, 4 digits.
+     * Time (including year, month, day, hour, minute).
      */
-    private int year;
-    
-    /**
-     * Numeric representation of a month, without leading zeros.
-     */
-    private int month;
-    
-    /**
-     * Day of the month without leading zeros.
-     */
-    private int day;
-    
-    /**
-     * 24-hour format of an hour without leading zeros.
-     */
-    private int hour;
-    
-    /**
-     * Minutes without leading zeros.
-     */
-    private int minute;
+    private Time time;
     
     /**
      * TimeChecker instance.
@@ -57,11 +37,7 @@ public class TimeReached extends UserAction {
      */
     public TimeReached(TimeChecker timeChecker) {
     	this.timeChecker = timeChecker;
-    	this.year = -1;
-    	this.month = -1;
-    	this.day = -1;
-    	this.hour = -1;
-    	this.minute = -1;
+    	this.time = new Time();
     	this.timeReached = false;
     }
     
@@ -78,7 +54,7 @@ public class TimeReached extends UserAction {
      * @return four digit representation of the given year, -1 if it has not been specified.
      */
     public int getYear() {
-    	return this.year;
+    	return this.time.getYear();
     }
     
     /**
@@ -86,7 +62,7 @@ public class TimeReached extends UserAction {
      * @return month or -1 if it has not been specified.
      */
     public int getMonth() {
-    	return this.month;
+    	return this.time.getMonth();
     }
     
     /**
@@ -94,7 +70,7 @@ public class TimeReached extends UserAction {
      * @return day or -1 if it has not been specified.
      */
     public int getDay() {
-    	return this.day;
+    	return this.time.getDay();
     }
     
     /**
@@ -102,7 +78,7 @@ public class TimeReached extends UserAction {
      * @return hour (0-23) or -1 if it has not been specified.
      */
     public int getHour() {
-    	return this.hour;
+    	return this.time.getHour();
     }
     
     /**
@@ -110,7 +86,7 @@ public class TimeReached extends UserAction {
      * @return minute or -1 if it has not been specified.
      */
     public int getMinute() {
-    	return this.minute;
+    	return this.time.getMinute();
     }
     
     /**
@@ -119,7 +95,7 @@ public class TimeReached extends UserAction {
      */
     public void setYear(int year) {
     	if (year > 0) {
-    		this.year = year;
+    		this.time.setYear(year);
     	}
     }
     
@@ -129,7 +105,7 @@ public class TimeReached extends UserAction {
      */
     public void setMonth(int month) {
     	if (month > 0 && month <= 12) {
-    		this.month = month;
+    		this.time.setMonth(month);
     	}
     }
     
@@ -139,7 +115,7 @@ public class TimeReached extends UserAction {
      */
     public void setDay(int day) {
     	if (day > 0 && day <= 31) {
-    		this.day = day;
+    		this.time.setDay(day);
     	}
     }
     
@@ -149,7 +125,7 @@ public class TimeReached extends UserAction {
      */
     public void setHour(int hour) {
     	if (hour >= 0) {
-    		this.hour = hour % 24;
+    		this.time.setHour(hour % 24);
     	}
     }
     
@@ -159,7 +135,7 @@ public class TimeReached extends UserAction {
      */
     public void setMinute(int minute) {
     	if (minute >= 0) {
-    		this.minute = minute % 60;
+    		this.time.setMinute(minute % 60);
     	}
     }
     
@@ -168,11 +144,7 @@ public class TimeReached extends UserAction {
      * @param time
      */
     public void setTime(Time time) {
-    	this.year = time.getYear();
-    	this.month = time.getMonth();
-    	this.day = time.getDay();
-    	this.hour = time.getHour();
-    	this.minute = time.getMinute();
+    	this.time = time;
     }
     
     /**
@@ -195,31 +167,7 @@ public class TimeReached extends UserAction {
      * Behavior should NOT call it!
      */
     public void update() {
-    	
-    	Calendar cal = Calendar.getInstance();
-    	int currY = cal.get(Calendar.YEAR);
-    	int currMo = cal.get(Calendar.MONTH) + 1;
-    	int currD = cal.get(Calendar.DAY_OF_MONTH);
-    	int currH = cal.get(Calendar.HOUR_OF_DAY);
-    	int currMi = cal.get(Calendar.MINUTE);
-    	
-    	int y = (this.year == -1) ? currY : this.year;
-    	int mo = (this.month == -1) ? currMo : this.month;
-    	int d = (this.day == -1) ? currD : this.day;
-    	int h = (this.hour == -1) ? currH : this.hour;
-    	int mi = (this.minute == -1) ? currMi : this.minute;
-    	
-    	/*
-    	 * Values: 	minute	1
-    	 * 			hour	60
-    	 * 			day		1440
-    	 * 			month	44640
-    	 * 			year	535680
-    	 */
-    	
-    	int reached = (currY - y) * 535680 + (currMo - mo) * 44640 + (currD - d) * 1440 + (currH - h) * 60 + (currMi - mi);
-    	
-    	if (reached >= 0) {
+    	if (this.time.isPassed()) {
     		// time reached
     		this.deactivate();
     		this.timeReached = true;

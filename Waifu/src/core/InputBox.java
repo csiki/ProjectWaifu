@@ -52,7 +52,7 @@ public class InputBox extends CounterAction {
     /**
      * Gets the input the user has given.
      * Call only after triggered!
-     * @return
+     * @return input string
      */
     public String getInput() {
     	return this.input;

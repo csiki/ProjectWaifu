@@ -8,6 +8,7 @@ package display;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -16,14 +17,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.WindowConstants;
+
+import java.awt.Graphics;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+
 import javax.swing.AbstractAction;
+
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.Action;
+
 import core.Settings;
 
 public class RadioBtnDialog extends JDialog {
@@ -186,6 +193,17 @@ public class RadioBtnDialog extends JDialog {
 				this.getSize().width, this.getSize().height);
 		
 		setVisible(true);
+	}
+	
+	@Override
+	public void paintComponents(Graphics g) {
+		// position
+		int offsetX = (this.settings.getCurrentSizing().cloudWidth - this.getSize().width) / 2;
+		int offsetY = (this.settings.getCurrentSizing().cloudHeight - this.getSize().height) / 2;
+				
+		setBounds(parentFrame.getLocation().x + this.settings.getCurrentSizing().offsetInputDialogBoxX + offsetX,
+				parentFrame.getLocation().y + this.settings.getCurrentSizing().offsetInputDialogBoxY + offsetY,
+				this.getSize().width, this.getSize().height);
 	}
 
 	private class OkAction extends AbstractAction {

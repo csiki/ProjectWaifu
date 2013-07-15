@@ -78,6 +78,44 @@ public class Time implements Serializable {
 	
 	@Override
 	public String toString() {
-		return this.year + ". " + (this.month + 1) + ". " + this.day + ". " + this.hour + ":" + this.minute;
+		Integer min = this.minute;
+		String minS = min.toString();
+		
+		if (min == 0) {
+			minS += "0";
+		}
+		else if (min < 10) {
+			minS = "0" + minS;
+		}
+		
+		return this.year + ". " + (this.month + 1) + ". " + this.day + ". " + this.hour + ":" + minS;
+	}
+	
+	public boolean isPassed() {
+		
+		Calendar cal = Calendar.getInstance();
+    	int currY = cal.get(Calendar.YEAR);
+    	int currMo = cal.get(Calendar.MONTH) + 1;
+    	int currD = cal.get(Calendar.DAY_OF_MONTH);
+    	int currH = cal.get(Calendar.HOUR_OF_DAY);
+    	int currMi = cal.get(Calendar.MINUTE);
+    	
+    	int y = (this.year == -1) ? currY : this.year;
+    	int mo = (this.month == -1) ? currMo : this.month;
+    	int d = (this.day == -1) ? currD : this.day;
+    	int h = (this.hour == -1) ? currH : this.hour;
+    	int mi = (this.minute == -1) ? currMi : this.minute;
+    	
+    	/*
+    	 * Values: 	minute	1
+    	 * 			hour	60
+    	 * 			day		1440
+    	 * 			month	44640
+    	 * 			year	535680
+    	 */
+    	
+    	int reached = (currY - y) * 535680 + (currMo - mo) * 44640 + (currD - d) * 1440 + (currH - h) * 60 + (currMi - mi);
+    	
+    	return reached >= 0;
 	}
 }

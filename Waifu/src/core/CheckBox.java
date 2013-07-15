@@ -111,6 +111,38 @@ public class CheckBox extends CounterAction {
     }
     
     /**
+     * Gets if an index is selected.
+     * @param index of the option
+     * @return true if the given index was selected, false otherwise
+     */
+    public boolean isIndexSelected(int index) {
+    	if (index >= 0 && index < this.options.size()) {
+    		for (int i = 0; i < this.selectedIndexes.size(); ++i) {
+    			if (index == this.selectedIndexes.get(i)) {
+    				return true;
+    			}
+    		}
+    	}
+    	
+    	return false;
+    }
+    
+    /**
+     * Gets if the given option is selected.
+     * @param option string
+     * @return true if the given option is selected, false otherwise
+     */
+    public boolean isOptionSelected(String option) {
+    	for (int i = 0; i < this.selectedIndexes.size(); ++i) {
+    		if (option.equals(this.options.get(this.selectedIndexes.get(i)))) {
+    			return true;
+    		}
+    	}
+    	
+    	return false;
+    }
+    
+    /**
      * Shows window including the check boxes for the user, waits till input is given.
      */
     public void trigger() {

@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Waifu - AI developer's guide</title>
+	<link rel="stylesheet" type="text/css" href="devguide.css" />
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+<section id="head">
+	<h1>AI developer's guide</h1>
+	<p>An example rich guide presenting the ways you can improve your waifu!</p>
+</section>
+
+<section id="body">
+
+	<article id="description">
+		<h2>1. Short description</h2>
+		<p>Short description about the functioning of the AI and behaviors, <span style="color:red;">must read first!</span></p>
+		
+		<p>If you would like to improve your AI with adding new behaviors or modifying existing ones a few things are required / recommended:</p>
+		<ul>
+			<li>
+			A bit of Java experience (if you are familiar with other programming languages, like C, C++, C# or any script languages, it should be enough; java is super easy).
+			</li>
+			
+			<li>
+			A Java IDE (recommended): whether it is ecplipse, netbeans or whatever; it makes the whole process easier (in my examples I work with Eclipse).
+			</li>
+			
+			<li>
+			Little reading: so let's get it started!
+			</li>
+		</ul>
+		
+		<p>For Java doc readers: <a href="devjavadoc/index.html" target="_blank">Developer's javadoc</a></p>
+		
+		<p>Making behaviors is the only way to improve your waifu's AI. Behaviors sort of connects user actions
+		(like a key hit on keyboard) and counter actions of the waifu (like a comment in a cloud or swithing the skin of the waifu).
+		To put it simply, when you create a behavior, you specify what the user would do to "trigger" the counter actions that are also
+		specified by you. Like a human behavior: action (user action) --> reaction (counter action).</p>
+		
+		<p>When you create a behavior, and add it to the folder from where the AI looks for it, than after restarting your waifu,
+		the new behavior is loaded (with the rest of the other behaviors). After loaded, the AI gives every behavior one chance
+		to create user actions and activate them. For example when your waifu answers when you type its name, it's a user action:
+		waifu name typed. You create and usually activate these user actions in the condition() method of the behavior.</p>
+		
+		<p>Why in the condition method? Because when the AI calls the condition method for you, it passes an instance of the UserActionFactory.
+		Only with UserActionFactory, you are able to create valid and functioning user actions. Here's a diagram for simplicity:</p>
+		
+		<img src="factories.jpg" />
+		
+		<p>So now you are able to create user actions by UserActionFactory (we'll get back to CounterActionFactory later).
+		After you created a user action, it still does nothing, for example KeyTyped is not listening to hit keys.
+		It should be activated beforehand, by calling its activate() method. This way we can pass the current behavior
+		as parameter. Why pass? Because we won't "wait" till the key is pressed. We just leave it to the KeyTyped. When
+		the expected key is pressed, KeyTyped will call back the actionPerformed() method of the behavior (passing itself).
+		So when the user action is performed, the activated user action will notify the behavior about it by calling its actionPerformed() method.</p>
+		
+		<p>I know it's getting a bit complex at first sight, so here's a diagram about who calls who:</p>
+		
+		<img src="whocallswho.jpg" />
+		
+		<p>After an actionPerformed() is called, the behavior either activate another user action or ask the AI for running
+		the consequent() method. Then if the AI thinks so, it lets the consequent to run, passing an instance of the CounterActionFactory.
+		So now in the consequent method, we can create CounterActions (what's on the previous diagram).</p>
+		
+		<p>And basically that's all, let's see some examples.</p>
+	</article>
+	
+	
+	<article id="firstex">
+		<h2>2. First example</h2>
+		<p>Installation of Eclipse, and a simple behavior.</p>
+
+		<p>Download and extract / install eclipse from here: <a href="http://www.eclipse.org/downloads/">Eclipse downloads</a>.</p>
+		
+		<p>If Eclipse or another IDE is isntalled, create a new project and drag the core.jar library into the project folder (on Eclipse interface).
+		Then a right click on the jar, Build Path / Add to build path.</p>
+		
+		<p>Now the library is sort of linked to the project. In this way, you can import and use classes for your behavior to be legit
+		for the waifu.</p>
+		
+		<p>At this point we create out first behavior, do the following:</p>
+		<ul>
+			<li>
+			Add a new java class file to the project, name it FirstBehavior.
+			</li>
+			<li>
+			Extend FirstBehavior by Behavior.
+			</li>
+		</ul>
+		
+		<pre>
+import core.*;
+
+public class FirstBehavior extends Behavior {
+
+}</pre>
+		
+		<ul>
+			<li>
+			Add a constructor without any parameters.
+			</li>
+		</ul>
+		
+		<pre>
+import core.*;
+
+public class FirstBehavior extends Behavior {
+
+	public FirstBehavior() {
+		super("firstBehavior"); // name the behavior whatever you want
+	}
+
+}</pre>
+		
+		<ul>
+			<li>
+			Add unimplemented methods to override.
+			</li>
+		</ul>
+		
+		<pre>
+import core.*;
+
+public class FirstBehavior extends Behavior {
+
+	public FirstBehavior() {
+		super("firstBehavior"); // name the behavior whatever you want
+	}
+
+	@Override
+	public void condition(UserActionFactory UAF) {
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+	}
+
+}</pre>
+	
+		<p>Now we have the skeleton of a behavior. From now on our only goal is to implement the three methods the new behavior inherited:
+		condition(), actionPerformed() and consequent().</p>
+		
+		<p>Let's say FirstBehavior is responsible for greeting the user with a smile and a cloud comment saying hi; only
+		after the user typed in "hi", "chao" or "hello".</p>
+		
+		<p>At first we implement the condition() method and create 3 StringTyped instance for "hello", "hi" and "chao".</p>
+		
+		<pre>
+import core.*;
+
+public class FirstBehavior extends Behavior {
+
+	public FirstBehavior() {
+		super("firstBehavior"); // name the behavior whatever you want
+	}
+	
+	StringTyped helloTyped;
+	StringTyped hiTyped;
+	StringTyped chaoTyped;
+
+	@Override
+	public void condition(UserActionFactory UAF) {
+		// create StringTyped instances
+		helloTyped = UAF.createStringTyped("hello");
+		hiTyped = UAF.createStringTyped("hi");
+		chaoTyped = UAF.createStringTyped("chao");
+		
+		// activate StringTypeds
+		// this way the three StringTyped will listen to..
+		// .. the hit keys at the same time,
+		// if any of them typed, one of them is triggered,
+		// and call actionPerformed() of this behavior
+		helloTyped.activate(this); // pass this behavior as 'this'
+		hiTyped.activate(this);
+		chaoTyped.activate(this);
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+	}
+
+}</pre>
+		
+		<p>Now the actionPerformed() method will be implemented. It's called by one of the activated
+		user actions (StringTyped instances), when the specified user action is performed.
+		In FirstBehavior we just notify the AI that our condition is fulfilled.</p>
+		
+		<pre>
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		// notify AI that the condition part is fulfilled
+		// if the AI is not busy, it is to call back consequent()
+		conditionFulfilled();
+	}</pre>
+		
+		<p>At the end, consequent should be implemented. We create a cloud comment with the text "Hi master!",
+		and switch waifu's skin to the happy one, using Emotion enumeration. Then wait 4 seconds and switch back
+		to the neutral skin, hiding the cloud comment.</p>
+		
+		<pre>
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		// create counter actions (waifu's reactions)
+		CloudComment cloudComment = CAF.createCloudComment("Hi master!");
+		SkinSwitch skinSwitch = CAF.createSkinSwitch(Emotion.happy.code);
+		
+		// trigger counter actions
+		cloudComment.trigger();
+		skinSwitch.trigger();
+		
+		// wait a 4 seconds
+		// let the user recognize and read the comment
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		// get waifu back to usual (neutral)
+		skinSwitch.setSkin(Emotion.neutral.code);
+		skinSwitch.trigger();
+		cloudComment.trigger();
+	}</pre>
+	
+		<p>That's all! Now if you saved FirstBehavior, an IDE like Eclipse has already compiled FirstBehavior.java and create FirstBehavior.class in bytecode.
+		This FirstBehavior.class (probably under the bin folder of the project), should be copied to the directory from which waifu's AI takes the
+		behaviors. At this point if you start your waifu, FirstBehavior should be loaded, and when you type in "hi", "hello" or "chao", it will
+		give the specified reaction (consequent).</p>
+		
+		<p>The whole behavior looks like this:</p>
+		
+		<pre>
+import core.*;
+
+public class FirstBehavior extends Behavior {
+
+	public FirstBehavior() {
+		super("firstBehavior"); // name the behavior whatever you want
+	}
+	
+	StringTyped helloTyped;
+	StringTyped hiTyped;
+	StringTyped chaoTyped;
+
+	@Override
+	public void condition(UserActionFactory UAF) {
+		// create StringTyped instances
+		helloTyped = UAF.createStringTyped("hello");
+		hiTyped = UAF.createStringTyped("hi");
+		chaoTyped = UAF.createStringTyped("chao");
+		
+		// activate StringTypeds
+		// this way the three StringTyped will listen to..
+		// .. the hit keys at the same time,
+		// if any of them typed, one of them is triggered,
+		// and call actionPerformed() of this behavior
+		helloTyped.activate(this); // pass this behavior as 'this'
+		hiTyped.activate(this);
+		chaoTyped.activate(this);
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		conditionFulfilled();
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		// create counter actions (waifu's reactions)
+		CloudComment cloudComment = CAF.createCloudComment("Hi master!");
+		SkinSwitch skinSwitch = CAF.createSkinSwitch(Emotion.happy.code);
+		
+		// trigger counter actions
+		cloudComment.trigger();
+		skinSwitch.trigger();
+		
+		// wait a 4 seconds
+		// let the user recognize and read the comment
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		// get waifu back to usual (neutral)
+		skinSwitch.setSkin(Emotion.neutral.code);
+		skinSwitch.trigger();
+		cloudComment.trigger();
+	}
+
+}</pre>
+	
+	<p>Now you are probably able to create and load behaviors, let's see some more examples.
+		
+	</article>
+	
+	<article id="moreex">
+		<h2>3. More examples</h2>
+		<p>More examples about other using other user and counter actions.</p>
+		
+		<h3>RandomBehavior</h3>
+		<p>The basic concept of RandomBehavior is that it's going to run randomly. It has a chance of
+		50% running the consequent every 5 minutes. The consequent includes a radio button form and
+		a cloud comment asking the user how she/he is doing (good or bad).</p>
+		
+		<p>Here is the behavior, RandomBehavior.java:</p>
+		
+		<pre>
+import java.util.Random;
+import core.*; 
+
+public class RandomBehavior extends Behavior {
+
+	public RandomBehavior() {
+		super("RandomBehavior");
+	}
+	
+	TimeReached every5minutes;
+	
+	@Override
+	public void condition(UserActionFactory UAF) {
+
+		// create a TimeReached user action to notify every 5 minutes
+		every5minutes = UAF.createTimeReached();
+		
+		// will call actionPeformed() after 5 minutes
+		every5minutes.nextMinutes(5);
+		every5minutes.activate(this);
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		// activate TimeReached again for the next 5 minutes
+		every5minutes.nextMinutes(5);
+		every5minutes.activate(this);
+		
+		// notify AI 50%
+		Random generator = new Random();
+		int chance = generator.nextInt(2);
+		
+		if (chance == 1) { // 50%
+			conditionFulfilled();
+		}
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		// create CloudComment and SkinSwitch
+		CloudComment cc = CAF.createCloudComment("How are you doing?");
+		SkinSwitch ss = CAF.createSkinSwitch(Emotion.suspicious.code);
+		
+		// create RadioBtn: form with radio buttons
+		RadioBtn radioForm = CAF.createRadioBtn();
+		
+		// add good and bad options
+		radioForm.addOption("Good!");
+		radioForm.addOption("Bad..");
+		
+		// at first trigger CloudComment and SkinSwitch
+		// only after trigger RadioBtn, because it waits..
+		// ..till the radio button form is filled
+		cc.trigger();
+		ss.trigger();
+		radioForm.trigger();
+		
+		// now we have the input of radioForm
+		// if the selected index is -1, than cancel button was pressed
+		// if it's 0, "Good!" was selected if 1, "Bad.." was selected
+		if (radioForm.getSelectedIndex() == -1) {
+			// cancel pressed, be anxious
+			// (the same CloudComment and SkinSwitch instances..
+			// ..can be used again and again)
+			cc.setComment("Why don't you tell me?!");
+			ss.setSkin(Emotion.mad.code);
+		}
+		else if (radioForm.getSelectedIndex() == 0) {
+			// "Good!" was selected
+			cc.setComment("Yaaay! Me too!");
+			ss.setSkin(Emotion.happy.code);
+		}
+		else {
+			// "Bad.." was selected
+			cc.setComment("I'm sorry to hear it!");
+			ss.setSkin(Emotion.sad.code);
+		}
+		
+		// trigger both CloudComment and SkinSwitch
+		cc.trigger();
+		ss.trigger();
+		
+		// wait 4 seconds
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		// get back to normal
+		ss.setSkin(Emotion.neutral.code);
+		ss.trigger();
+		cc.hide();
+	}
+}</pre>
+		
+		<h3>MemoryBehavior</h3>
+		
+		<p>MemoryBehavior intents to remember what the user said (typed) last time the same question was raised.
+		At the first attempts we have no answer saved (serialized). The second time we include the previous answer in the question.
+		MemoryBehavior shows how serialization and permanent data saving functioning.</p>
+		
+		<pre>
+import java.util.Random;
+import core.*; 
+
+public class MemoryBehavior extends Behavior {
+
+	public MemoryBehavior() {
+		super("MemoryBehavior");
+	}
+
+	@Override
+	public void condition(UserActionFactory UAF) {
+
+		// will ask the question 1-2 minutes after waifu started
+		Random generator = new Random();
+		int waitInMinutes = generator.nextInt(2) + 1;
+		
+		// remember, we don't use Thread.sleep in condition,
+		// because it blocks the whole working thread,
+		// and doesn't let other behaviors to load
+		// .. so use TimeReached
+		TimeReached tr = UAF.createTimeReached();
+		tr.nextMinutes(waitInMinutes);
+		tr.activate(this);
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		// it only ask the question once, after the waifu started,
+		// so we don't need to activate TimeReached again
+		
+		// just notify the AI
+		conditionFulfilled();
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		// create CloudComment and SkinSwitch (used anyway)
+		CloudComment cc = CAF.createCloudComment("");
+		SkinSwitch ss = CAF.createSkinSwitch(Emotion.neutral.code);
+		
+		// load the previous answer if there is any
+		// from a serialized file "answer.dat"
+		String answer = (String) Serializer.deserialize(this, "answer.dat");
+		
+		// don't use primitives (like int if you saved an integer)
+		// ..to load cast data (cast to Integer e.g)
+		// that way you can check if it's null or not
+		
+		if (answer == null) {
+			// if null, there was no file like answer.dat,
+			// or null value was in the file
+			
+			// ask the question first time
+			cc.setComment("What music do you listen to recently?");
+			ss.setSkin(Emotion.talking.code);
+		}
+		else {
+			// answer not null
+			// ask the question nth time
+			cc.setComment("I know you listening to " + answer +
+				" recently, got anything new?");
+			ss.setSkin(Emotion.happy.code);
+		}
+		
+		InputBox musicRecentlyInput = CAF.createInputBox();
+		
+		// trigger counter actions
+		cc.trigger();
+		ss.trigger();
+		musicRecentlyInput.trigger();
+		
+		// now we've got the answer from musicRecentlyInput
+		if (musicRecentlyInput.getInput() == null) {
+			// if null, cancel was pressed
+			cc.setComment("Why don't you tell me?!");
+			ss.setSkin(Emotion.sad.code);
+		}
+		else {
+			// input text is not null
+			// save the answer (only serializable objects can be saved
+			// if you pass null as the first parameter,
+			// answer.dat will be created in serialized/shared/
+			// if you pass this behavior as 'this',
+			// answer.dat will be created in serialized/&lt;name of this behavior&gt;/
+			Serializer.serialize(this, musicRecentlyInput.getInput(),
+				"answer.dat");
+			
+			cc.setComment("Thank you for telling me! I won't forget it!");
+			ss.setSkin(Emotion.happy.code);
+		}
+		
+		cc.trigger();
+		ss.trigger();
+		
+		// wait 4 seconds
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		// get back to normal
+		ss.setSkin(Emotion.neutral.code);
+		ss.trigger();
+		cc.hide();
+	}
+
+}</pre>
+
+		<h3>HighlightBehavior</h3>
+		
+		<p>The purpose of this is behavior is to demonstrate how to use a UserAction in the "consequent" part.
+		Furthermore shows how TextHighlighted and KeyTyped user actions works.</p>
+		
+		<p>At the beginning we wait for an Enter (return) to be pressed. Then ask the user to highlight his/her comment
+		(in a forum for example). After the comment was highlighted, we congratulate the user.</p>
+		
+		<pre>
+import core.*;
+import de.ksquared.system.keyboard.KeyEvent;
+
+public class HighlightBehavior extends Behavior {
+
+	public HighlightBehavior() {
+		super("HighlightBehavior");
+	}
+	
+	TextHighlighted commentH;
+
+	@Override
+	public void condition(UserActionFactory UAF) {
+		// create TextHighlighted, to be able to use..
+		// ..it in method consequent
+		commentH = UAF.createTextHighlighted();
+		
+		// wait for Enter to be pressed
+		KeyTyped enterPressed = UAF.createKeyTyped(KeyEvent.VK_RETURN);
+		enterPressed.activate(this);
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		// enter pressed, notify AI
+		conditionFulfilled();
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		CloudComment cc = CAF.createCloudComment("Highlight your comment!");
+		SkinSwitch ss = CAF.createSkinSwitch(Emotion.embarassed.code);
+		
+		cc.trigger();
+		ss.trigger();
+		
+		// activate TextHighlighted
+		// pass null, we don't want to call actionPerformed()
+		this.commentH.activate(null);
+		
+		// wait till text is highlighted or 30 seconds
+		int secondsPassed = 0;
+		while (!this.commentH.isTextHighlighted() && secondsPassed &lt; 30) {
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			++secondsPassed;
+		}
+		
+		if (!this.commentH.isTextHighlighted()) {
+			// still no text is highlighted
+			cc.setComment("I can't see your comment!");
+			ss.setSkin(Emotion.sad.code);
+		}
+		else {
+			// text is highligted
+			cc.setComment("Great comment!");
+			ss.setSkin(Emotion.happy.code);
+		}
+		
+		// trigger counter actions
+		cc.trigger();
+		ss.trigger();
+		
+		// wait 4 seconds
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		// get back to normal
+		ss.setSkin(Emotion.neutral.code);
+		ss.trigger();
+		cc.hide();
+	}
+}</pre>
+		
+	</article>
+	
+	<article id="firstex">
+		<h2>4. Basic inbuilt behaviors</h2>
+		<p>Code of the basically inbuilt behaviors: AfterWork, EventStore, EventNotify, Introduction and WaifuMenuBehavior.</p>
+		
+		<h3>Afterwork</h3>
+		
+		<p>This behavior is responsible for asking the user how her/his day was (only once a day).
+		It uses shared serialized data saved by IntroductionBehavior ("endofdayhour.dat") and
+		"lastrun.dat" to remember if the question has been already asked today.</p>
+		
+		<pre>
+import java.util.Calendar;
+
+import core.*;
+
+public class AfterWork extends Behavior {
+
+	public AfterWork() {
+		super("AfterWork");
+	}
+
+	@Override
+	public void condition(UserActionFactory UAF) {
+		
+		// retrieve last run
+		Calendar cal = Calendar.getInstance();
+		Integer lastRunDay = (Integer) Serializer.deserialize(this,
+			"lastrun.dat");
+		boolean run = false;
+		
+		if (lastRunDay != null) {
+			if (lastRunDay != cal.get(Calendar.DAY_OF_MONTH)) {
+				// not today
+				run = true;
+			}
+		}
+		else {
+			// last run is null
+			run = true;
+		}
+		
+		if (run) {
+			// load end of day hour
+			Integer endOfDayHour = (Integer) Serializer.deserialize(null,
+				"endofdayhour.dat");
+			if (endOfDayHour == null) {
+				endOfDayHour = 17; // 5pm
+			}
+			
+			TimeReached tr = UAF.createTimeReached();
+			if (cal.get(Calendar.HOUR_OF_DAY) >= endOfDayHour) {
+				tr.nextMinutes(0);
+			}
+			else {
+				// set a time reached to alert when end of day occurs
+				tr.setHour(endOfDayHour);
+			}
+			tr.activate(this);
+		}
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		this.conditionFulfilled();
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		
+		// set and save last run
+		Serializer.serialize(
+			this,
+			new Integer(
+				Calendar.getInstance().get(Calendar.DAY_OF_MONTH)),
+			"lastrun.dat");
+		
+		// retreive master name
+		String mName = (String) Serializer.deserialize(null, "mastername.dat");
+		
+		String question;
+		if (mName != null) {
+			question = "How was your day " + mName + "?";
+		}
+		else {
+			question = "How was your day?";
+		}
+		
+		// get data from a previous day
+		Integer prevDaySI = (Integer) Serializer.deserialize(this,
+			"howwayyourday.dat");
+		
+		String remember = "";
+		if (prevDaySI != null) {
+			if (prevDaySI == 1 || prevDaySI == 2) {
+				// good or excellent
+				remember = " Was it as good as yesterday?";
+			}
+			else if (prevDaySI == 3) {
+				// best
+				remember = " Was it as extraordinary good as yesterday?";
+			}
+			else {
+				// not good
+				remember = " I bet it's better than yesterday!";
+			}
+		}
+		
+		CloudComment cc = CAF.createCloudComment(question + remember);
+		SkinSwitch ss = CAF.createSkinSwitch(Emotion.happy.code);
+		RadioBtn rb = CAF.createRadioBtn();
+		rb.addOption("not that good..");
+		rb.addOption("good.");
+		rb.addOption("excellent!");
+		rb.addOption("best of my life!");
+		
+		cc.trigger();
+		ss.trigger();
+		rb.trigger();
+		
+		int si = rb.getSelectedIndex();
+		if (si == -1) { 
+			// rejected
+			cc.setComment("Nevermind.. if you don't want to tell me..");
+			ss.setSkin(Emotion.facingaway.code);
+			
+			cc.trigger();
+			ss.trigger();
+			
+			try {
+				Thread.sleep(3500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		else if (si == 1 || si == 2) {
+			// good or excellent
+			// save
+			Serializer.serialize(this, (Integer) si, "howwayyourday.dat");
+			
+			if (mName != null) {
+				cc.setComment("Good to hear " + mName + "!");
+			}
+			else {
+				cc.setComment("Good to hear!");
+			}
+			ss.setSkin(Emotion.happy.code);
+			
+			cc.trigger();
+			ss.trigger();
+			
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		else if (si == 3) {
+			// best
+			// save data
+			Serializer.serialize(this, (Integer) si, "howwayyourday.dat");
+			
+			cc.setComment("Really? I'm sooo happy about that!");
+			ss.setSkin(Emotion.happy.code);
+			
+			cc.trigger();
+			ss.trigger();
+			
+			try {
+				Thread.sleep(3500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
+			// not that good..
+			// save data
+			Serializer.serialize(this, (Integer) si, "howwayyourday.dat");
+			
+			cc.setComment("Hmm, what a pity..");
+			ss.setSkin(Emotion.sad.code);
+			
+			cc.trigger();
+			ss.trigger();
+			
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			cc.setComment("Because I have a great day so far, you should get more positive!");
+			ss.setSkin(Emotion.happy.code);
+			
+			cc.trigger();
+			ss.trigger();
+			
+			try {
+				Thread.sleep(4000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		// get back to neutral
+		ss.setSkin(Emotion.neutral.code);
+		ss.trigger();
+		cc.hide();
+	}
+
+}</pre>
+
+		<h3>EventStore</h3>
+		
+		<p>EventStore and EventNotify works together to store events for the user,
+		and notify he/she about them. EventStore runs randomly every hour, asking the user
+		if there's any events in the future. If there is, it saves in a HashMap with the Time
+		instance that contains the concrete time when to notify the user.</p>
+		
+		<pre>
+import core.*;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Random;
+
+public class EventStore extends Behavior {
+
+	public EventStore() {
+		super("EventStore");
+	}
+	
+	private TimeReached askTime;
+
+	@Override
+	public void condition(UserActionFactory UAF) {
+
+		// rand time between 2-3 minutes
+		Random generator = new Random();
+		int waitMinute = generator.nextInt(2) + 1;
+		
+		// set a TimeReached to the next waitTime minute
+		this.askTime = UAF.createTimeReached();
+		this.askTime.nextMinutes(waitMinute);
+		
+		// this behavior is run only once a day, now we see if it has run already
+		// by loading a serialized file, that contains only an Integer, the day of the last run
+		Integer lastRun = (Integer) Serializer.deserialize(this, "lastrunhour.dat");
+		if (lastRun != null) {
+			if (Calendar.getInstance().get(Calendar.HOUR_OF_DAY) != lastRun) {
+				// activate TimeReached
+				// it will call actionPerformed() method of this behavior..
+				// ..(when the given time reached)
+				this.askTime.activate(this);
+			}
+		}
+		else {
+			// if lastRun == null, that means it couldn't run today (or have not run at all)
+			this.askTime.activate(this);
+		}
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		this.askTime.nextMinutes(1);
+		this.askTime.activate(this);
+		// ask for running consequent
+		this.conditionFulfilled();
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		
+		// set askTime to half an hour later
+		this.askTime.deactivate();
+		this.askTime.nextMinutes(30);
+		this.askTime.activate(this);
+		
+		// save last run
+		Serializer.serialize(this, new Integer(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)), "lastrunhour.dat");
+		
+		// now condition is fulfilled and AI has given the permission
+		// ask for any events in the future
+		// prepare a SkinSwitch to switch the waifu skin to suspicious
+		SkinSwitch skinSwitch = CAF.createSkinSwitch(Emotion.suspicious.code);
+		
+		// prepare a cloud comment for asking the user
+		CloudComment cloudComment = CAF.createCloudComment("Any important events for today?");
+		
+		// prepare a radio button to find out if the user has any events
+		RadioBtn yesnoRadioBtn = CAF.createRadioBtn();
+		// add two options (yes/no)
+		yesnoRadioBtn.addOption("Yes");
+		yesnoRadioBtn.addOption("No");
+		
+		// now trigger all of them (this is the point when the user see something happening)
+		skinSwitch.trigger();
+		cloudComment.trigger();
+		// last we trigger the radioBtn, because it waits until the input is given
+		yesnoRadioBtn.trigger();
+		
+		// now we have the input
+		int selectedIndex = yesnoRadioBtn.getSelectedIndex();
+		
+		if (selectedIndex == -1) {
+			// if selected index == -1 than cancel button has been hit
+			// change the skin
+			// we don't have to create a new SkinSwitch for that
+			// but we should trigger again if we want to see the effect
+			skinSwitch.setSkin(Emotion.mad.code);
+			// change comment
+			// same CloudComment instance will do it
+			cloudComment.setComment("Ok, if you don't want to tell me!");
+			
+			// trigger both
+			skinSwitch.trigger();
+			cloudComment.trigger();
+			
+			// now we wait a bit for the user to able to read the cloud
+			try {
+				Thread.sleep(3500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			// now get back to neutral
+			skinSwitch.setSkin(Emotion.neutral.code);
+			
+			skinSwitch.trigger();
+			cloudComment.hide();
+		}
+		else if (selectedIndex == 0) {
+			// the user has chosen "Yes" (that's the option with the 0. index, the first that was added)
+			// now we ask what is that event, and ask again if the user has any more events
+			boolean askFurther = true;
+			boolean rejected = false;
+
+			while (askFurther) {
+				skinSwitch.setSkin(Emotion.talking.code);
+				cloudComment.setComment("What's the name of the event?");
+				// create an input box for asking the name of the event
+				InputBox eventNameBox = CAF.createInputBox();
+				
+				cloudComment.trigger();
+				skinSwitch.trigger();
+				// notice, input box is triggered after cloudComment
+				eventNameBox.trigger();
+				
+				String eventName = eventNameBox.getInput();
+				if (eventName == null) {
+					// if null, than cancel pressed, rejected
+					rejected = true;
+					break;
+				}
+				//else {
+					
+				// now we have the name
+				// ask if the event is today
+				cloudComment.setComment("Shall I notify you today about the event?");
+				// remember we have already got a radio btn box with a yes and no options
+				cloudComment.trigger();
+				yesnoRadioBtn.trigger();
+				
+				selectedIndex = yesnoRadioBtn.getSelectedIndex();
+				if (selectedIndex == -1) {
+					// rejected
+					rejected = true;
+					break;
+				}
+				else if (selectedIndex == 0) {
+					// it's for today
+					// ask for hour
+					cloudComment.setComment("When shall I notify you (hour 0-23)?");
+					InputBox eventHour = CAF.createInputBox();
+					
+					cloudComment.trigger();
+					eventHour.trigger();
+					if (eventHour.getInput() == null) {
+						// rejected
+						rejected = true;
+						break;
+					}
+					else {
+						int hour;
+						try {
+							hour = Integer.parseInt(eventHour.getInput());
+						} catch (Exception e) {
+							cloudComment.setComment("That was not a number!");
+							skinSwitch.setSkin(Emotion.mad.code);
+							
+							cloudComment.trigger();
+							skinSwitch.trigger();
+							
+							try {
+								Thread.sleep(3000);
+							} catch (InterruptedException e1) {
+								e1.printStackTrace();
+							}
+							this.actionPerformed(null);
+							return;
+						}
+						
+						cloudComment.setComment("When shall I notify you (minute 0-59)?");
+						InputBox eventMinute = CAF.createInputBox();
+						
+						cloudComment.trigger();
+						eventMinute.trigger();
+						
+						if (eventMinute.getInput() == null) {
+							// rejected
+							rejected = true;
+							break;
+						}
+						else {
+							int minute;
+							try {
+								minute = Integer.parseInt(eventMinute.getInput());
+							} catch (Exception e) {
+								cloudComment.setComment("That was not a number!");
+								skinSwitch.setSkin(Emotion.mad.code);
+								
+								cloudComment.trigger();
+								skinSwitch.trigger();
+								
+								try {
+									Thread.sleep(3000);
+								} catch (InterruptedException e1) {
+									e1.printStackTrace();
+								}
+								this.actionPerformed(null);
+								return;
+							}
+							
+							// now we got the hour, minute, save the data
+							// create time that we can serialize (save)
+							Time time = new Time();
+							time.setHour(hour);
+							time.setMinute(minute);
+							// year, month, day automatically filled
+							
+							// deserialize existing events
+							@SuppressWarnings("unchecked")
+							HashMap&lt;Time, String&gt; events = (HashMap&lt;Time, String&gt;) Serializer.deserialize(this, "events.dat");
+							if (events == null) {
+								// no data exists
+								events = new HashMap&lt;Time, String&gt;();
+							}
+							
+							events.put(time, eventName);
+							
+							// save data
+							Serializer.serialize(this, events, "events.dat");
+							
+							// say ok
+							cloudComment.setComment("Ok, I won't forget " + eventName + "!");
+							skinSwitch.setSkin(Emotion.happy.code);
+							
+							cloudComment.trigger();
+							skinSwitch.trigger();
+							
+							try {
+								Thread.sleep(3000);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							
+							skinSwitch.setSkin(Emotion.neutral.code);
+							
+							skinSwitch.trigger();
+							cloudComment.hide();
+						}
+					}
+				}
+				else {
+					// other day in the future
+					// ask for month at first
+					cloudComment.setComment("What month?");
+					RadioBtn eventMonth = CAF.createRadioBtn();
+					
+					for (Integer i = 1; i &lt;= 12; ++i) {
+						eventMonth.addOption(i.toString());
+					}
+					
+					cloudComment.trigger();
+					eventMonth.trigger();
+					
+					if (eventMonth.getSelectedIndex() == -1) {
+						// rejected
+						rejected = true;
+						break;
+					}
+					else {
+						int month = eventMonth.getSelectedIndex() + 1;
+						
+						// day
+						cloudComment.setComment("What day?");
+						InputBox eventDay = CAF.createInputBox();
+						
+						cloudComment.trigger();
+						eventDay.trigger();
+						if (eventDay.getInput() == null) {
+							// rejected
+							rejected = true;
+							break;
+						}
+						else {
+							int day;
+							try {
+								day = Integer.parseInt(eventDay.getInput());
+							} catch (Exception e) {
+								cloudComment.setComment("That was not a number!");
+								skinSwitch.setSkin(Emotion.mad.code);
+								
+								cloudComment.trigger();
+								skinSwitch.trigger();
+								
+								try {
+									Thread.sleep(3000);
+								} catch (InterruptedException e1) {
+									e1.printStackTrace();
+								}
+								this.actionPerformed(null);
+								return;
+							}
+							
+							// hour
+							cloudComment.setComment("What hour?");
+							InputBox eventHour = CAF.createInputBox();
+							
+							cloudComment.trigger();
+							eventHour.trigger();
+							if (eventHour.getInput() == null) {
+								// rejected
+								rejected = true;
+								break;
+							}
+							else {
+								int hour;
+								try {
+									hour = Integer.parseInt(eventHour.getInput());
+								} catch (Exception e) {
+									cloudComment.setComment("That was not a number!");
+									skinSwitch.setSkin(Emotion.mad.code);
+									
+									cloudComment.trigger();
+									skinSwitch.trigger();
+									
+									try {
+										Thread.sleep(3000);
+									} catch (InterruptedException e1) {
+										e1.printStackTrace();
+									}
+									this.actionPerformed(null);
+									return;
+								}
+								
+								// minute
+								cloudComment.setComment("When exactly (minute)?");
+								InputBox eventMinute = CAF.createInputBox();
+								
+								cloudComment.trigger();
+								eventMinute.trigger();
+								if (eventMinute.getInput() == null) {
+									// rejected
+									rejected = true;
+									break;
+								}
+								else {
+									int minute;
+									try {
+										minute = Integer.parseInt(eventMinute.getInput());
+									} catch (Exception e) {
+										cloudComment.setComment("That was not a number!");
+										skinSwitch.setSkin(Emotion.mad.code);
+										
+										cloudComment.trigger();
+										skinSwitch.trigger();
+										
+										try {
+											Thread.sleep(3000);
+										} catch (InterruptedException e1) {
+											e1.printStackTrace();
+										}
+										this.actionPerformed(null);
+										return;
+									}
+									
+									// we've got everything, now save data
+									Time time = new Time();
+									time.setMonth(month);
+									time.setDay(day);
+									time.setHour(hour);
+									time.setMinute(minute);
+									
+									// deserialize existing events
+									@SuppressWarnings("unchecked")
+									HashMap&lt;Time, String&gt; events = (HashMap&lt;Time, String&gt;) Serializer.deserialize(this, "events.dat");
+									if (events == null) {
+										// no data exists
+										events = new HashMap&lt;Time, String&gt;();
+									}
+									
+									events.put(time, eventName);
+									
+									// save data
+									Serializer.serialize(this, events, "events.dat");
+									
+									// say ok
+									cloudComment.setComment("Ok, I won't forget " + eventName + "!");
+									skinSwitch.setSkin(Emotion.happy.code);
+									
+									cloudComment.trigger();
+									skinSwitch.trigger();
+									
+									try {
+										Thread.sleep(3000);
+									} catch (InterruptedException e) {
+										e.printStackTrace();
+									}
+									
+									skinSwitch.setSkin(Emotion.neutral.code);
+									
+									skinSwitch.trigger();
+									cloudComment.hide();
+								}
+							}
+						}
+					}
+				}
+				
+				// ask for any new event
+				skinSwitch.setSkin(Emotion.talking.code);
+				cloudComment.setComment("Any more events?");
+				
+				skinSwitch.trigger();
+				cloudComment.trigger();
+				yesnoRadioBtn.trigger();
+				
+				if (yesnoRadioBtn.getSelectedIndex() == -1) {
+					// rejected
+					rejected = true;
+					break;
+				}
+				else if (yesnoRadioBtn.getSelectedIndex() == 0) {
+					// yes
+					askFurther = true;
+				}
+				else {
+					// no
+					askFurther = false;
+					
+					try {
+						Thread.sleep(800);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+					skinSwitch.setSkin(Emotion.neutral.code);
+					skinSwitch.trigger();
+					cloudComment.hide();
+				}
+			}
+			
+			// if rejected, waifu gets mad
+			if (rejected) {
+				skinSwitch.setSkin(Emotion.mad.code);
+				cloudComment.setComment("Why you always playing with me?!");
+				
+				skinSwitch.trigger();
+				cloudComment.trigger();
+				
+				try {
+					Thread.sleep(3500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+				skinSwitch.setSkin(Emotion.neutral.code);
+				skinSwitch.trigger();
+				cloudComment.hide();
+			}
+			
+		}
+		else {
+			cloudComment.setComment("What a boring day..");
+			skinSwitch.setSkin(Emotion.sleepy.code);
+			
+			cloudComment.trigger();
+			skinSwitch.trigger();
+			
+			try {
+				Thread.sleep(3500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			skinSwitch.setSkin(Emotion.neutral.code);
+			skinSwitch.trigger();
+			cloudComment.hide();
+		}
+	}
+
+}</pre>
+
+		<h3>EventNotify</h3>
+		
+		<p>Notify users about the events saved by EventStore.</p>
+		
+		<pre>
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
+import core.*;
+
+public class EventNotify extends Behavior {
+
+	public EventNotify() {
+		super("EventStore"); // use store serialized objects
+	}
+	
+	HashMap&lt;Time, String&gt; events;
+	TimeReached timer;
+	String chosenEventName = null;
+	Time chosenEventTime = null;
+
+	@Override
+	public void condition(UserActionFactory UAF) {
+		timer = UAF.createTimeReached();
+		timer.nextMinutes(1);
+		timer.activate(this);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		timer.nextMinutes(1);
+		timer.activate(this);
+		// load events data
+		events = (HashMap&lt;Time, String&gt;) Serializer.deserialize(this, "events.dat");
+		
+		if (events == null) {
+			events = new HashMap&lt;Time, String&gt;();
+			return;
+		}
+		
+		// find already reached times
+		Iterator&lt;Entry&lt;Time, String&gt;&gt; it = events.entrySet().iterator();
+		this.chosenEventName = null;
+		this.chosenEventTime = null;
+		while (it.hasNext()) {
+			Entry&lt;Time, String&gt; one = it.next();
+			Time time = one.getKey();
+			
+			if (time.isPassed()) {
+				// notify user
+				chosenEventName = one.getValue();
+				this.chosenEventTime = one.getKey();
+				events.remove(one.getKey());
+				break;
+			}
+		}
+		
+		if (this.chosenEventName != null) {
+			this.conditionFulfilled();
+		}
+	}
+	
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		
+		// save event changes
+		Serializer.serialize(this, this.events, "events.dat");
+		
+		// if it was yesterday (or earlier) we just mention it
+		Calendar cal = Calendar.getInstance();
+		CloudComment cl;
+		SkinSwitch ss;
+		if (cal.get(Calendar.DAY_OF_MONTH) &gt; this.chosenEventTime.getDay()) {
+			cl = CAF.createCloudComment("I forgot to tell you about " + this.chosenEventName + "! I'm so sorry..");
+			ss = CAF.createSkinSwitch(Emotion.embarassed.code);
+		}
+		else {
+			cl = CAF.createCloudComment("Hey! I should notify you about an event: " + this.chosenEventName + ".");
+			ss = CAF.createSkinSwitch(Emotion.happy.code);
+		}
+		
+		cl.trigger();
+		ss.trigger();
+		
+		try {
+			Thread.sleep(6000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		this.chosenEventName = null;
+		
+		ss.setSkin(Emotion.neutral.code);
+		cl.hide();
+		ss.trigger();
+	}
+
+}</pre>
+
+		<h3>Introduction</h3>
+		
+		<p>Starts immediately when the waifu started; actionPerformed is called immediately in condition
+		(no user actions).</p>
+		
+		<pre>
+import core.*;
+
+public class Introduction extends Behavior {
+
+	public Introduction() {
+		super("intro");
+	}
+
+	@Override
+	public void condition(UserActionFactory UAF) {
+		this.actionPerformed(null);
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		// run immediately
+		this.conditionFulfilled();
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		
+		try {
+			Thread.sleep(800);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		// preparation
+		CloudComment cc = CAF.createCloudComment("");
+		SkinSwitch ss = CAF.createSkinSwitch(Emotion.happy.code);
+		String wName = (String) Serializer.deserialize(null, "waifuname.dat");
+		String mName = (String) Serializer.deserialize(null, "mastername.dat");
+		Integer endOfDayHour = (Integer) Serializer.deserialize(null, "endofdayhour.dat");
+		
+		// get a name for the waifu
+		if (wName == null) {
+			cc.setComment("I believe we haven't seen each other! Hi! Please tell me how you want to call me!");
+			ss.setSkin(Emotion.happy.code);
+			InputBox waifuName = CAF.createInputBox();
+			
+			cc.trigger();
+			ss.trigger();
+			waifuName.trigger();
+			
+			while (waifuName.getInput() == null) {
+				cc.setComment("Please give me a naaaaame!");
+				ss.setSkin(Emotion.sad.code);
+				
+				cc.trigger();
+				ss.trigger();
+				waifuName.trigger();
+			}
+			
+			// now we got the name
+			Serializer.serialize(null, waifuName.getInput(), "waifuname.dat");
+			
+			try {
+				Thread.sleep(400);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			// *** at your service!
+			cc.setComment(waifuName.getInput() + ".. hmm thanks!");
+			ss.setSkin(Emotion.happy.code);
+			
+			cc.trigger();
+			ss.trigger();
+			
+			try {
+				Thread.sleep(2500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			// inform about waifu menu
+			cc.setComment("From now on, whenever you type my name " + waifuName.getInput() + ", I'll be at your service!");
+			cc.trigger();
+			
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			ss.setSkin(Emotion.neutral.code);
+			ss.trigger();
+			cc.hide();
+		}
+		// get name for the master
+		else if (mName == null) {
+			cc.setComment("I was so rude! I haven't asked your name, so what should I call you?");
+			ss.setSkin(Emotion.embarassed.code);
+			InputBox masterName = CAF.createInputBox();
+			
+			cc.trigger();
+			ss.trigger();
+			masterName.trigger();
+			
+			while (masterName.getInput() == null) {
+				cc.setComment("Please tell me your name!");
+				ss.setSkin(Emotion.sad.code);
+				
+				cc.trigger();
+				ss.trigger();
+				masterName.trigger();
+			}
+			
+			// now we got the master's name
+			Serializer.serialize(null, masterName.getInput(), "mastername.dat");
+			
+			// say thanks
+			cc.setComment(masterName.getInput() + ", ok! I'll get use to it!");
+			ss.setSkin(Emotion.happy.code);
+			
+			cc.trigger();
+			ss.trigger();
+						
+			try {
+				Thread.sleep(3500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			ss.setSkin(Emotion.neutral.code);
+			ss.trigger();
+			cc.hide();
+		}
+		// get end of day hour
+		else if (endOfDayHour == null) {
+			RadioBtn rb = CAF.createRadioBtn();
+			rb.addOption("Working");
+			rb.addOption("Studying");
+			rb.addOption("Chilling");
+			cc.setComment("What are you doing during the weekdays " + mName + "?");
+			ss.setSkin(Emotion.suspicious.code);
+			
+			cc.trigger();
+			ss.trigger();
+			rb.trigger();
+			
+			String question;
+			if (rb.getSelectedIndex() == -1) {
+				// rejected
+				cc.setComment("Ok whatever..");
+				ss.setSkin(Emotion.sad.code);
+				
+				try {
+					Thread.sleep(2500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+				question = "What's the end of the day for you then? When you just hang before the screen?";
+			}
+			else if (rb.getSelectedIndex() == 0) {
+				question = "What's the time when you finish working (hour 0-23)?";
+			}
+			else if (rb.getSelectedIndex() == 1) {
+				question = "What's the time when you leave your school or university usually?";
+			}
+			else {
+				ss.setSkin(Emotion.happy.code);
+				ss.trigger();
+				question = "Haha! Than what's the time when you just hang before the screen after the day?";
+			}
+			
+			cc.setComment(question);
+			InputBox endofday = CAF.createInputBox();
+			
+			cc.trigger();
+			endofday.trigger();
+			
+			while (endofday.getInput() == null) {
+				cc.setComment("Please tell meeeee!");
+				ss.setSkin(Emotion.sad.code);
+				
+				cc.trigger();
+				ss.trigger();
+				endofday.trigger();
+			}
+			
+			// now we got end of day, save it
+			Integer eod = null;
+			boolean isNumber = true;
+			try {
+				eod = Integer.parseInt(endofday.getInput());
+			} catch (Exception e) {
+				isNumber = false;
+			}
+			
+			if (isNumber) {
+				Serializer.serialize(null, eod, "endofdayhour.dat");
+				
+				// say thanks
+				ss.setSkin(Emotion.happy.code);
+				cc.setComment("Thank you! Now I can plan my day to be able to spend the most time with you!");
+				
+				ss.trigger();
+				cc.trigger();
+				
+				try {
+					Thread.sleep(4000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			else {
+				// not a number
+				cc.setComment("That was not a number!");
+				ss.setSkin(Emotion.mad.code);
+				
+				ss.trigger();
+				cc.trigger();
+				
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			ss.setSkin(Emotion.neutral.code);
+			ss.trigger();
+			cc.hide();
+		}
+	}
+}</pre>
+
+		<h3>WaifuMenuBehavior</h3>
+		
+		<p>When the user type in the waifu's name, the waifu appears a 'menu' filled with radio buttons.
+		Waifu handle the requests further.</p>
+		
+		<pre>
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Random;
+import java.util.Map.Entry;
+
+import core.*;
+
+public class WaifuMenuBehavior extends Behavior {
+
+	public WaifuMenuBehavior() {
+		super("EventStore"); // to be able to load events
+	}
+	
+	StringTyped nameTyped = null;
+	TextHighlighted commentHed = null;
+	
+	@Override
+	public void condition(UserActionFactory UAF) {
+		commentHed = UAF.createTextHighlighted();
+		
+		// retrieve waifu name
+		String wName = (String) Serializer.deserialize(null, "waifuname.dat");
+		
+		if (wName != null) {
+			nameTyped = UAF.createStringTyped(wName);
+			nameTyped.activate(this);
+		}
+	}
+
+	@Override
+	public void actionPerformed(UserAction userAction) {
+		nameTyped.activate(this);
+		this.conditionFulfilled();
+	}
+
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		
+		// retrieve master name
+		String mName = (String) Serializer.deserialize(null, "mastername.dat");
+		
+		String question = "What can I help you with?";
+		if (mName != null) {
+			question = "What can I help you with "+ mName +"?";
+		}
+		
+		// show menu
+		CloudComment cc = CAF.createCloudComment(question);
+		SkinSwitch ss = CAF.createSkinSwitch(Emotion.happy.code);
+		RadioBtn menu = CAF.createRadioBtn();
+		menu.addOption("Would you read my comment?");
+		menu.addOption("Tell me something positive!");
+		menu.addOption("I'd like to talk with you!");
+		menu.addOption("Events in mind?");
+		
+		cc.trigger();
+		ss.trigger();
+		menu.trigger();
+		
+		int si = menu.getSelectedIndex();
+		if (si == -1) {
+			// cancelled
+			cc.setComment("Ohh.. ok.");
+			ss.setSkin(Emotion.sleepy.code);
+			
+			cc.trigger();
+			ss.trigger();
+			
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		else if (si == 0) {
+			// read comment
+			this.readComment(CAF);
+		}
+		else if (si == 1) {
+			// something pos
+			this.somethingPositive(CAF);
+		}
+		else if (si == 2) {
+			// talking
+			this.someTalking(CAF);
+		}
+		else {
+			// events in mind
+			this.eventsInMind(CAF);
+		}
+		
+		// get back to neutral
+		ss.setSkin(Emotion.neutral.code);
+		ss.trigger();
+		cc.hide();
+	}
+	
+	private void readComment(CounterActionFactory CAF) {
+		CloudComment cc = CAF.createCloudComment("Of course! Highlight your comment for me please!");
+		SkinSwitch ss = CAF.createSkinSwitch(Emotion.happy.code);
+		
+		cc.trigger();
+		ss.trigger();
+		
+		commentHed.activate(null);
+		
+		// wait till highlight, max 30 seconds
+		int seconds = 0;
+		while (!commentHed.isTextHighlighted() && seconds &lt; 30) {
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			++seconds;
+		}
+		
+		if (!commentHed.isTextHighlighted()) {
+			// haven't highlighted anything
+			cc.setComment("Thank you for that nothing!");
+			ss.setSkin(Emotion.facingaway.code);
+			
+			cc.trigger();
+			ss.trigger();
+			
+			try {
+				Thread.sleep(3500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
+			// highlighted
+			String text = commentHed.getHighlightedText();
+			text = text.toLowerCase();
+			
+			// waifu mentioned
+			String wName = (String) Serializer.deserialize(null, "waifuname.dat");
+			
+			if (wName != null) {
+				if (text.contains(wName.toLowerCase())) {
+					cc.setComment("You mentioned my name?? I'm so embarassed!");
+					ss.setSkin(Emotion.embarassed.code);
+					
+					cc.trigger();
+					ss.trigger();
+					
+					try {
+						Thread.sleep(4000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+					return;
+				}
+			}
+			
+			// favourite movie mentioned
+			String favMov = (String) Serializer.deserialize(null, "favmovie.dat");
+			
+			if (favMov != null) {
+				if (text.contains(favMov.toLowerCase())) {
+					cc.setComment("That's your favourite movie, " + favMov + ", you mentioned! Hell good it is!");
+					ss.setSkin(Emotion.happy.code);
+					
+					cc.trigger();
+					ss.trigger();
+					
+					try {
+						Thread.sleep(4000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+					return;
+				}
+			}
+			
+			// favourite spot on earth
+			String favSpot = (String) Serializer.deserialize(null, "favspot.dat");
+			
+			if (favSpot != null) {
+				if (text.contains(favSpot.toLowerCase())) {
+					cc.setComment("That's your favourite spot on earth you mentioned, " + favSpot + "! What a nice place!");
+					ss.setSkin(Emotion.happy.code);
+					
+					cc.trigger();
+					ss.trigger();
+					
+					try {
+						Thread.sleep(4000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+					return;
+				}
+			}
+			
+			// music recently listening to
+			String musicRecently = (String) Serializer.deserialize(null, "musicrecently.dat");
+			
+			if (musicRecently != null) {
+				if (text.contains(musicRecently.toLowerCase())) {
+					cc.setComment("The music you listening to nowadays, " + musicRecently + ", is mentioned! Good taste of music!");
+					ss.setSkin(Emotion.happy.code);
+					
+					cc.trigger();
+					ss.trigger();
+					
+					try {
+						Thread.sleep(5000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+					return;
+				}
+			}
+			
+			// crush's name
+			String crushName = (String) Serializer.deserialize(null, "crushname.dat");
+			if (crushName != null) {
+				if (text.contains(crushName.toLowerCase())) {
+					cc.setComment("That's your crush you're talking to?? Go on!");
+					ss.setSkin(Emotion.happy.code);
+					
+					cc.trigger();
+					ss.trigger();
+					
+					try {
+						Thread.sleep(4000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+					return;
+				}
+			}
+			
+			// nothing found
+			String mName = (String) Serializer.deserialize(null, "mastername.dat");
+			if (mName == null) {
+				mName = "";
+			}
+			
+			String[] reactions = {
+					"I like that comment " + mName + "!",
+					"You're so creative " + mName + "! Great comment!",
+					"Ohh, I wonder what the others gonna react to that comment " + mName + "!",
+					"Aha, it's ok.",
+					"Anything more maybe " + mName + "?"};
+			Random generator = new Random();
+			int rIndex = generator.nextInt(reactions.length);
+			
+			// different skins
+			if (rIndex &lt; 3) {
+				ss.setSkin(Emotion.happy.code);
+			}
+			else {
+				ss.setSkin(Emotion.sleepy.code);
+			}
+			
+			cc.setComment(reactions[rIndex]);
+			
+			ss.trigger();
+			cc.trigger();
+			
+			try {
+				Thread.sleep(4000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	private void somethingPositive(CounterActionFactory CAF) {
+		CloudComment cc = CAF.createCloudComment("");
+		SkinSwitch ss = CAF.createSkinSwitch(Emotion.happy.code);
+		
+		String[] positiveTs= {
+				"\"Be yourself; everyone else is already taken.\" - Oscar Wilde",
+				"\"Be the change that you wish to see in the world.\" - Mahatma Gandhi",
+				"\"Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.\" - Marilyn Monroe",
+				"\"There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.\" - Albert Einstein",
+				"\"I have not failed. I've just found 10,000 ways that won't work.\" - Thomas A. Edison",
+				"\"It is never too late to be what you might have been.\" - George Eliot",
+				"\"Do what you can, with what you have, where you are.\" - Theodore Roosevelt",
+				"\"Life isn't about finding yourself. Life is about creating yourself.\" - George Bernard Shaw",
+				"\"If you don't like something, change it. If you can't change it, change your attitude. Don't complain.\" - Maya Angelou"};
+		
+		Random generator = new Random();
+		int index = generator.nextInt(positiveTs.length);
+		
+		cc.setComment(positiveTs[index]);
+		
+		cc.trigger();
+		ss.trigger();
+		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void someTalking(CounterActionFactory CAF) {
+		CloudComment cc = CAF.createCloudComment("");
+		SkinSwitch ss = CAF.createSkinSwitch(0);
+		InputBox answerBox = CAF.createInputBox();
+		
+		// retrieve serialized data
+		String favMovie = (String) Serializer.deserialize(null, "favmovie.dat");
+		String favSpot = (String) Serializer.deserialize(null, "favspot.dat");
+		String musicRecently = (String) Serializer.deserialize(null, "musicrecently.dat");
+		String crushName = (String) Serializer.deserialize(null, "crushname.dat");
+		
+		if (favMovie == null) {
+			favMovie = "";
+		}
+		if (favSpot == null) {
+			favSpot = "";
+		}
+		if (musicRecently == null) {
+			musicRecently = "";
+		}
+		if (crushName == null) {
+			crushName = "";
+		}
+		String[] favs = {favMovie, favSpot, musicRecently, crushName};
+		String[] serializedFavs = {"favmovie.dat", "favspot.dat", "musicrecently.dat", "crushname.dat"};
+		
+		// ask about fav movie, fav spot, music recently listening to, crush's name
+		String[] questions = {
+				"What's your favourite movie lately? Mine is Pulp Fiction!",
+				"What's your favourite spot on Earth?",
+				"What music do you listen to recently?",
+				"Do you have a crush on someone? Who is it?"};
+		String[] questionsNTime = {
+				"What's your favourite movie lately? I know it was " + favMovie + " last time I asked you! Something new?",
+				"What's one of your favourite spot on Earth? I know " + favSpot + ", but that's all?",
+				"I know you listening to " + musicRecently + " recently, got anything new?",
+				"Last time we talked you was in love with " + crushName + ". Any updates? Maybe a new one?"};
+		
+		Random generator = new Random();
+		int qIndex = generator.nextInt(4);
+		
+		if (favs[qIndex] == "") {
+			// question taken first!
+			cc.setComment(questions[qIndex]);
+		}
+		else {
+			cc.setComment(questionsNTime[qIndex]);
+		}
+		ss.setSkin(Emotion.happy.code);
+		
+		ss.trigger();
+		cc.trigger();
+		answerBox.trigger();
+		
+		String answer = answerBox.getInput();
+		if (answer == null) {
+			// rejected
+			ss.setSkin(Emotion.sad.code);
+			cc.setComment("Why don't you tell me?!");
+			
+			ss.trigger();
+			cc.trigger();
+			
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
+			// save data
+			Serializer.serialize(null, answer, serializedFavs[qIndex]);
+			
+			ss.setSkin(Emotion.happy.code);
+			cc.setComment("I appreciate you told me that! I won't forget it!");
+			
+			ss.trigger();
+			cc.trigger();
+			
+			try {
+				Thread.sleep(4000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	private void eventsInMind(CounterActionFactory CAF) {
+		CloudComment cc = CAF.createCloudComment("");
+		SkinSwitch ss = CAF.createSkinSwitch(0);
+		
+		@SuppressWarnings("unchecked")
+		HashMap&lt;Time, String&gt; events = (HashMap&lt;Time, String&gt;) Serializer.deserialize(this, "events.dat");
+		
+		if (events == null) {
+			ss.setSkin(Emotion.sleepy.code);
+			cc.setComment("There's no event I know about.");
+			
+			ss.trigger();
+			cc.trigger();
+			
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
+			if (events.size() == 0) {
+				ss.setSkin(Emotion.sleepy.code);
+				cc.setComment("There's no event I know about.");
+				
+				ss.trigger();
+				cc.trigger();
+				
+				try {
+					Thread.sleep(3500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			else {
+				ss.setSkin(Emotion.facingaway.code);
+				cc.setComment("Wait a bit, I found some heereee..");
+			
+				ss.trigger();
+				cc.trigger();
+				
+				try {
+					Thread.sleep(3500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+				ss.setSkin(Emotion.talking.code);
+				ss.trigger();
+				
+				Iterator&lt;Entry&lt;Time, String&gt;&gt; it = events.entrySet().iterator();
+				while (it.hasNext()) {
+					Entry&lt;Time, String&gt; one = it.next();
+					Time evTime = one.getKey();
+					String evName = one.getValue();
+					
+					cc.setComment(evName + " at " + evTime.toString());
+					cc.trigger();
+					
+					try {
+						Thread.sleep(3500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+				
+				cc.setComment("Aaaand that's all.");
+				ss.setSkin(Emotion.sleepy.code);
+				
+				cc.trigger();
+				ss.trigger();
+				try {
+					Thread.sleep(3500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+}</pre>
+	</article>
+	
+	<article id="whatdoeswhat">
+		<h2>5. <span style="color:#bbb; text-decoration:line-through;">Object catalogue</span> What does what?</h2>
+		
+		<p>If you are familiar with java documentation, <a href="devjavadoc/index.html" target="_blank">Developer's javadoc</a>
+		should be read.</p>
+		
+		<h3>User actions</h3>
+		
+		<h4>KeyTyped</h4>
+		<p>Listen for a certain key and if it's typed calls Behavior.update().
+		Can be created by behaviors using UserActionFactory.
+		Can listen to unicode of a key ('any' key on keyboard) or for a character (from 'a' to 'z').</p>
+		
+		<pre>
+	@Override
+	public void condition(UserActionFactory UAF) {
+		// wait for a caps lock
+		KeyTyped kt = UAF.createKeyTyped(KeyEvent.VK_CAPS_LOCK);
+		kt.activate(this);
+	}</pre>
+	
+		<pre>
+	@Override
+	public void condition(UserActionFactory UAF) {
+		// wait for 'v' to be pressed
+		KeyTyped kt = UAF.createKeyTyped('v');
+		kt.activate(this);
+	}</pre>
+	
+		<h4>StringTyped</h4>
+		<p>Listen for a certain sequence of characters (like multiple KeyTypeds after each other).
+		Can be created by behaviors using UserActionFactory. Only listen for characters (a-z) to be pressed.</p>
+		
+		<pre>
+	@Override
+	public void condition(UserActionFactory UAF) {
+		// wait for "blabla" to be typed
+		StringTyped st = UAF.createStringTyped("blabla");
+		st.activate(this);
+	}</pre>
+	
+		<h4>TimeReached</h4>
+		<p>Checks if the given time is reached (when updated by TimeChecker).
+		If reached, calls behavior's actionPerformed().
+		Can be created by behaviors using UserActionFactory.</p>
+		
+		<pre>
+	@Override
+	public void condition(UserActionFactory UAF) {
+		// set TimeReached to 18:30 this day
+		TimeReached tr = UAF.createTimeReached();
+		tr.setHour(18);
+		tr.setMinute(30);
+		// day, month and year automatically filled with current time
+		
+		tr.activate(this);
+	}</pre>
+	
+		<h4>TextHighlighted</h4>
+		<p>Listen for any text highlight and stores the highlighted text immediately.
+		Can be created by behaviors using UserActionFactory.</p>
+		
+		<pre>
+	@Override
+	public void condition(UserActionFactory UAF) {
+		// wait till text highlighted
+		TextHighlighted th = UAF.createTextHighlighted();
+		th.activate(this);
+	}</pre>
+	
+		
+		<h3>Counter actions</h3>
+		
+		<h4>CloudComment</h4>
+		<p>Popup a cloud with text in it, like the waifu is speaking.</p>
+		
+		<pre>
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		// greets the user, then says goodbye
+		CloudComment cc = CAF.createCloudComment("Hi!");
+		cc.trigger();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		cc.setComment("Goodbye!");
+		cc.trigger();
+		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		// hide the cloud
+		cc.hide();
+	}</pre>
+		
+		<h4>SkinSwitch</h4>
+		<p>Changes the skin of the waifu.</p>
+		
+		<pre>
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		// set waifu's skin to happy
+		SkinSwitch ss = CAF.createSkinSwitch(Emotion.happy.code);
+		ss.trigger();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		// set waifu's skin to an extra slot
+		// no change will occur, if there's no image to that slot
+		ss.setSkin(Emotion.extra1.code);
+		ss.trigger();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		// back to normal skin (neutral)
+		ss.setSkin(Emotion.neutral.code);
+		ss.trigger();
+	}</pre>
+		
+		<h4>InputBox</h4>
+		<p>Popup an input dialog for text inputs and stores the input after given.</p>
+		
+		<pre>
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		// appear an input box, then show the input in a cloud comment
+		InputBox ib = CAF.createInputBox();
+		CloudComment cc = CAF.createCloudComment("");
+		
+		ib.trigger();
+		
+		if (ib.getInput() == null) {
+			// if null, cancel is pressed
+			cc.setComment("No input...");
+		}
+		else {
+			cc.setComment("Input: " + ib.getInput());
+		}
+		
+		cc.trigger();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		cc.hide();
+	}</pre>
+		
+		<h4>RadioBtn</h4>
+		<p>Popup an input dialog including (multiple) radio buttons and stores the input.</p>
+		
+		<pre>
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		// Yes/No radio buttons appears
+		RadioBtn rb = CAF.createRadioBtn();
+		rb.addOption("Yes");
+		rb.addOption("No");
+		
+		// check answer
+		if (rb.getSelectedIndex() == -1) {
+			// cancel is pressed...
+		}
+		else if (rb.getSelectedIndex() == 0) {
+			// "Yes" is the chosen one...
+		}
+		else if (rb.getSelectedIndex() == 1) {
+			// "No" is the chosen one...
+		}
+	}</pre>
+		
+		<h4>CheckBox</h4>
+		<p>Popup an input dialog including (multiple) check boxes and stores the input.</p>
+		
+		<pre>
+	@Override
+	public void consequent(CounterActionFactory CAF) {
+		// ask a question, gives options with checkboxes to answer
+		CheckBox cb = CAF.createCheckBox();
+		cb.addOption("Elephant");
+		cb.addOption("Lion");
+		cb.addOption("Apple tree");
+		
+		CloudComment cc = CAF.createCloudComment("Which one(s) are animals?");
+		
+		cc.trigger();
+		cb.trigger();
+		
+		// process the answer
+		if (cb.getNumOfSelectedIndexes() == 2) {
+			// 2 selected, can be good
+			if (cb.isIndexSelected(0) && cb.isIndexSelected(1)) {
+				// Elephant and Lion is selected
+				// right answer
+				cc.setComment("Right answer!");
+			}
+			else {
+				cc.setComment("Wrong answer!");
+			}
+		} else {
+			cc.setComment("Wrong answer! Too much, or too few are selected!");
+		}
+		
+		cc.trigger();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		cc.hide();
+	}</pre>
+	</article>
+
+</section>
+
+</body>
+	
+</html>
