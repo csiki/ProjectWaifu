@@ -1,0 +1,1 @@
+An AI that can interact with the user in multiple ways appearing on desktop. The intelligence of the AI can be altered by Java programming.
